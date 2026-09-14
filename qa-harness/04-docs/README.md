@@ -8,6 +8,8 @@ decisions, but are not themselves QA standards.
 
 Current documents:
 
+- `workspace-deployment-guide.md` - 新人部署、Team Lead 验收和日常更新手册。
+
 - `workspace-structure.md` - workspace-level refactor plan and migration map.
 - `path-reference-audit.md` - hard-coded old-path audit for physical migration.
 - `historical-path-policy.md` - what to rewrite now vs preserve as evidence.
