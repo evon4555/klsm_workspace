@@ -1,0 +1,12 @@
+{
+  "ran_at": "2026-06-23T06:17:23+00:00",
+  "layers": [
+    {
+      "name": "api_smoke",
+      "passed": 40,
+      "failed": 0,
+      "skipped": 0,
+      "total": 40
+    }
+  ]
+}

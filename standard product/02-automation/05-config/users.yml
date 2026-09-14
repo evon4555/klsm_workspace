@@ -1,0 +1,19 @@
+# Standard Product test-user mapping.
+#
+# Keep real credentials out of this file. The sensitive source reference is:
+# D:\Workspace\standard product\01-requirements\02-subprojects\01-domestic projects\01-source-documents\网站地址以及权限.txt
+#
+# For execution, set the environment variables below in 06-envs/.env.<env>
+# or in the shell before running Behave.
+
+local:
+  user1:
+    username: "${TA_USER1_USERNAME}"
+    password: "${TA_USER1_PASSWORD}"
+    role: "admin"
+
+sit:
+  user1:
+    username: "${TA_USER1_USERNAME}"
+    password: "${TA_USER1_PASSWORD}"
+    role: "admin"

@@ -1,0 +1,17 @@
+﻿scenario,step,method,path,load_test_level,risk_level,extract,use,assertion,source
+home_browse,1,GET,/thvendor/companyBaseInfo/getDisplayConfig.xhtml,Ready,low,,站点配置入口,HTTP 200; errcode=0000 when JSON has errcode,"current_playwright_crawl,local_wk_endpoints_registry"
+home_browse,2,POST,/thvendor/ad/getNewAdList.xhtml,Scenario Ready,medium,,首页广告/轮播,HTTP 200; data exists,"current_playwright_crawl,legacy_anticket_har,local_wk_endpoints_registry"
+home_browse,3,POST,/thvendor/program/getCategoryList.xhtml,Scenario Ready,medium,categoryIds if needed,项目分类,HTTP 200; data exists,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+home_browse,4,POST,/thvendor/ticket/program/getHotProgramList.xhtml,Scenario Ready,medium,programId/id,为详情页提供 programId,HTTP 200; data list not empty,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+show_order_create_cancel,1,GET,/thvendor/ticket/program/getProgramById.xhtml,Scenario Ready,low,programKey,输入 programId，提取 programKey,errcode=0000; data.programKey exists,"current_playwright_crawl,legacy_anticket_har"
+show_order_create_cancel,2,GET,/thvendor/member/show/listBydate.xhtml,Scenario Ready,low,"showId/id, sessionKey",输入 programKey/programId，选可售场次,errcode=0000; data list not empty,"current_spa_static_template,legacy_anticket_har"
+show_order_create_cancel,3,GET,/thvendor/member/show/tickettype/list.xhtml,Scenario Ready,low,"ticketTypeId/id, ticketType",输入 showId/sessionKey/programKey，选可售票种,errcode=0000; data list not empty,"current_spa_static_template,legacy_anticket_har"
+show_order_create_cancel,4,POST,/thvendor/member/show/order/create.xhtml,Scenario Ready,medium,tradeNo,生成唯一 orderkey header，创建非座位票未支付订单,errcode=0000; success=true; data.tradeNo exists,legacy_anticket_har
+show_order_create_cancel,5,GET,/thvendor/member/show/order/cancelOrder.xhtml,Scenario Ready,medium,,使用 tradeNo 立即取消订单,errcode=0000; success=true,legacy_anticket_har
+member_read,1,POST,/ucenter/rest/getLogonInfo.xhtml,Scenario Ready,medium,member id,验证预置登录态有效,errcode=0000; data exists,"current_playwright_crawl,legacy_anticket_har"
+member_read,2,GET,/thvendor/member/info/getMemberInfo.xhtml,Ready,low,,会员核心信息,errcode=0000; data exists,"current_playwright_crawl,local_wk_endpoints_registry"
+member_read,3,GET,/thvendor/member/order/getMemberOrderList.xhtml,Scenario Ready,low,,订单列表读取,errcode=0000; data.resultList exists,"current_playwright_crawl,legacy_anticket_har,local_wk_endpoints_registry"
+seat_query,1,GET,/thvendor/member/ticket/scheduleDateListWithSellOut.xhtml,Scenario Ready,low,date,座位类场次日期,errcode=0000; data exists,legacy_anticket_har
+seat_query,2,POST,/thvendor/member/ticket/listScheduleByDate.xhtml,Scenario Ready,medium,scheduleId,按日期查询座位类场次,errcode=0000; data exists,"current_spa_static_template,legacy_anticket_har"
+seat_query,3,POST,/thvendor/member/ticket/getSchedulePrices.xhtml,Scenario Ready,medium,ticketPriceId,查询票价,errcode=0000; data exists,"current_spa_static_template,legacy_anticket_har"
+seat_query,4,POST,/thvendor/member/ticket/getAvailableSeats2.xhtml,Scenario Ready,medium,"available seat, orderKey",查询座位图库存；不建议高并发创建同一座位订单,errcode=0000; data exists,"current_spa_static_template,legacy_anticket_har"

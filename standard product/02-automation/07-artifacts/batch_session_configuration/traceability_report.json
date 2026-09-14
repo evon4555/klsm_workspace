@@ -1,0 +1,155 @@
+{
+  "X_count": 14,
+  "F_count": 14,
+  "D_count": 14,
+  "case_prefixes": [
+    "SIT-TC-STD-CONFIG-"
+  ],
+  "orphans_xf": [],
+  "dirty_fx": [],
+  "drift_df": [],
+  "xlsx_by_id": {
+    "SIT-TC-STD-CONFIG-001": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-002": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-003": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-004": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-005": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-006": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-007": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-008": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-009": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-010": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-011": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-012": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-013": [
+      "test-cases-batch-session-configuration"
+    ],
+    "SIT-TC-STD-CONFIG-014": [
+      "test-cases-batch-session-configuration"
+    ]
+  },
+  "features_by_id": {
+    "SIT-TC-STD-CONFIG-003": [
+      [
+        "api\\batch_session_configuration_api.feature",
+        4,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-004": [
+      [
+        "api\\batch_session_configuration_api.feature",
+        11,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-005": [
+      [
+        "api\\batch_session_configuration_api.feature",
+        18,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-006": [
+      [
+        "api\\batch_session_configuration_api.feature",
+        25,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-007": [
+      [
+        "api\\batch_session_configuration_api.feature",
+        32,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-008": [
+      [
+        "api\\batch_session_configuration_api.feature",
+        39,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-009": [
+      [
+        "api\\batch_session_configuration_api.feature",
+        46,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-010": [
+      [
+        "api\\batch_session_configuration_api.feature",
+        53,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-011": [
+      [
+        "api\\batch_session_configuration_api.feature",
+        60,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-013": [
+      [
+        "api_ui_mixed\\batch_session_configuration_mixed.feature",
+        4,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-001": [
+      [
+        "ui_e2e\\batch_session_configuration_ui.feature",
+        4,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-002": [
+      [
+        "ui_e2e\\batch_session_configuration_ui.feature",
+        12,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-012": [
+      [
+        "ui_e2e\\batch_session_configuration_ui.feature",
+        20,
+        "scenario-prefix"
+      ]
+    ],
+    "SIT-TC-STD-CONFIG-014": [
+      [
+        "ui_e2e\\batch_session_configuration_ui.feature",
+        28,
+        "scenario-prefix"
+      ]
+    ]
+  }
+}

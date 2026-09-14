@@ -1,0 +1,139 @@
+{
+  "title": "Mixed API Call Summary Evidence",
+  "scenario": "SIT-TC-STD-CONFIG-013 Verify that deleting a row from the preview excludes that session from submission",
+  "feature": "Batch Session Configuration API plus UI mixed automation",
+  "flow_key": "no-seat preview row exclusion",
+  "selected_ids": [
+    "90042939",
+    "90037094"
+  ],
+  "expected_field": "display",
+  "expected_value": "remaining=N; deleted=Y",
+  "assertion": {
+    "result": "PASS",
+    "logic": "Remaining row changes through the API action; deleted preview row stays unchanged.",
+    "message": "API setup/action/readback passed. Final user-facing check is captured in the following UI screenshot."
+  },
+  "source_requests": [],
+  "setup_requests": [],
+  "before_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/get.xhtml",
+      "params": {
+        "id": "90042939"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/get.xhtml?id=90042939",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "enableReserve",
+          "openShow",
+          "venue"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/get.xhtml",
+      "params": {
+        "id": "90037094"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/get.xhtml?id=90037094",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "enableReserve",
+          "openShow",
+          "venue"
+        ]
+      }
+    }
+  ],
+  "write_request": {
+    "method": "POST",
+    "path": "/theatre/home/openShow/op/batchUpdateDisplay.xhtml",
+    "params": {
+      "showIds": "90042939",
+      "display": "N"
+    },
+    "url": "https://anticket.lengliwh.com/theatre/home/openShow/op/batchUpdateDisplay.xhtml?showIds=90042939&display=N"
+  },
+  "write_response": {
+    "success": true,
+    "status_code": 200
+  },
+  "readback_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/get.xhtml",
+      "params": {
+        "id": "90042939"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/get.xhtml?id=90042939",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "enableReserve",
+          "openShow",
+          "venue"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/get.xhtml",
+      "params": {
+        "id": "90037094"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/get.xhtml?id=90037094",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "enableReserve",
+          "openShow",
+          "venue"
+        ]
+      }
+    }
+  ],
+  "observations": [
+    {
+      "selected_id": "90042939",
+      "field": "display",
+      "before_value": "Y",
+      "before_raw_actual": "Y",
+      "before_matched_target": false,
+      "expected_value": "N",
+      "actual_value": "N",
+      "raw_actual": "N",
+      "changed_from_before": true,
+      "comparison": "equals",
+      "expect_change": true,
+      "passed": true
+    },
+    {
+      "selected_id": "90037094",
+      "field": "display",
+      "before_value": "Y",
+      "before_raw_actual": "Y",
+      "before_matched_target": true,
+      "expected_value": "Y",
+      "actual_value": "Y",
+      "raw_actual": "Y",
+      "changed_from_before": false,
+      "comparison": "equals",
+      "expect_change": false,
+      "passed": true
+    }
+  ],
+  "footer": "PASS requires the API setup/action path to succeed, the remaining row to change to the target display value, and the deleted row to retain its before value. The final user-facing checkpoint is verified by the paired UI screenshot.",
+  "case_id": "SIT-TC-STD-CONFIG-013",
+  "run_id": "217",
+  "captured_at": "2026-07-20T11:35:33+08:00",
+  "evidence_kind": "api-readback-assertion"
+}

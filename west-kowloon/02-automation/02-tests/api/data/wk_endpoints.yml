@@ -1,0 +1,350 @@
+project: 西九
+website_url: https://anticket.lengliwh.com
+discovered_at: 2026-05-28
+discovery_method: SPA chunk static analysis (websitehtml bundle)
+endpoints:
+- name: ucenter.getCaptchaId
+  path: /ucenter/getCaptchaId.xhtml
+  method: GET
+  auth_required: false
+  expected_status:
+  - 200
+  group: auth
+  notes: Issues a captcha session id used by login / register flows.
+- name: ucenter.rest.logout
+  path: /ucenter/rest/logout.xhtml
+  method: GET
+  auth_required: false
+  expected_status:
+  - 200
+  group: auth
+  notes: Logout endpoint.
+- name: ucenter.member.globalConfig.telephoneCountryCodes
+  path: /ucenter/member/globalConfig/telephoneCountryCodes.xhtml
+  method: GET
+  auth_required: false
+  expected_status:
+  - 200
+  group: config
+  notes: Returns the list of supported country codes shown in the phone dropdown.
+- name: thvendor.member.clearMember.validateWay
+  path: /thvendor/member/clearMember/validateWay.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: Step 1 of account-deletion — which channel (email/SMS) to verify on.
+- name: thvendor.member.clearMember.sendCode
+  path: /thvendor/member/clearMember/sendCode.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: Step 2 of account-deletion — send the verification code.
+- name: thvendor.member.clearMember.checkCode
+  path: /thvendor/member/clearMember/checkCode.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: Step 3 of account-deletion — verify the entered code.
+- name: thvendor.member.clearMember.reasonList
+  path: /thvendor/member/clearMember/reasonList.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: List of selectable reasons for leaving (account deletion).
+- name: thvendor.member.clearMember.confirm
+  path: /thvendor/member/clearMember/confirm.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: Final step of account-deletion — submit deletion request.
+- name: thvendor.member.subscription.eventMsg.mine
+  path: /thvendor/member/subscription/record/eventMsg/mine.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: My event subscriptions / message inbox.
+- name: thvendor.member.ticket.getScheduleInfo
+  path: /thvendor/member/ticket/getScheduleInfo.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: ticket
+  notes: Get show schedule info for a given product.
+- name: thvendor.member.ticket.getSchedulePrices
+  path: /thvendor/member/ticket/getSchedulePrices.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: ticket
+  notes: Get ticket price tiers for a given schedule.
+- name: thvendor.member.ticket.getAvailableSeats2
+  path: /thvendor/member/ticket/getAvailableSeats2.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: ticket
+  notes: Get seat-map availability for a given schedule.
+- name: thvendor.ad.getNewAdList
+  path: /thvendor/ad/getNewAdList.xhtml
+  method: POST
+  auth_required: false
+  expected_status:
+  - 200
+  group: cms
+  notes: '[crawler] Banner / ad list shown on home + landing pages.'
+- name: thvendor.campaign.listCachedCampaign
+  path: /thvendor/campaign/listCachedCampaign.xhtml
+  method: GET
+  auth_required: false
+  expected_status:
+  - 200
+  group: cms
+  notes: '[crawler] Cached campaign list (homepage).'
+- name: thvendor.campaignLabel.listCampaignLabel
+  path: /thvendor/campaignLabel/listCampaignLabel.xhtml
+  method: GET
+  auth_required: false
+  expected_status:
+  - 200
+  group: cms
+  notes: '[crawler] Campaign labels / categories.'
+- name: thvendor.companyBaseInfo.getDisplayConfig
+  path: /thvendor/companyBaseInfo/getDisplayConfig.xhtml
+  method: GET
+  auth_required: false
+  expected_status:
+  - 200
+  group: config
+  notes: '[crawler] Per-site display config loaded on every page entry.'
+- name: thvendor.getStadiums
+  path: /thvendor/getStadiums.xhtml
+  method: GET
+  auth_required: false
+  expected_status:
+  - 200
+  group: config
+  notes: '[crawler] Venue / stadium list.'
+- name: thvendor.membership.getList
+  path: /thvendor/membership/getList.xhtml
+  method: GET
+  auth_required: false
+  expected_status:
+  - 200
+  group: member
+  notes: '[crawler] Public membership plans list (anonymous browse).'
+- name: thvendor.program.getCategoryList
+  path: /thvendor/program/getCategoryList.xhtml
+  method: POST
+  auth_required: false
+  expected_status:
+  - 200
+  group: ticket
+  notes: '[crawler] Program / show categories.'
+- name: thvendor.ticket.program.getHotProgramList
+  path: /thvendor/ticket/program/getHotProgramList.xhtml
+  method: POST
+  auth_required: false
+  expected_status:
+  - 200
+  group: ticket
+  notes: '[crawler] Hot programs (PC recList) — homepage carousel data.'
+- name: thvendor.member.address.getMemberAddressList
+  path: /thvendor/member/address/getMemberAddressList.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] Member shipping address list.'
+- name: thvendor.member.cart.getCartDetail
+  path: /thvendor/member/cart/getCartDetail.xhtml
+  method: POST
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: ticket
+  notes: '[crawler] Current cart contents.'
+- name: thvendor.member.cart.initTicketCart
+  path: /thvendor/member/cart/initTicketCart.xhtml
+  method: POST
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: ticket
+  notes: '[crawler] Initialise a ticket cart session.'
+- name: thvendor.member.coupon.getMemberCouponsByStatus
+  path: /thvendor/member/coupon/getMemberCouponsByStatus.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] My coupons, filtered by status (notStart / inUse / expired).'
+- name: thvendor.member.favorites.listFavorites
+  path: /thvendor/member/favorites/listFavorites.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] My wishlist / favorites.'
+- name: thvendor.member.getCertificationList
+  path: /thvendor/member/getCertificationList.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] ID certification status (real-name).'
+- name: thvendor.member.info.getMemberInfo
+  path: /thvendor/member/info/getMemberInfo.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] Logged-in member''s core info bundle.'
+- name: thvendor.member.info.getPersonalInfo
+  path: /thvendor/member/info/getPersonalInfo.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] Profile page data.'
+- name: thvendor.member.info.getPersonalInfoDynamicField
+  path: /thvendor/member/info/getPersonalInfoDynamicField.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] Dynamic / custom profile fields.'
+- name: thvendor.member.membership.getMemberships
+  path: /thvendor/member/membership/getMemberships.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] My membership cards list.'
+- name: thvendor.member.order.getAllValidTicketList
+  path: /thvendor/member/order/getAllValidTicketList.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] My valid tickets (entry-ready).'
+- name: thvendor.member.order.getMemberOrderList
+  path: /thvendor/member/order/getMemberOrderList.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] My orders, paginated + filterable by status.'
+- name: thvendor.member.record.getMemberRemainPointBeforeTime
+  path: /thvendor/member/record/getMemberRemainPointBeforeTime.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] Remaining points expiring soon.'
+- name: thvendor.member.record.listMemberPointReceiveRecord
+  path: /thvendor/member/record/listMemberPointReceiveRecord.xhtml
+  method: POST
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[crawler] Point-earning history.'
+- name: thvendor.member.transfer.rule.times
+  path: /thvendor/member/transfer/rule/times.xhtml
+  method: GET
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: ticket
+  notes: '[crawler] Ticket-transfer rule: allowed times per ticket.'
+- name: thvendor.favorites.getFavoritesTotal
+  path: /thvendor/favorites/getFavoritesTotal.xhtml
+  method: POST
+  auth_required: false
+  expected_status:
+  - 200
+  group: member
+  notes: '[deep-crawler] Aggregate favourite count for a program.'
+- name: thvendor.program.content.getProgramContentInfo
+  path: /thvendor/program/content/getProgramContentInfo.xhtml
+  method: GET
+  auth_required: false
+  expected_status:
+  - 200
+  group: ticket
+  notes: '[deep-crawler] Static program detail content (description, images).'
+- name: thvendor.program.promotion.member.list
+  path: /thvendor/program/promotion/member/list.xhtml
+  method: POST
+  auth_required: false
+  expected_status:
+  - 200
+  group: ticket
+  notes: '[deep-crawler] Membership-tier discount info shown on program page.'
+- name: thvendor.program.promotion.package.ticket.list
+  path: /thvendor/program/promotion/package/ticket/list.xhtml
+  method: POST
+  auth_required: false
+  expected_status:
+  - 200
+  group: ticket
+  notes: '[deep-crawler] Combo / package ticket options for a program.'
+- name: thvendor.member.favorites.isFavorites
+  path: /thvendor/member/favorites/isFavorites.xhtml
+  method: POST
+  auth_required: true
+  expected_status:
+  - 401
+  - 403
+  group: member
+  notes: '[deep-crawler] Did the logged-in member favourite this program.'

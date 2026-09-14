@@ -1,0 +1,168 @@
+{
+  "scenario": "SIT-TC-STD-CONFIG-007 Verify that admission-ticket sessions can be batch-updated for calendar display",
+  "feature": "Batch Session Configuration real automation",
+  "flow_key": "admission calendar display",
+  "selected_ids": [
+    "90051349",
+    "90051350"
+  ],
+  "expected_field": "showCalendar",
+  "expected_value": "Y",
+  "assertion": {
+    "result": "PASS",
+    "logic": "open_show_detail_field",
+    "message": "Precondition differed from target and post-write readback matched expected value."
+  },
+  "source_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/listShowByTimeRange.xhtml",
+      "params": {
+        "programId": "225562",
+        "fromDateTime": "",
+        "toDateTime": "",
+        "keyword": "",
+        "isExpired": "N",
+        "status": ""
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/listShowByTimeRange.xhtml?programId=225562&fromDateTime=&toDateTime=&keyword=&isExpired=N&status=",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_count": 7
+      }
+    }
+  ],
+  "setup_requests": [
+    {
+      "method": "POST",
+      "path": "/theatre/home/openShow/op/batchUpdateShowCalendar.xhtml",
+      "params": {
+        "showIds": "90051349,90051350",
+        "showCalendar": "N"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/op/batchUpdateShowCalendar.xhtml?showIds=90051349%2C90051350&showCalendar=N",
+      "status_code": 200,
+      "response_summary": {
+        "success": true
+      }
+    }
+  ],
+  "before_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/get.xhtml",
+      "params": {
+        "id": "90051349"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/get.xhtml?id=90051349",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "enableReserve",
+          "openShow",
+          "venue"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/get.xhtml",
+      "params": {
+        "id": "90051350"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/get.xhtml?id=90051350",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "enableReserve",
+          "openShow",
+          "venue"
+        ]
+      }
+    }
+  ],
+  "write_request": {
+    "method": "POST",
+    "path": "/theatre/home/openShow/op/batchUpdateShowCalendar.xhtml",
+    "params": {
+      "showIds": "90051349,90051350",
+      "showCalendar": "Y"
+    },
+    "url": "https://anticket.lengliwh.com/theatre/home/openShow/op/batchUpdateShowCalendar.xhtml?showIds=90051349%2C90051350&showCalendar=Y"
+  },
+  "write_response": {
+    "success": true,
+    "status_code": 200
+  },
+  "readback_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/get.xhtml",
+      "params": {
+        "id": "90051349"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/get.xhtml?id=90051349",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "enableReserve",
+          "openShow",
+          "venue"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/get.xhtml",
+      "params": {
+        "id": "90051350"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/get.xhtml?id=90051350",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "enableReserve",
+          "openShow",
+          "venue"
+        ]
+      }
+    }
+  ],
+  "observations": [
+    {
+      "selected_id": "90051349",
+      "field": "showCalendar",
+      "expected_value": "Y",
+      "actual_value": "Y",
+      "raw_actual": "Y",
+      "comparison": "equals",
+      "passed": true,
+      "before_value": "N",
+      "before_raw_actual": "N",
+      "before_matched_target": false,
+      "changed_from_before": true
+    },
+    {
+      "selected_id": "90051350",
+      "field": "showCalendar",
+      "expected_value": "Y",
+      "actual_value": "Y",
+      "raw_actual": "Y",
+      "comparison": "equals",
+      "passed": true,
+      "before_value": "N",
+      "before_raw_actual": "N",
+      "before_matched_target": false,
+      "changed_from_before": true
+    }
+  ],
+  "case_id": "SIT-TC-STD-CONFIG-007",
+  "run_id": "199",
+  "captured_at": "2026-07-18T16:19:47+08:00",
+  "evidence_kind": "api-readback-assertion"
+}

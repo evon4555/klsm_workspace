@@ -1,0 +1,11 @@
+Feature: Removed Batch Session Configuration UI scenarios
+
+  @removed_scope @deprecated
+  Scenario: SIT-TC-STD-CONFIG-002 Verify that batch operations cannot be started when no session is selected
+    # Removed from current scope on 2026-07-18 because the scenario depends on
+    # unstable list/filter data. Do not tag with @batch_session_configuration.
+    Given I am logged in to the real Standard Product admin UI
+    And I open the no-seat session management UI without session rows
+    When I open calendar-display batch modification and pre-generate
+    Then the UI blocks pre-generation because no session row is available
+    And no batch write API is emitted by the UI flow

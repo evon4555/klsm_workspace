@@ -1,0 +1,611 @@
+{
+  "exported_at": "2026-07-18T16:22:40+08:00",
+  "package": "D:/Workspace/standard product/01-requirements/02-subprojects/01-domestic projects/02-modules/04-Configuration Related/2026-07-15",
+  "scope": "batch-session-configuration",
+  "project": "standard product",
+  "dashboard_run_id": 200,
+  "dashboard_url": "http://127.0.0.1:5173/?page=test-run&project=standard%20product",
+  "run_api_url": "http://127.0.0.1:8002/api/runs/200",
+  "dashboard_db": "D:/Workspace/qa-harness/02-platform/02-dashboard/01-backend/dashboard.db",
+  "artifact_root": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration",
+  "runtime_screenshot_manifest": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/case-screenshot-manifest-run-200.json",
+  "source_test_case_workbook": "D:/Workspace/standard product/01-requirements/02-subprojects/01-domestic projects/02-modules/04-Configuration Related/2026-07-15/03-test-design/test-cases-batch-session-configuration.xlsx",
+  "automation_assessment_workbook": "D:/Workspace/standard product/01-requirements/02-subprojects/01-domestic projects/02-modules/04-Configuration Related/2026-07-15/05-execution/02-automation-assessment/automation-assessment-batch-session-configuration.xlsx",
+  "manual_scope": "None for current 13-case scope after SIT-TC-STD-CONFIG-002 and SIT-TC-STD-CONFIG-015 removal",
+  "run": {
+    "id": 200,
+    "started_at": "2026-07-18 08:21:14.103967",
+    "finished_at": "2026-07-18 08:22:40.083541",
+    "status": "passed",
+    "env": "sit",
+    "project_key": "standard product",
+    "tags": null,
+    "total": 13,
+    "passed": 13,
+    "failed": 0,
+    "errored": 0,
+    "skipped": 0
+  },
+  "summary": {
+    "total": 13,
+    "passed": 13,
+    "failed": 0,
+    "errored": 0,
+    "skipped": 0
+  },
+  "scenarios": [
+    {
+      "id": 2338,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real automation",
+      "name": "SIT-TC-STD-CONFIG-003 Verify that seat-selection sessions can be batch-updated to a new saleable ticket group",
+      "status": "passed",
+      "duration_s": 1.711207628250122,
+      "error_msg": "",
+      "tags": "api,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-003",
+      "test_case_description": "Verify that seat-selection sessions can be batch-updated to a new saleable ticket group",
+      "automation_type": "API",
+      "automation_location": {
+        "file": "01-features/api/batch_session_configuration_api.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api/batch_session_configuration_api.feature",
+        "line": 4,
+        "feature": "Batch Session Configuration real automation",
+        "scenario": "SIT-TC-STD-CONFIG-003 Verify that seat-selection sessions can be batch-updated to a new saleable ticket group",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-003 Verify that seat-selection sessions can be batch-updated to a new saleable ticket group",
+        "tags": [
+          "@batch_session_configuration",
+          "@api"
+        ]
+      },
+      "screenshot_count": 1,
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_user_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-18T16:21:15+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2339,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real automation",
+      "name": "SIT-TC-STD-CONFIG-004 Verify that admission-ticket sessions can be batch-updated to a new saleable ticket group",
+      "status": "passed",
+      "duration_s": 1.0534751415252686,
+      "error_msg": "",
+      "tags": "api,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-004",
+      "test_case_description": "Verify that admission-ticket sessions can be batch-updated to a new saleable ticket group",
+      "automation_type": "API",
+      "automation_location": {
+        "file": "01-features/api/batch_session_configuration_api.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api/batch_session_configuration_api.feature",
+        "line": 11,
+        "feature": "Batch Session Configuration real automation",
+        "scenario": "SIT-TC-STD-CONFIG-004 Verify that admission-ticket sessions can be batch-updated to a new saleable ticket group",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-004 Verify that admission-ticket sessions can be batch-updated to a new saleable ticket group",
+        "tags": [
+          "@batch_session_configuration",
+          "@api"
+        ]
+      },
+      "screenshot_count": 1,
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_list_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-18T16:21:16+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2340,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real automation",
+      "name": "SIT-TC-STD-CONFIG-005 Verify that no-seat sessions can be batch-updated to a new saleable ticket group",
+      "status": "passed",
+      "duration_s": 0.9535505771636963,
+      "error_msg": "",
+      "tags": "api,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-005",
+      "test_case_description": "Verify that no-seat sessions can be batch-updated to a new saleable ticket group",
+      "automation_type": "API",
+      "automation_location": {
+        "file": "01-features/api/batch_session_configuration_api.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api/batch_session_configuration_api.feature",
+        "line": 18,
+        "feature": "Batch Session Configuration real automation",
+        "scenario": "SIT-TC-STD-CONFIG-005 Verify that no-seat sessions can be batch-updated to a new saleable ticket group",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-005 Verify that no-seat sessions can be batch-updated to a new saleable ticket group",
+        "tags": [
+          "@batch_session_configuration",
+          "@api"
+        ]
+      },
+      "screenshot_count": 1,
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_list_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-18T16:21:17+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2341,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real automation",
+      "name": "SIT-TC-STD-CONFIG-006 Verify that seat-selection sessions can be batch-updated for calendar display",
+      "status": "passed",
+      "duration_s": 1.182384967803955,
+      "error_msg": "",
+      "tags": "api,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-006",
+      "test_case_description": "Verify that seat-selection sessions can be batch-updated for calendar display",
+      "automation_type": "API",
+      "automation_location": {
+        "file": "01-features/api/batch_session_configuration_api.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api/batch_session_configuration_api.feature",
+        "line": 25,
+        "feature": "Batch Session Configuration real automation",
+        "scenario": "SIT-TC-STD-CONFIG-006 Verify that seat-selection sessions can be batch-updated for calendar display",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-006 Verify that seat-selection sessions can be batch-updated for calendar display",
+        "tags": [
+          "@batch_session_configuration",
+          "@api"
+        ]
+      },
+      "screenshot_count": 1,
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_list_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-18T16:21:18+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2342,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real automation",
+      "name": "SIT-TC-STD-CONFIG-007 Verify that admission-ticket sessions can be batch-updated for calendar display",
+      "status": "passed",
+      "duration_s": 1.7835290431976318,
+      "error_msg": "",
+      "tags": "api,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-007",
+      "test_case_description": "Verify that admission-ticket sessions can be batch-updated for calendar display",
+      "automation_type": "API",
+      "automation_location": {
+        "file": "01-features/api/batch_session_configuration_api.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api/batch_session_configuration_api.feature",
+        "line": 32,
+        "feature": "Batch Session Configuration real automation",
+        "scenario": "SIT-TC-STD-CONFIG-007 Verify that admission-ticket sessions can be batch-updated for calendar display",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-007 Verify that admission-ticket sessions can be batch-updated for calendar display",
+        "tags": [
+          "@batch_session_configuration",
+          "@api"
+        ]
+      },
+      "screenshot_count": 1,
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-18T16:21:20+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2343,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real automation",
+      "name": "SIT-TC-STD-CONFIG-008 Verify that no-seat sessions can be batch-updated for calendar display",
+      "status": "passed",
+      "duration_s": 1.4440720081329346,
+      "error_msg": "",
+      "tags": "api,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-008",
+      "test_case_description": "Verify that no-seat sessions can be batch-updated for calendar display",
+      "automation_type": "API",
+      "automation_location": {
+        "file": "01-features/api/batch_session_configuration_api.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api/batch_session_configuration_api.feature",
+        "line": 39,
+        "feature": "Batch Session Configuration real automation",
+        "scenario": "SIT-TC-STD-CONFIG-008 Verify that no-seat sessions can be batch-updated for calendar display",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-008 Verify that no-seat sessions can be batch-updated for calendar display",
+        "tags": [
+          "@batch_session_configuration",
+          "@api"
+        ]
+      },
+      "screenshot_count": 1,
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-18T16:21:22+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2344,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real automation",
+      "name": "SIT-TC-STD-CONFIG-009 Verify that seat-selection sessions can be batch-updated for session-list display type",
+      "status": "passed",
+      "duration_s": 1.358271598815918,
+      "error_msg": "",
+      "tags": "api,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-009",
+      "test_case_description": "Verify that seat-selection sessions can be batch-updated for session-list display type",
+      "automation_type": "API",
+      "automation_location": {
+        "file": "01-features/api/batch_session_configuration_api.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api/batch_session_configuration_api.feature",
+        "line": 46,
+        "feature": "Batch Session Configuration real automation",
+        "scenario": "SIT-TC-STD-CONFIG-009 Verify that seat-selection sessions can be batch-updated for session-list display type",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-009 Verify that seat-selection sessions can be batch-updated for session-list display type",
+        "tags": [
+          "@batch_session_configuration",
+          "@api"
+        ]
+      },
+      "screenshot_count": 1,
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_list_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-18T16:21:23+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2345,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real automation",
+      "name": "SIT-TC-STD-CONFIG-010 Verify that admission-ticket sessions can be batch-updated for session-list display type",
+      "status": "passed",
+      "duration_s": 0.6888887882232666,
+      "error_msg": "",
+      "tags": "api,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-010",
+      "test_case_description": "Verify that admission-ticket sessions can be batch-updated for session-list display type",
+      "automation_type": "API",
+      "automation_location": {
+        "file": "01-features/api/batch_session_configuration_api.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api/batch_session_configuration_api.feature",
+        "line": 53,
+        "feature": "Batch Session Configuration real automation",
+        "scenario": "SIT-TC-STD-CONFIG-010 Verify that admission-ticket sessions can be batch-updated for session-list display type",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-010 Verify that admission-ticket sessions can be batch-updated for session-list display type",
+        "tags": [
+          "@batch_session_configuration",
+          "@api"
+        ]
+      },
+      "screenshot_count": 1,
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-18T16:21:24+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2346,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real automation",
+      "name": "SIT-TC-STD-CONFIG-011 Verify that no-seat sessions can be batch-updated for session-list display type",
+      "status": "passed",
+      "duration_s": 0.8053858280181885,
+      "error_msg": "",
+      "tags": "api,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-011",
+      "test_case_description": "Verify that no-seat sessions can be batch-updated for session-list display type",
+      "automation_type": "API",
+      "automation_location": {
+        "file": "01-features/api/batch_session_configuration_api.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api/batch_session_configuration_api.feature",
+        "line": 60,
+        "feature": "Batch Session Configuration real automation",
+        "scenario": "SIT-TC-STD-CONFIG-011 Verify that no-seat sessions can be batch-updated for session-list display type",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-011 Verify that no-seat sessions can be batch-updated for session-list display type",
+        "tags": [
+          "@batch_session_configuration",
+          "@api"
+        ]
+      },
+      "screenshot_count": 1,
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-18T16:21:25+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2347,
+      "run_id": 200,
+      "feature": "Batch Session Configuration API plus UI mixed automation",
+      "name": "SIT-TC-STD-CONFIG-013 Verify that deleting a row from the preview excludes that session from submission",
+      "status": "passed",
+      "duration_s": 13.931510925292969,
+      "error_msg": "",
+      "tags": "mixed,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-013",
+      "test_case_description": "Verify that deleting a row from the preview excludes that session from submission",
+      "automation_type": "Mixed",
+      "automation_location": {
+        "file": "01-features/api_ui_mixed/batch_session_configuration_mixed.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/api_ui_mixed/batch_session_configuration_mixed.feature",
+        "line": 4,
+        "feature": "Batch Session Configuration API plus UI mixed automation",
+        "scenario": "SIT-TC-STD-CONFIG-013 Verify that deleting a row from the preview excludes that session from submission",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-013 Verify that deleting a row from the preview excludes that session from submission",
+        "tags": [
+          "@batch_session_configuration",
+          "@mixed"
+        ]
+      },
+      "screenshot_count": 2,
+      "screenshots": [
+        {
+          "label": "mixed-api-call-summary",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "evidence_json_relative_path": "run-200/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "Remaining row changes through the API action; deleted preview row stays unchanged.",
+            "message": "API setup/action/readback passed. Final user-facing check is captured in the following UI screenshot."
+          },
+          "captured_at": "2026-07-18T16:21:29+08:00"
+        },
+        {
+          "label": "mixed-final-ui-assertion",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-013/02-mixed-final-ui-assertion.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-013/02-mixed-final-ui-assertion.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/mixed-row-exclusion-ui-evidence.png",
+          "captured_at": "2026-07-18T16:21:39+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2348,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real UI automation",
+      "name": "SIT-TC-STD-CONFIG-001 Verify that an admin user can open the session batch operation menu after selecting sessions",
+      "status": "passed",
+      "duration_s": 12.759573698043823,
+      "error_msg": "",
+      "tags": "ui,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-001",
+      "test_case_description": "Verify that an admin user can open the session batch operation menu after selecting sessions",
+      "automation_type": "UI",
+      "automation_location": {
+        "file": "01-features/ui_e2e/batch_session_configuration_ui.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/ui_e2e/batch_session_configuration_ui.feature",
+        "line": 4,
+        "feature": "Batch Session Configuration real UI automation",
+        "scenario": "SIT-TC-STD-CONFIG-001 Verify that an admin user can open the session batch operation menu after selecting sessions",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-001 Verify that an admin user can open the session batch operation menu after selecting sessions",
+        "tags": [
+          "@batch_session_configuration",
+          "@ui"
+        ]
+      },
+      "screenshot_count": 2,
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-18T16:21:51+08:00"
+        },
+        {
+          "label": "ui-batch-operation-menu",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-batch-operation-menu.png",
+          "captured_at": "2026-07-18T16:21:53+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2349,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real UI automation",
+      "name": "SIT-TC-STD-CONFIG-012 Verify that pre-generation is blocked when a required target value is missing",
+      "status": "passed",
+      "duration_s": 16.955328941345215,
+      "error_msg": "",
+      "tags": "ui,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-012",
+      "test_case_description": "Verify that pre-generation is blocked when a required target value is missing",
+      "automation_type": "UI",
+      "automation_location": {
+        "file": "01-features/ui_e2e/batch_session_configuration_ui.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/ui_e2e/batch_session_configuration_ui.feature",
+        "line": 12,
+        "feature": "Batch Session Configuration real UI automation",
+        "scenario": "SIT-TC-STD-CONFIG-012 Verify that pre-generation is blocked when a required target value is missing",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-012 Verify that pre-generation is blocked when a required target value is missing",
+        "tags": [
+          "@batch_session_configuration",
+          "@ui"
+        ]
+      },
+      "screenshot_count": 2,
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-18T16:22:07+08:00"
+        },
+        {
+          "label": "ui-target-group-required",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-target-group-required.png",
+          "captured_at": "2026-07-18T16:22:10+08:00"
+        }
+      ]
+    },
+    {
+      "id": 2350,
+      "run_id": 200,
+      "feature": "Batch Session Configuration real UI automation",
+      "name": "SIT-TC-STD-CONFIG-014 Verify that canceling or closing the preview does not save changes",
+      "status": "passed",
+      "duration_s": 28.344045877456665,
+      "error_msg": "",
+      "tags": "ui,batch_session_configuration",
+      "case_id": "SIT-TC-STD-CONFIG-014",
+      "test_case_description": "Verify that canceling or closing the preview does not save changes",
+      "automation_type": "UI",
+      "automation_location": {
+        "file": "01-features/ui_e2e/batch_session_configuration_ui.feature",
+        "absolute_file": "D:/Workspace/standard product/02-automation/01-features/ui_e2e/batch_session_configuration_ui.feature",
+        "line": 20,
+        "feature": "Batch Session Configuration real UI automation",
+        "scenario": "SIT-TC-STD-CONFIG-014 Verify that canceling or closing the preview does not save changes",
+        "test_kind": "Behave Scenario",
+        "test_name": "SIT-TC-STD-CONFIG-014 Verify that canceling or closing the preview does not save changes",
+        "tags": [
+          "@batch_session_configuration",
+          "@ui"
+        ]
+      },
+      "screenshot_count": 3,
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-18T16:22:22+08:00"
+        },
+        {
+          "label": "ui-preview-return-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-return-before-close.png",
+          "captured_at": "2026-07-18T16:22:26+08:00"
+        },
+        {
+          "label": "ui-preview-close-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-200/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "relative_path": "run-200/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-close-before-close.png",
+          "captured_at": "2026-07-18T16:22:39+08:00"
+        }
+      ]
+    }
+  ]
+}

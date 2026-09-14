@@ -1,0 +1,559 @@
+{
+  "schema": "case-screenshot-manifest/v1",
+  "project": "standard product",
+  "suite": "batch_session_configuration",
+  "run_id": "217",
+  "artifact_root": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration",
+  "created_at": "2026-07-20T11:35:13+08:00",
+  "updated_at": "2026-07-20T11:36:47+08:00",
+  "cases": {
+    "SIT-TC-STD-CONFIG-003": {
+      "case_id": "SIT-TC-STD-CONFIG-003",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_user_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:13+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-003 Verify that seat-selection sessions can be batch-updated to a new saleable ticket group",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_user_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:13+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:13+08:00"
+    },
+    "SIT-TC-STD-CONFIG-004": {
+      "case_id": "SIT-TC-STD-CONFIG-004",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_list_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:15+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-004 Verify that admission-ticket sessions can be batch-updated to a new saleable ticket group",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-004/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_list_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:15+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:15+08:00"
+    },
+    "SIT-TC-STD-CONFIG-005": {
+      "case_id": "SIT-TC-STD-CONFIG-005",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_list_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:16+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-005 Verify that no-seat sessions can be batch-updated to a new saleable ticket group",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-005/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_list_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:16+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:16+08:00"
+    },
+    "SIT-TC-STD-CONFIG-006": {
+      "case_id": "SIT-TC-STD-CONFIG-006",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_list_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:18+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-006 Verify that seat-selection sessions can be batch-updated for calendar display",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-006/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_list_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:18+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:19+08:00"
+    },
+    "SIT-TC-STD-CONFIG-007": {
+      "case_id": "SIT-TC-STD-CONFIG-007",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:20+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-007 Verify that admission-ticket sessions can be batch-updated for calendar display",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-007/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:20+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:20+08:00"
+    },
+    "SIT-TC-STD-CONFIG-008": {
+      "case_id": "SIT-TC-STD-CONFIG-008",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:22+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-008 Verify that no-seat sessions can be batch-updated for calendar display",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-008/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:22+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:22+08:00"
+    },
+    "SIT-TC-STD-CONFIG-009": {
+      "case_id": "SIT-TC-STD-CONFIG-009",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_list_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:24+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-009 Verify that seat-selection sessions can be batch-updated for session-list display type",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-009/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_list_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:24+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:24+08:00"
+    },
+    "SIT-TC-STD-CONFIG-010": {
+      "case_id": "SIT-TC-STD-CONFIG-010",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:25+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-010 Verify that admission-ticket sessions can be batch-updated for session-list display type",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-010/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:25+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:25+08:00"
+    },
+    "SIT-TC-STD-CONFIG-011": {
+      "case_id": "SIT-TC-STD-CONFIG-011",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:26+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-011 Verify that no-seat sessions can be batch-updated for session-list display type",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-011/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "open_show_detail_field",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:35:26+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:26+08:00"
+    },
+    "SIT-TC-STD-CONFIG-013": {
+      "case_id": "SIT-TC-STD-CONFIG-013",
+      "screenshots": [
+        {
+          "label": "mixed-api-call-summary",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "Remaining row changes through the API action; deleted preview row stays unchanged.",
+            "message": "API setup/action/readback passed. Final user-facing check is captured in the following UI screenshot."
+          },
+          "captured_at": "2026-07-20T11:35:33+08:00"
+        },
+        {
+          "label": "mixed-final-ui-assertion",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-013/02-mixed-final-ui-assertion.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-013/02-mixed-final-ui-assertion.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/mixed-row-exclusion-ui-evidence.png",
+          "captured_at": "2026-07-20T11:35:45+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-013 Verify that deleting a row from the preview excludes that session from submission",
+      "feature": "Batch Session Configuration API plus UI mixed automation",
+      "tags": [
+        "batch_session_configuration",
+        "mixed"
+      ],
+      "api_evidence": [
+        {
+          "label": "mixed-api-call-summary",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "evidence_json_relative_path": "run-217/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "Remaining row changes through the API action; deleted preview row stays unchanged.",
+            "message": "API setup/action/readback passed. Final user-facing check is captured in the following UI screenshot."
+          },
+          "captured_at": "2026-07-20T11:35:33+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:45+08:00"
+    },
+    "SIT-TC-STD-CONFIG-001": {
+      "case_id": "SIT-TC-STD-CONFIG-001",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T11:35:57+08:00"
+        },
+        {
+          "label": "ui-batch-operation-menu",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-batch-operation-menu.png",
+          "captured_at": "2026-07-20T11:35:58+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-001 Verify that an admin user can open the session batch operation menu after selecting sessions",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:35:58+08:00"
+    },
+    "SIT-TC-STD-CONFIG-012": {
+      "case_id": "SIT-TC-STD-CONFIG-012",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T11:36:12+08:00"
+        },
+        {
+          "label": "ui-target-group-required",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-target-group-required.png",
+          "captured_at": "2026-07-20T11:36:16+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-012 Verify that pre-generation is blocked when a required target value is missing",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:36:16+08:00"
+    },
+    "SIT-TC-STD-CONFIG-014": {
+      "case_id": "SIT-TC-STD-CONFIG-014",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T11:36:31+08:00"
+        },
+        {
+          "label": "ui-preview-return-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-return-before-close.png",
+          "captured_at": "2026-07-20T11:36:35+08:00"
+        },
+        {
+          "label": "ui-preview-close-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-217/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "relative_path": "run-217/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-close-before-close.png",
+          "captured_at": "2026-07-20T11:36:47+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-014 Verify that canceling or closing the preview does not save changes",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:36:47+08:00"
+    }
+  }
+}

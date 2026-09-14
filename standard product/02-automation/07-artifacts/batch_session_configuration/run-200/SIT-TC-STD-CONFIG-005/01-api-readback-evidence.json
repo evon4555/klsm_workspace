@@ -1,0 +1,147 @@
+{
+  "scenario": "SIT-TC-STD-CONFIG-005 Verify that no-seat sessions can be batch-updated to a new saleable ticket group",
+  "feature": "Batch Session Configuration real automation",
+  "flow_key": "no seat saleable group",
+  "selected_ids": [
+    "90042939",
+    "90037094"
+  ],
+  "expected_field": "groupIdList",
+  "expected_value": "57689",
+  "assertion": {
+    "result": "PASS",
+    "logic": "open_show_list_group",
+    "message": "Precondition differed from target and post-write readback matched expected value."
+  },
+  "source_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/listShowByTimeRange.xhtml",
+      "params": {
+        "programId": "223334",
+        "fromDateTime": "",
+        "toDateTime": "",
+        "keyword": "",
+        "isExpired": "",
+        "status": "",
+        "ticketTypeIds": ""
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/listShowByTimeRange.xhtml?programId=223334&fromDateTime=&toDateTime=&keyword=&isExpired=&status=&ticketTypeIds=",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_count": 4
+      }
+    }
+  ],
+  "setup_requests": [
+    {
+      "method": "POST",
+      "path": "/theatre/home/openShow/op/batchSaveUserGroup.xhtml",
+      "params": {
+        "showIds": "90042939,90037094",
+        "groups": "56776"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/op/batchSaveUserGroup.xhtml?showIds=90042939%2C90037094&groups=56776",
+      "status_code": 200,
+      "response_summary": {
+        "success": true
+      }
+    }
+  ],
+  "before_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/listShowByTimeRange.xhtml",
+      "params": {
+        "programId": "223334",
+        "fromDateTime": "",
+        "toDateTime": "",
+        "keyword": "",
+        "isExpired": "",
+        "status": "",
+        "ticketTypeIds": ""
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/listShowByTimeRange.xhtml?programId=223334&fromDateTime=&toDateTime=&keyword=&isExpired=&status=&ticketTypeIds=",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_count": 4
+      }
+    }
+  ],
+  "write_request": {
+    "method": "POST",
+    "path": "/theatre/home/openShow/op/batchSaveUserGroup.xhtml",
+    "params": {
+      "showIds": "90042939,90037094",
+      "groups": "57689"
+    },
+    "url": "https://anticket.lengliwh.com/theatre/home/openShow/op/batchSaveUserGroup.xhtml?showIds=90042939%2C90037094&groups=57689"
+  },
+  "write_response": {
+    "success": true,
+    "status_code": 200
+  },
+  "readback_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/openShow/listShowByTimeRange.xhtml",
+      "params": {
+        "programId": "223334",
+        "fromDateTime": "",
+        "toDateTime": "",
+        "keyword": "",
+        "isExpired": "",
+        "status": "",
+        "ticketTypeIds": ""
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/openShow/listShowByTimeRange.xhtml?programId=223334&fromDateTime=&toDateTime=&keyword=&isExpired=&status=&ticketTypeIds=",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_count": 4
+      }
+    }
+  ],
+  "observations": [
+    {
+      "selected_id": "90042939",
+      "field": "groupIdList",
+      "expected_value": "57689",
+      "actual_value": "[57689]",
+      "raw_actual": [
+        57689
+      ],
+      "comparison": "contains",
+      "passed": true,
+      "before_value": "[56776]",
+      "before_raw_actual": [
+        56776
+      ],
+      "before_matched_target": false,
+      "changed_from_before": true
+    },
+    {
+      "selected_id": "90037094",
+      "field": "groupIdList",
+      "expected_value": "57689",
+      "actual_value": "[57689]",
+      "raw_actual": [
+        57689
+      ],
+      "comparison": "contains",
+      "passed": true,
+      "before_value": "[56776]",
+      "before_raw_actual": [
+        56776
+      ],
+      "before_matched_target": false,
+      "changed_from_before": true
+    }
+  ],
+  "case_id": "SIT-TC-STD-CONFIG-005",
+  "run_id": "200",
+  "captured_at": "2026-07-18T16:21:17+08:00",
+  "evidence_kind": "api-readback-assertion"
+}

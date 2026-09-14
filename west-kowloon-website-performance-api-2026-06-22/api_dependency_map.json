@@ -1,0 +1,347 @@
+[
+  {
+    "id": "home_browse",
+    "title": "首页浏览链路",
+    "risk": "low",
+    "goal": "匿名浏览、首页配置、项目列表和项目详情查询压测。",
+    "jmeter_notes": [
+      "适合单接口和轻量串联压测。",
+      "从热门项目列表提取 programId 后进入项目详情。"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "method": "GET",
+        "path": "/thvendor/companyBaseInfo/getDisplayConfig.xhtml",
+        "extract": [],
+        "uses": [],
+        "assert": [
+          "HTTP 200",
+          "data exists when JSON"
+        ]
+      },
+      {
+        "step": 2,
+        "method": "POST",
+        "path": "/thvendor/ad/getNewAdList.xhtml",
+        "extract": [],
+        "uses": [],
+        "assert": [
+          "HTTP 200",
+          "data exists"
+        ]
+      },
+      {
+        "step": 3,
+        "method": "POST",
+        "path": "/thvendor/ticket/program/getHotProgramList.xhtml",
+        "extract": [
+          "programId / id"
+        ],
+        "uses": [],
+        "assert": [
+          "errcode=0000",
+          "data list not empty"
+        ]
+      },
+      {
+        "step": 4,
+        "method": "GET",
+        "path": "/thvendor/ticket/program/getProgramById.xhtml",
+        "extract": [
+          "programKey"
+        ],
+        "uses": [
+          "programId"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data.programKey exists"
+        ]
+      },
+      {
+        "step": 5,
+        "method": "GET",
+        "path": "/thvendor/program/content/getProgramContentInfo.xhtml",
+        "extract": [],
+        "uses": [
+          "programId"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data exists"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "show_order_create_cancel",
+    "title": "非座位票下单后取消",
+    "risk": "medium",
+    "goal": "第一优先级端到端压测链路；创建订单后必须立即取消。",
+    "jmeter_notes": [
+      "每个线程生成唯一 orderkey header。",
+      "create 响应提取 tradeNo，cancelOrder 必须执行。",
+      "适合少量账号和可售库存准备后的受控压测。"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "method": "GET",
+        "path": "/thvendor/ticket/program/getProgramById.xhtml",
+        "extract": [
+          "programKey"
+        ],
+        "uses": [
+          "programId"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data.programKey exists"
+        ]
+      },
+      {
+        "step": 2,
+        "method": "GET",
+        "path": "/thvendor/member/show/listBydate.xhtml",
+        "extract": [
+          "showId / id",
+          "sessionKey"
+        ],
+        "uses": [
+          "programId",
+          "programKey"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data list not empty"
+        ]
+      },
+      {
+        "step": 3,
+        "method": "GET",
+        "path": "/thvendor/member/show/tickettype/list.xhtml",
+        "extract": [
+          "ticketTypeId / id",
+          "ticketType"
+        ],
+        "uses": [
+          "showId",
+          "sessionKey",
+          "programKey"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data list not empty"
+        ]
+      },
+      {
+        "step": 4,
+        "method": "POST",
+        "path": "/thvendor/member/show/order/create.xhtml",
+        "extract": [
+          "tradeNo"
+        ],
+        "uses": [
+          "showId",
+          "ticketTypeId",
+          "ticketType",
+          "quantity",
+          "orderkey"
+        ],
+        "assert": [
+          "errcode=0000",
+          "success=true",
+          "data.tradeNo exists"
+        ]
+      },
+      {
+        "step": 5,
+        "method": "GET",
+        "path": "/thvendor/member/show/order/cancelOrder.xhtml",
+        "extract": [],
+        "uses": [
+          "tradeNo"
+        ],
+        "assert": [
+          "errcode=0000",
+          "success=true"
+        ]
+      },
+      {
+        "step": 6,
+        "method": "GET",
+        "path": "/thvendor/member/order/getMemberOrderList.xhtml",
+        "extract": [],
+        "uses": [
+          "tradeNo",
+          "status=cancel"
+        ],
+        "assert": [
+          "errcode=0000",
+          "cancel list contains tradeNo when validating correctness"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "seat_query",
+    "title": "座位票查询链路",
+    "risk": "low",
+    "goal": "压测座位类日期、场次、票价和库存查询，不直接抢座。",
+    "jmeter_notes": [
+      "查询链路可压；创建座位订单前必须准备大量座位数据。",
+      "getAvailableSeats2 提供座位和 orderKey 相关数据。"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "method": "GET",
+        "path": "/thvendor/member/ticket/scheduleDateListWithSellOut.xhtml",
+        "extract": [
+          "date"
+        ],
+        "uses": [
+          "programId"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data exists"
+        ]
+      },
+      {
+        "step": 2,
+        "method": "POST",
+        "path": "/thvendor/member/ticket/listScheduleByDate.xhtml",
+        "extract": [
+          "scheduleId"
+        ],
+        "uses": [
+          "programId",
+          "date"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data list not empty"
+        ]
+      },
+      {
+        "step": 3,
+        "method": "POST",
+        "path": "/thvendor/member/ticket/getScheduleInfo.xhtml",
+        "extract": [
+          "venueId / schedule metadata"
+        ],
+        "uses": [
+          "scheduleId"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data exists"
+        ]
+      },
+      {
+        "step": 4,
+        "method": "POST",
+        "path": "/thvendor/member/ticket/getSchedulePrices.xhtml",
+        "extract": [
+          "ticketPriceId"
+        ],
+        "uses": [
+          "scheduleId"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data list not empty"
+        ]
+      },
+      {
+        "step": 5,
+        "method": "POST",
+        "path": "/thvendor/member/ticket/getAvailableSeats2.xhtml",
+        "extract": [
+          "seat row/col",
+          "venueAreaId",
+          "orderKey"
+        ],
+        "uses": [
+          "scheduleId",
+          "ticketPriceId"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data exists"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "member_read",
+    "title": "会员中心读取链路",
+    "risk": "low",
+    "goal": "验证预置登录态和会员中心读接口吞吐。",
+    "jmeter_notes": [
+      "不要每个线程走验证码登录。",
+      "使用预置 session、免验证码测试登录或压测白名单。"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "method": "POST",
+        "path": "/ucenter/rest/getLogonInfo.xhtml",
+        "extract": [
+          "memberId / id"
+        ],
+        "uses": [
+          "Cookie/session"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data exists"
+        ]
+      },
+      {
+        "step": 2,
+        "method": "GET",
+        "path": "/thvendor/member/info/getMemberInfo.xhtml",
+        "extract": [],
+        "uses": [
+          "Cookie/session"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data exists"
+        ]
+      },
+      {
+        "step": 3,
+        "method": "GET",
+        "path": "/thvendor/member/info/getPersonalInfo.xhtml",
+        "extract": [],
+        "uses": [
+          "Cookie/session"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data exists"
+        ]
+      },
+      {
+        "step": 4,
+        "method": "GET",
+        "path": "/thvendor/member/order/getMemberOrderList.xhtml",
+        "extract": [],
+        "uses": [
+          "Cookie/session",
+          "pageNo",
+          "pageSize",
+          "status"
+        ],
+        "assert": [
+          "errcode=0000",
+          "data.resultList exists"
+        ]
+      }
+    ]
+  }
+]

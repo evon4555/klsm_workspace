@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://west-kowloon.local/schemas/automation-evidence-manifest.v1.json",
+  "title": "West Kowloon Automation Evidence Manifest",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "packageId",
+    "project",
+    "module",
+    "evidenceType",
+    "status",
+    "promotedAt",
+    "environment",
+    "source",
+    "summary",
+    "qualityDeliverables",
+    "artifacts",
+    "gate"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "wk-evidence-manifest/v1" },
+    "packageId": { "type": "string" },
+    "project": { "const": "west-kowloon" },
+    "subproject": { "type": "string" },
+    "module": { "type": "string" },
+    "evidenceType": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "selected-for-review", "delivery-approved", "rejected"]
+    },
+    "promotedAt": { "type": "string" },
+    "promotedBy": { "type": "string" },
+    "environment": { "type": "string" },
+    "build": { "type": "string" },
+    "source": {
+      "type": "object",
+      "required": ["dashboardRunId", "automationArtifacts", "runFile"],
+      "properties": {
+        "dashboardRunId": { "type": "integer" },
+        "automationArtifacts": { "type": "string" },
+        "runFile": { "type": "string" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["scenarioCount", "executed", "passed", "failed", "errored", "skipped", "passRate"],
+      "properties": {
+        "featureCount": { "type": "integer" },
+        "scenarioCount": { "type": "integer" },
+        "executed": { "type": "integer" },
+        "passed": { "type": "integer" },
+        "failed": { "type": "integer" },
+        "errored": { "type": "integer" },
+        "skipped": { "type": "integer" },
+        "passRate": { "type": "number" },
+        "testCaseIds": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "qualityDeliverables": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "traceability": { "type": "object" },
+    "defects": { "type": "array", "items": { "type": "string" } },
+    "knownRisks": { "type": "array", "items": { "type": "string" } },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "path", "sha256", "sizeBytes"],
+        "properties": {
+          "kind": { "type": "string" },
+          "path": { "type": "string" },
+          "sourcePath": { "type": "string" },
+          "sha256": { "type": "string" },
+          "sizeBytes": { "type": "integer" }
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "required": ["status", "trusted", "blockingIssues", "warnings", "checkedAt"],
+      "properties": {
+        "status": { "type": "string", "enum": ["PASS", "FAIL"] },
+        "trusted": { "type": "boolean" },
+        "blockingIssues": { "type": "array", "items": { "type": "string" } },
+        "warnings": { "type": "array", "items": { "type": "string" } },
+        "checkedAt": { "type": "string" }
+      }
+    }
+  }
+}

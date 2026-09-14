@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "defaultProject": "west-kowloon",
+  "projects": [
+    {
+      "key": "west-kowloon",
+      "name": "West Kowloon",
+      "kind": "customer",
+      "workspace": "west-kowloon",
+      "aliases": ["西九", "瑗夸節"],
+      "zentaoProductId": 146,
+      "zentaoExecutionId": 614,
+      "automationFallback": "qa-harness/02-platform/01-automation"
+    },
+    {
+      "key": "standard product",
+      "name": "Standard Product",
+      "kind": "baseline",
+      "workspace": "standard product",
+      "aliases": [],
+      "zentaoProductId": 22,
+      "zentaoExecutionId": 640
+    },
+    {
+      "key": "jockey club",
+      "name": "Jockey Club",
+      "kind": "customer",
+      "workspace": "jockey club",
+      "aliases": [],
+      "zentaoProductId": null,
+      "zentaoExecutionId": null
+    }
+  ]
+}

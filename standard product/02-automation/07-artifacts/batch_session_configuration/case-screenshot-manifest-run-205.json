@@ -1,0 +1,23 @@
+{
+  "schema": "case-screenshot-manifest/v1",
+  "project": "standard product",
+  "suite": "batch_session_configuration",
+  "run_id": "205",
+  "artifact_root": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration",
+  "created_at": "2026-07-18T20:02:09+08:00",
+  "updated_at": "2026-07-18T20:02:09+08:00",
+  "cases": {
+    "SIT-TC-STD-CONFIG-013": {
+      "case_id": "SIT-TC-STD-CONFIG-013",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-013 Verify that deleting a row from the preview excludes that session from submission",
+      "feature": "Batch Session Configuration API plus UI mixed automation",
+      "tags": [
+        "batch_session_configuration",
+        "mixed"
+      ],
+      "status": "skipped",
+      "finished_at": "2026-07-18T20:02:09+08:00"
+    }
+  }
+}

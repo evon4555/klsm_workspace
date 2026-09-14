@@ -1,0 +1,8 @@
+{
+  "case_id": "SIT-TC-WEB-AUTH-009",
+  "pattern": "api-first-ui-validation",
+  "api_member_id": 56577659499,
+  "api_email": "evan.wang@antank.com",
+  "ui_url": "https://anticket.lengliwh.com/websitehtml/index.html#/my/profile",
+  "screenshot": "D:\\Workspace\\west-kowloon\\02-automation\\07-artifacts\\api_first_ui\\SIT-TC-WEB-AUTH-009-profile.png"
+}

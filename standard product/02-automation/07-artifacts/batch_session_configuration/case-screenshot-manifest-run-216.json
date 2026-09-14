@@ -1,0 +1,56 @@
+{
+  "schema": "case-screenshot-manifest/v1",
+  "project": "standard product",
+  "suite": "batch_session_configuration",
+  "run_id": "216",
+  "artifact_root": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration",
+  "created_at": "2026-07-20T11:29:47+08:00",
+  "updated_at": "2026-07-20T11:29:47+08:00",
+  "cases": {
+    "SIT-TC-STD-CONFIG-003": {
+      "case_id": "SIT-TC-STD-CONFIG-003",
+      "screenshots": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-216/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "relative_path": "run-216/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-216/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-216/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_user_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:29:47+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-003 Verify that seat-selection sessions can be batch-updated to a new saleable ticket group",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "api_evidence": [
+        {
+          "label": "api-readback-evidence",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-216/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "relative_path": "run-216/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-216/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "evidence_json_relative_path": "run-216/SIT-TC-STD-CONFIG-003/01-api-readback-evidence.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "schedule_user_group",
+            "message": "Precondition differed from target and post-write readback matched expected value."
+          },
+          "captured_at": "2026-07-20T11:29:47+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:29:47+08:00"
+    }
+  }
+}

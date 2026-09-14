@@ -1,0 +1,49 @@
+{
+  "project": "standard product",
+  "suite": "standard_product_batch_session_configuration",
+  "requirement_package": "04-Configuration Related/2026-07-15",
+  "dashboard_run_id": 200,
+  "ran_at_utc": "2026-07-18T08:22:40.083541",
+  "status": "passed",
+  "total": 13,
+  "passed": 13,
+  "failed": 0,
+  "errored": 0,
+  "skipped": 0,
+  "layers": [
+    {
+      "name": "api",
+      "total": 9,
+      "passed": 9,
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-003",
+        "SIT-TC-STD-CONFIG-004",
+        "SIT-TC-STD-CONFIG-005",
+        "SIT-TC-STD-CONFIG-006",
+        "SIT-TC-STD-CONFIG-007",
+        "SIT-TC-STD-CONFIG-008",
+        "SIT-TC-STD-CONFIG-009",
+        "SIT-TC-STD-CONFIG-010",
+        "SIT-TC-STD-CONFIG-011"
+      ]
+    },
+    {
+      "name": "ui",
+      "total": 3,
+      "passed": 3,
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-001",
+        "SIT-TC-STD-CONFIG-012",
+        "SIT-TC-STD-CONFIG-014"
+      ]
+    },
+    {
+      "name": "mixed",
+      "total": 1,
+      "passed": 1,
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-013"
+      ]
+    }
+  ]
+}

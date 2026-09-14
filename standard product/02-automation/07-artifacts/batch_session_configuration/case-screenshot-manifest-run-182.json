@@ -1,0 +1,46 @@
+{
+  "schema": "case-screenshot-manifest/v1",
+  "project": "standard product",
+  "suite": "batch_session_configuration",
+  "run_id": "182",
+  "artifact_root": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration",
+  "created_at": "2026-07-17T21:40:15+08:00",
+  "updated_at": "2026-07-17T21:40:31+08:00",
+  "cases": {
+    "SIT-TC-STD-CONFIG-014": {
+      "case_id": "SIT-TC-STD-CONFIG-014",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-182/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-182/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-17T21:40:15+08:00"
+        },
+        {
+          "label": "ui-preview-return-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-182/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "relative_path": "run-182/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-return-before-close.png",
+          "captured_at": "2026-07-17T21:40:18+08:00"
+        },
+        {
+          "label": "ui-preview-close-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-182/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "relative_path": "run-182/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-close-before-close.png",
+          "captured_at": "2026-07-17T21:40:31+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-014 Verify that canceling or closing the preview does not save changes",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-17T21:40:31+08:00"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema": "case-screenshot-manifest/v1",
+  "project": "standard product",
+  "suite": "batch_session_configuration",
+  "run_id": "215",
+  "artifact_root": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration",
+  "created_at": "2026-07-20T11:08:07+08:00",
+  "updated_at": "2026-07-20T11:09:02+08:00",
+  "cases": {
+    "SIT-TC-STD-CONFIG-001": {
+      "case_id": "SIT-TC-STD-CONFIG-001",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-215/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-215/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T11:08:07+08:00"
+        },
+        {
+          "label": "ui-batch-operation-menu",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-215/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "relative_path": "run-215/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-batch-operation-menu.png",
+          "captured_at": "2026-07-20T11:08:09+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-001 Verify that an admin user can open the session batch operation menu after selecting sessions",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:08:09+08:00"
+    },
+    "SIT-TC-STD-CONFIG-012": {
+      "case_id": "SIT-TC-STD-CONFIG-012",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-215/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-215/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T11:08:27+08:00"
+        },
+        {
+          "label": "ui-target-group-required",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-215/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "relative_path": "run-215/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-target-group-required.png",
+          "captured_at": "2026-07-20T11:08:30+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-012 Verify that pre-generation is blocked when a required target value is missing",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:08:30+08:00"
+    },
+    "SIT-TC-STD-CONFIG-014": {
+      "case_id": "SIT-TC-STD-CONFIG-014",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-215/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-215/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T11:08:45+08:00"
+        },
+        {
+          "label": "ui-preview-return-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-215/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "relative_path": "run-215/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-return-before-close.png",
+          "captured_at": "2026-07-20T11:08:48+08:00"
+        },
+        {
+          "label": "ui-preview-close-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-215/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "relative_path": "run-215/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-close-before-close.png",
+          "captured_at": "2026-07-20T11:09:01+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-014 Verify that canceling or closing the preview does not save changes",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T11:09:02+08:00"
+    }
+  }
+}

@@ -1,0 +1,1805 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>优先购 C 端流程交互原型 V1</title>
+<style>
+:root{
+  --page:#f5f5f5;
+  --panel:#ffffff;
+  --text:#20242c;
+  --body:#606266;
+  --muted:#8a94a3;
+  --line:#dcdfe6;
+  --line2:#ebeef5;
+  --red:#e94752;
+  --red2:#cf3340;
+  --redSoft:#fff1f2;
+  --green:#4dad8c;
+  --greenDeep:#278565;
+  --greenSoft:#eaf7f2;
+  --blue:#2f6fd6;
+  --blueSoft:#eef5ff;
+  --amber:#a46a00;
+  --amberSoft:#fff8e6;
+  --dark:#151515;
+  --shadow:0 14px 40px rgba(17,24,39,.14);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{
+  margin:0;
+  background:var(--page);
+  color:var(--text);
+  font-family:var(--font);
+  letter-spacing:0;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed}
+.proto-shell{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:260px minmax(0,1fr);
+}
+.proto-panel{
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow:auto;
+  background:#171b22;
+  color:#fff;
+  border-right:1px solid #252a33;
+  padding:18px;
+}
+.proto-title{
+  margin:0 0 6px;
+  font-size:16px;
+  line-height:1.35;
+  font-weight:800;
+}
+.proto-subtitle{
+  margin:0 0 16px;
+  color:#aeb6c4;
+  font-size:12px;
+  line-height:1.55;
+}
+.proto-group{
+  border-top:1px solid #303744;
+  padding-top:14px;
+  margin-top:14px;
+}
+.proto-group-title{
+  margin-bottom:9px;
+  color:#dfe5ef;
+  font-size:13px;
+  font-weight:800;
+}
+.proto-state{
+  display:grid;
+  gap:8px;
+}
+.proto-state button{
+  width:100%;
+  min-height:34px;
+  border:1px solid #343b48;
+  border-radius:6px;
+  background:#20252e;
+  color:#e5ebf5;
+  text-align:left;
+  padding:7px 10px;
+  font-size:13px;
+  line-height:1.35;
+}
+.proto-state button.active{
+  background:#fff;
+  color:#171b22;
+  border-color:#fff;
+  font-weight:800;
+}
+.proto-check{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  color:#dfe5ef;
+  font-size:13px;
+  line-height:1.45;
+}
+.proto-check input{
+  margin-top:3px;
+}
+.proto-note{
+  margin-top:9px;
+  color:#aeb6c4;
+  font-size:12px;
+  line-height:1.55;
+}
+.app{min-width:0}
+.site-top{
+  height:72px;
+  background:#151515;
+  color:#fff;
+}
+.top-inner{
+  width:min(1180px,calc(100% - 40px));
+  height:100%;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.nav{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  overflow:auto;
+  scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  white-space:nowrap;
+}
+.nav a.active{
+  color:#ffe2e5;
+  font-weight:800;
+}
+.top-tools{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex:0 0 auto;
+}
+.tool-btn{
+  min-width:32px;
+  height:32px;
+  border:0;
+  border-radius:17px;
+  background:#262626;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  font-weight:800;
+}
+.lang-btn{
+  height:32px;
+  border:0;
+  border-radius:17px;
+  background:#2f2f2f;
+  color:#fff;
+  padding:0 12px;
+  font-size:13px;
+  font-weight:800;
+}.lang-menu{
+  position:relative;
+}
+.lang-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.lang-options{
+  position:absolute;
+  right:0;
+  top:38px;
+  display:none;
+  min-width:132px;
+  padding:6px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:8px;
+  background:#252525;
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+  z-index:5;
+}
+.lang-menu.open .lang-options{
+  display:grid;
+  gap:4px;
+}
+.lang-options button{
+  width:100%;
+  min-height:30px;
+  border:0;
+  border-radius:5px;
+  background:transparent;
+  color:#fff;
+  padding:0 9px;
+  text-align:left;
+  font-size:13px;
+}
+.lang-options button:hover,
+.lang-options button.active{
+  background:#3b3b3b;
+}
+.wrap{
+  width:min(1180px,calc(100% - 40px));
+  margin:0 auto;
+  padding:24px 0 56px;
+}
+.breadcrumb{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#9aa3af;
+  font-size:13px;
+  margin-bottom:14px;
+}
+.breadcrumb strong{
+  color:#515967;
+  font-weight:700;
+}
+.project-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:16px;
+}
+.project-title{
+  margin:0 0 10px;
+  font-size:28px;
+  line-height:1.25;
+  font-weight:850;
+}
+.label-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  min-height:24px;
+  border-radius:4px;
+  border:1px solid transparent;
+  padding:0 8px;
+  font-size:12px;
+  font-weight:800;
+}
+.tag.red{background:var(--redSoft);border-color:#ffc9cd;color:#d93642}
+.tag.green{background:var(--greenSoft);border-color:#bee8d1;color:#117949}
+.tag.blue{background:var(--blueSoft);border-color:#c9dbff;color:#2268d9}
+.tag.amber{background:var(--amberSoft);border-color:#ffdaa3;color:#8d5d00}
+.tag.gray{background:#f3f5f8;border-color:#e1e5ec;color:#697386}
+.head-actions{
+  display:flex;
+  gap:14px;
+  margin-top:10px;
+  color:#252b35;
+  font-size:14px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.detail-layout{
+  display:grid;
+  grid-template-columns:minmax(0,55fr) minmax(420px,45fr);
+  gap:24px;
+  align-items:start;
+}
+.cover-card,
+.purchase-card,
+.content-card,
+.modal{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:8px;
+}
+.cover-card{overflow:hidden}
+.cover-art{
+  position:relative;
+  min-height:380px;
+  background:
+    radial-gradient(circle at 78% 30%,rgba(255,255,255,.16),transparent 19%),
+    radial-gradient(circle at 25% 76%,rgba(255,215,140,.2),transparent 18%),
+    linear-gradient(135deg,#17110d 0%,#2e1518 42%,#10232b 100%);
+}
+.cover-art:before{
+  content:"";
+  position:absolute;
+  inset:42px;
+  border:1px solid rgba(255,255,255,.14);
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0 / 34px 100%,
+    linear-gradient(0deg,rgba(255,255,255,.06) 1px,transparent 1px) 0 0 / 100% 34px;
+}
+.cover-art:after{
+  content:attr(data-cover-title);
+  position:absolute;
+  left:52px;
+  right:52px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#fff;
+  font-size:42px;
+  line-height:1.2;
+  font-weight:900;
+  text-shadow:0 8px 24px rgba(0,0,0,.45);
+}
+.tabs{
+  display:flex;
+  gap:24px;
+  border-top:1px solid var(--line2);
+  padding:14px 22px 0;
+}
+.tabs span{
+  position:relative;
+  padding:0 0 14px;
+  color:#4b5563;
+  font-size:15px;
+}
+.tabs span.active{
+  color:var(--red);
+  font-weight:800;
+}
+.tabs span.active:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:2px;
+  background:var(--red);
+}
+.content-card{
+  margin-top:14px;
+  padding:20px 22px;
+}
+.content-card h2{
+  margin:0 0 12px;
+  font-size:16px;
+}
+.content-card p{
+  margin:0 0 10px;
+  color:#4b5563;
+  font-size:14px;
+  line-height:1.75;
+}
+.purchase-card{
+  position:sticky;
+  top:20px;
+  padding:22px;
+}
+.price{
+  color:#bd2f3d;
+  font-size:28px;
+  line-height:1.25;
+  font-weight:900;
+  margin-bottom:18px;
+}
+.promo-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:40px;
+  padding:0 12px;
+  border:1px solid #ff8f5a;
+  border-radius:6px;
+  color:#9c4217;
+  background:#fff7ed;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+.info-row{
+  display:flex;
+  gap:12px;
+  padding:13px 0;
+  border-top:1px solid var(--line2);
+}
+.info-row:first-of-type{border-top:0}
+.info-dot{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  border:1px solid #111827;
+  color:#111827;
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  font-weight:900;
+  flex:0 0 auto;
+}
+.info-row strong{
+  display:block;
+  color:#111827;
+  font-size:15px;
+  margin-bottom:5px;
+}
+.info-row span{
+  display:block;
+  color:#4b5563;
+  font-size:13px;
+  line-height:1.45;
+}
+.sale-box{
+  margin-top:16px;
+  border-radius:8px;
+  border:1px solid #f4cfd2;
+  overflow:hidden;
+  background:#fff8f8;
+}
+.sale-line{
+  display:flex;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:8px 10px;
+  min-height:58px;
+  padding:11px 14px;
+  color:#8d2530;
+  font-size:13px;
+}
+.sale-line.highlight{
+  background:#4d352d;
+  color:#fff;
+}
+.sale-line.public{
+  background:#fff1f1;
+}
+.sale-icon{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#ff4d57;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:11px;
+  font-weight:900;
+  flex:0 0 auto;
+}
+.sale-main{
+  min-width:0;
+  flex:1;
+}
+.sale-title{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+  font-weight:900;
+}
+.sale-sub{
+  margin-top:5px;
+  color:currentColor;
+  opacity:.88;
+}
+.countdown{
+  display:flex;
+  flex:0 0 calc(100% - 28px);
+  gap:5px;
+  align-items:center;
+  margin-left:28px;
+  margin-top:2px;
+  white-space:nowrap;
+  font-weight:900;
+}
+.countdown b{
+  display:inline-grid;
+  place-items:center;
+  min-width:24px;
+  height:22px;
+  border-radius:3px;
+  background:#e70012;
+  color:#fff;
+  font-size:12px;
+}
+.presale-zone{
+  margin-top:14px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  overflow:hidden;
+}
+.zone-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px 14px;
+  background:#fafafa;
+  border-bottom:1px solid var(--line2);
+}
+.zone-head h3{
+  margin:0;
+  font-size:15px;
+  font-weight:900;
+}
+.zone-body{
+  padding:13px 14px;
+}
+.status-title{
+  margin:0 0 6px;
+  color:#20242c;
+  font-size:14px;
+  font-weight:900;
+}
+.status-desc{
+  margin:0;
+  color:#606266;
+  font-size:13px;
+  line-height:1.6;
+}
+.policy-list{
+  display:grid;
+  gap:12px;
+  margin-top:12px;
+}
+.policy-group-card{
+  border:1px solid var(--line2);
+  border-radius:8px;
+  background:#fff;
+  overflow:hidden;
+}
+.policy-group-card.hit{
+  border-color:#bee8d1;
+  background:var(--greenSoft);
+}
+.policy-group-card.verifiable{
+  border-color:#f0ce7a;
+  background:#fffaf0;
+}
+.policy-group-card.primary{
+  box-shadow:inset 3px 0 0 var(--green);
+}
+.policy-group-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 11px 8px;
+  border-bottom:1px solid var(--line2);
+}
+.policy-group-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#303744;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.4;
+}
+.policy-group-title:before{
+  content:"";
+  width:3px;
+  height:13px;
+  border-radius:2px;
+  background:var(--green);
+}.policy-group-info{
+  min-width:0;
+}
+.policy-group-desc{
+  margin:4px 0 0 11px;
+  color:#7a8494;
+  font-size:12px;
+  line-height:1.45;
+}
+.policy-group-status{
+  display:inline-flex;
+  flex:0 0 auto;
+  align-items:center;
+  min-height:22px;
+  border-radius:4px;
+  border:1px solid transparent;
+  padding:0 7px;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  white-space:nowrap;
+}
+.policy-group-status.green{background:#fff;border-color:#a8ddb9;color:#117949}
+.policy-group-status.amber{background:#fff;border-color:#f0ce7a;color:#8d5d00}
+.policy-group-status.gray{background:#f7f8fa;border-color:#e1e5ec;color:#697386}
+.policy-group-body{
+  display:grid;
+  gap:0;
+  padding:4px 11px 10px;
+}
+.policy-item{
+  display:grid;
+  grid-template-columns:18px 1fr;
+  gap:8px;
+  align-items:start;
+  padding:8px 0;
+}
+.policy-item.bank{
+  grid-template-columns:18px 46px 1fr;
+}
+.policy-image{
+  width:46px;
+  aspect-ratio:1/1;
+  border:1px solid #d9dee7;
+  border-radius:6px;
+  background:linear-gradient(135deg,#ffffff,#f3f6fa);
+  color:#4b5563;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  font-size:11px;
+  font-weight:900;
+  line-height:1.15;
+}
+.policy-image.visa{
+  color:#1a4da1;
+  background:linear-gradient(135deg,#ffffff,#eef5ff);
+}
+.policy-item + .policy-item{
+  border-top:1px dashed #e3e7ee;
+}
+.policy-item.hit .policy-name{
+  color:#117949;
+}
+.policy-item.muted{
+  opacity:.82;
+}
+.policy-check{
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  border:1px solid #d4dae3;
+  margin-top:2px;
+  color:transparent;
+  display:inline-grid;
+  place-items:center;
+  font-size:11px;
+  font-weight:900;
+  line-height:1;
+}
+.policy-item.hit .policy-check{
+  border-color:#4dad8c;
+  background:#4dad8c;
+  color:#fff;
+}
+.policy-name{
+  color:#27303d;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.45;
+}
+.policy-desc{
+  display:block;
+  margin-top:2px;
+  color:#7a8494;
+  font-size:12px;
+  line-height:1.45;
+}
+.policy-action{
+  min-height:30px;
+  border:1px solid var(--green);
+  border-radius:5px;
+  background:#fff;
+  color:var(--greenDeep);
+  padding:0 10px;
+  font-size:12px;
+  font-weight:800;
+  white-space:nowrap;
+  justify-self:start;
+}
+.policy-item-action{
+  margin-top:7px;
+}
+.policy-card-action{
+  margin-top:8px;
+}
+.bank-card-note{
+  margin-top:10px;
+  border-top:1px dashed #e4cf9a;
+  padding-top:9px;
+  color:#806000;
+  font-size:12px;
+  line-height:1.55;
+}
+.bank-important{
+  border:1px solid #f0ce7a;
+  border-radius:6px;
+  background:#fffaf0;
+  padding:10px 12px;
+  color:#4b5563;
+  font-size:13px;
+  line-height:1.65;
+}
+.bank-important strong,
+.bank-support strong{
+  color:#20242c;
+}
+.bank-support{
+  display:grid;
+  gap:6px;
+  margin:12px 0;
+  border:1px solid var(--line2);
+  border-radius:6px;
+  background:#fafafa;
+  padding:10px 12px;
+  color:#4b5563;
+  font-size:13px;
+  line-height:1.55;
+}
+.notice{
+  margin-top:12px;
+  border-radius:6px;
+  background:var(--amberSoft);
+  color:#8a6200;
+  padding:9px 10px;
+  font-size:12px;
+  line-height:1.55;
+}
+.qual-strip{
+  margin-top:12px;
+  border-radius:6px;
+  padding:10px;
+  background:#f3f5f8;
+  color:#4b5563;
+  font-size:12px;
+  line-height:1.55;
+}
+.qual-strip.fail{
+  background:var(--redSoft);
+  color:#a7333d;
+}
+.main-btn{
+  width:100%;
+  min-height:52px;
+  border:0;
+  border-radius:8px;
+  margin-top:18px;
+  background:var(--red);
+  color:#fff;
+  font-size:16px;
+  font-weight:900;
+}
+.main-btn:hover{background:var(--red2)}
+.main-btn.disabled{
+  background:#c9cdd5;
+  color:#fff;
+}
+.button-note{
+  min-height:18px;
+  margin-top:9px;
+  color:#8a94a3;
+  font-size:12px;
+  line-height:1.5;
+  text-align:center;
+}
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(17,24,39,.48);
+  z-index:20;
+}
+.modal-backdrop.show{display:flex}
+.modal{
+  width:min(480px,100%);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px 18px;
+  border-bottom:1px solid var(--line2);
+}
+.modal-head h3{
+  margin:0;
+  font-size:17px;
+}
+.close-btn{
+  border:0;
+  background:#f3f5f8;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  color:#4b5563;
+  font-weight:900;
+}
+.modal-body{
+  padding:18px;
+}
+.modal-body p{
+  margin:0 0 12px;
+  color:#4b5563;
+  font-size:14px;
+  line-height:1.65;
+}
+.bank-scope{
+  display:grid;
+  gap:8px;
+  margin:12px 0;
+}
+.bank-scope span{
+  display:block;
+  border:1px solid var(--line2);
+  border-radius:6px;
+  background:#fafafa;
+  padding:9px 10px;
+  color:#4b5563;
+  font-size:13px;
+}
+.form-row{
+  margin-top:12px;
+}
+.form-row label{
+  display:block;
+  color:#303744;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:7px;
+}
+.input-line{
+  display:flex;
+  gap:8px;
+}
+.input-line input{
+  flex:1;
+  min-width:0;
+  height:38px;
+  border:1px solid var(--line);
+  border-radius:5px;
+  padding:0 10px;
+  outline:none;
+}
+.input-line input:focus{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(77,173,140,.16);
+}
+.primary-btn,
+.secondary-btn{
+  min-height:36px;
+  border-radius:5px;
+  padding:0 14px;
+  font-size:14px;
+  font-weight:800;
+}
+.primary-btn{
+  border:1px solid var(--green);
+  background:var(--green);
+  color:#fff;
+}
+.secondary-btn{
+  border:1px solid var(--line);
+  background:#fff;
+  color:#303744;
+}
+.field-msg{
+  min-height:18px;
+  margin-top:7px;
+  color:#a7333d;
+  font-size:12px;
+}
+.result-msg{
+  display:none;
+  border-radius:6px;
+  padding:10px;
+  margin-top:12px;
+  font-size:13px;
+  line-height:1.55;
+}
+.result-msg.ok{
+  display:block;
+  background:var(--greenSoft);
+  color:#117949;
+}
+.result-msg.fail{
+  display:block;
+  background:var(--redSoft);
+  color:#a7333d;
+}
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  padding:14px 18px 18px;
+}
+@media (max-width:1080px){
+  .proto-shell{grid-template-columns:1fr}
+  .proto-panel{
+    position:relative;
+    height:auto;
+  }
+  .proto-state{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .detail-layout{
+    grid-template-columns:1fr;
+  }
+  .purchase-card{
+    position:static;
+  }
+}
+@media (max-width:720px){
+  .top-inner,.wrap{
+    width:min(100% - 24px,1180px);
+  }
+  .site-top{
+    height:auto;
+  }
+  .top-inner{
+    padding:12px 0;
+    align-items:flex-start;
+  }
+  .nav{
+    gap:16px;
+    max-width:calc(100vw - 140px);
+  }
+  .top-tools{
+    gap:6px;
+  }
+  .tool-btn{
+    min-width:30px;
+    height:30px;
+  }
+  .project-head{
+    display:block;
+  }
+  .project-title{
+    font-size:23px;
+  }
+  .head-actions{
+    margin-top:2px;
+  }
+  .cover-art{
+    min-height:260px;
+  }
+  .cover-art:after{
+    left:28px;
+    right:28px;
+    font-size:30px;
+  }
+  .purchase-card{
+    padding:18px;
+  }
+  .policy-item{
+    grid-template-columns:1fr;
+  }
+  .policy-action{
+    width:100%;
+  }
+  .proto-state{
+    grid-template-columns:1fr;
+  }
+  .countdown{
+    flex-basis:calc(100% - 28px);
+    margin-left:28px;
+    margin-top:6px;
+    white-space:normal;
+  }
+  .input-line{
+    display:grid;
+  }
+}
+</style>
+</head>
+<body>
+<div class="proto-shell">
+  <aside class="proto-panel">
+    <h1 class="proto-title" data-i18n="proto.title">优先购 C 端流程 V1</h1>
+    <p class="proto-subtitle" data-i18n="proto.subtitle">仅覆盖官网项目详情页、优先购入口决策、银行卡 BIN 当前页验证、购票入口实时校验。左侧用于评审切换状态，不属于真实 C 端界面。</p>
+
+    <div class="proto-group">
+      <div class="proto-group-title" data-i18n="proto.identityTitle">用户身份</div>
+      <div class="proto-state" id="identityControls">
+        <button type="button" class="active" data-identity="guest" data-i18n="identity.guest">未登录</button>
+        <button type="button" data-identity="tourist" data-i18n="identity.tourist">游客/临时账号</button>
+        <button type="button" data-identity="registered" data-i18n="identity.registered">注册用户</button>
+      </div>
+    </div>
+
+    <div class="proto-group">
+      <div class="proto-group-title" data-i18n="proto.presaleStatusTitle">注册用户优先购状态</div>
+      <div class="proto-state" id="presaleControls">
+        <button type="button" class="active" data-presale="none" data-i18n="scenario.none">未命中，展示全量政策</button>
+        <button type="button" data-presale="memberLevel" data-i18n="scenario.memberLevel">命中会员等级，银行卡更早</button>
+        <button type="button" data-presale="memberCard" data-i18n="scenario.memberCard">命中会员卡，银行卡同时间</button>
+        <button type="button" data-presale="storedValue" data-i18n="scenario.storedValue">命中储值卡优先购</button>
+        <button type="button" data-presale="bankVerified" data-i18n="scenario.bankVerified">命中银行卡优先购</button>
+        <button type="button" data-presale="multi" data-i18n="scenario.multi">多资格命中，同时间按优先级</button>
+      </div>
+      <p class="proto-note" data-i18n="proto.presaleNote">页面全量展示优先购政策，按类型分组；注册用户按类型卡片展示状态，银行卡卡片内保留验证入口。测试通过 BIN：622260、402658、518710。</p>
+    </div>
+
+    <div class="proto-group">
+      <div class="proto-group-title" data-i18n="proto.timeTitle">当前时间模拟</div>
+      <div class="proto-state" id="timeControls">
+        <button type="button" class="active" data-phase="beforePresale" data-i18n="phase.beforePresale">优先购前</button>
+        <button type="button" data-phase="publicOpen" data-i18n="phase.publicOpen">已开售</button>
+      </div>
+    </div>
+
+    <div class="proto-group">
+      <label class="proto-check">
+        <input type="checkbox" id="countdownToggle" checked />
+        <span data-i18n="proto.countdownToggle">开启倒计时展示</span>
+      </label>
+      <p class="proto-note" data-i18n="proto.countdownNote">关闭倒计时时，不展示静态开售时间；购票资格按既有流程独立校验。</p>
+    </div>
+  </aside>
+
+  <main class="app">
+    <header class="site-top">
+      <div class="top-inner">
+        <nav class="nav" aria-label="主导航" data-i18n-aria-label="nav.aria">
+          <a href="#" data-i18n="nav.home">首页</a>
+          <a class="active" href="#" data-i18n="nav.ticket">购票</a>
+          <a href="#" data-i18n="nav.events">活动</a>
+          <a href="#" data-i18n="nav.calendar">日历</a>
+        </nav>
+        <div class="top-tools">
+          <button type="button" class="tool-btn" aria-label="搜索" data-i18n="tool.searchShort" data-i18n-aria-label="tool.search">搜</button>
+          <button type="button" class="tool-btn" aria-label="心愿单" data-i18n="tool.wishlistShort" data-i18n-aria-label="tool.wishlist">心</button>
+          <button type="button" class="tool-btn" aria-label="购物车" data-i18n="tool.cartShort" data-i18n-aria-label="tool.cart">车</button>
+          <button type="button" class="tool-btn" aria-label="会员" data-i18n="tool.memberShort" data-i18n-aria-label="tool.member">VIP</button>
+          <div class="lang-menu" id="langMenu">
+            <button type="button" class="lang-btn" id="langButton" aria-haspopup="true" aria-expanded="false">简体中文 ▾</button>
+            <div class="lang-options" id="langOptions" role="menu">
+              <button type="button" data-lang-option="zh" role="menuitem">简体中文</button>
+              <button type="button" data-lang-option="zhHk" role="menuitem">繁體中文</button>
+              <button type="button" data-lang-option="en" role="menuitem">English</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <div class="breadcrumb">
+        <span>&lt;</span>
+        <span data-i18n="nav.home">首页</span>
+        <span>/</span>
+        <strong data-i18n="breadcrumb.detail">项目详情</strong>
+      </div>
+
+      <div class="project-head">
+        <div>
+          <h2 class="project-title" data-i18n="project.title">城市剧场茶叙 Preview</h2>
+          <div class="label-row">
+            <span class="tag amber" data-i18n="project.hotTag">West 大热门</span>
+            <span class="tag red" id="headPresaleTag">当前项目开启优先购</span>
+          </div>
+        </div>
+        <div class="head-actions">
+          <span data-i18n="action.wishlist">加入心愿单</span>
+          <span data-i18n="action.share">分享</span>
+        </div>
+      </div>
+
+      <div class="detail-layout">
+        <div>
+          <article class="cover-card">
+            <div class="cover-art" aria-label="项目封面占位" data-i18n-aria-label="project.coverAria" data-cover-title="城市剧场茶叙 Preview"></div>
+            <div class="tabs">
+              <span class="active" data-i18n="tab.detail">详情</span>
+              <span data-i18n="tab.notice">须知</span>
+              <span data-i18n="tab.faq">常见问题</span>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <h2 data-i18n="content.title">项目介绍</h2>
+            <p data-i18n="content.p1">本项目页面用于评审优先购 C 端流程。实际项目开售时间、公众开售安排与购票须知由项目介绍或网站公告承接，优先购区域不在倒计时关闭时重复展示静态开售时间。</p>
+            <p data-i18n="content.p2">优先购不设置独立库存，用户仍需遵循实时库存、限购、实名、退改签等既有票务规则。</p>
+          </article>
+        </div>
+
+        <aside class="purchase-card">
+          <div class="price" data-i18n="price.range">HK$300.0 - 350.0</div>
+          <div class="promo-pill"><span data-i18n="promo.title">优惠活动</span> <strong data-i18n="promo.discount">组合折扣</strong></div>
+
+          <div class="info-row">
+            <div class="info-dot" data-i18n="info.dateIcon">日</div>
+            <div><strong data-i18n="info.dateTitle">日期范围</strong><span data-i18n="info.dateValue">2026/07/09 - 2026/09/30</span></div>
+          </div>
+          <div class="info-row">
+            <div class="info-dot" data-i18n="info.venueIcon">馆</div>
+            <div><strong data-i18n="info.venueTitle">场馆</strong><span data-i18n="info.venueValue">西九演艺，戏曲中心茶馆剧场</span></div>
+          </div>
+          <div class="info-row">
+            <div class="info-dot" data-i18n="info.serviceIcon">服</div>
+            <div><strong data-i18n="info.serviceTitle">服务保障</strong><span data-i18n="info.serviceValue">可选座、订单与支付、退换票规则、过期自退</span></div>
+          </div>
+
+          <div class="sale-box" id="saleBox"></div>
+
+          <section class="presale-zone" id="presaleZone">
+            <div class="zone-head">
+              <h3 data-i18n="zone.heading">优先购</h3>
+              <span class="tag red" id="zoneTag">已开启</span>
+            </div>
+            <div class="zone-body" id="zoneBody"></div>
+          </section>
+
+          <div class="qual-strip" id="qualStrip"></div>
+          <button type="button" class="main-btn" id="buyButton">暂未开售</button>
+          <div class="button-note" id="buttonNote"></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <h3 id="modalTitle">提示</h3>
+      <button type="button" class="close-btn" id="closeModal" aria-label="关闭" data-i18n-aria-label="modal.close">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-actions" id="modalActions"></div>
+  </div>
+</div>
+
+<script>
+const state = {
+  identity: "guest",
+  presale: "none",
+  phase: "beforePresale",
+  countdown: true,
+  verifiedBankPolicyIds: [],
+  bankVerificationFailed: false,
+  lang: "zh"
+};
+
+const acceptedBinRules = {
+  "622260": "bankPartner",
+  "402658": "bankVisa",
+  "518710": "bankVisa"
+};
+const acceptedBins = Object.keys(acceptedBinRules);
+const typePriorityText = "银行卡 > 会员卡 > 储值卡 > 会员等级";
+const groupMeta = {
+  bank: { label: "银行卡优先购", priority: 1, desc: "指定银行卡用户可通过银行卡 BIN 验证优先购资格。" },
+  memberCard: { label: "会员卡优先购", priority: 2, desc: "指定会员卡持有人可参与该项目优先购。" },
+  storedValue: { label: "储值卡优先购", priority: 3, desc: "指定储值卡持有人可参与该项目优先购。" },
+  memberLevel: { label: "会员等级优先购", priority: 4, desc: "指定会员等级用户可参与该项目优先购。" }
+};
+
+const presalePolicies = [
+  {
+    id: "bankPartner",
+    type: "bank",
+    label: "指定银行卡用户享优先购票资格",
+    shortLabel: "银行卡优先购",
+    displayTime: "2026/07/09 周四 10:30",
+    sortAt: 630,
+    canVerify: true,
+    desc: "合作银行信用卡、白金卡等指定银行卡用户可参与，输入银行卡 BIN 后自动识别是否符合活动范围。",
+    scope: "合作银行 A / B 指定信用卡、白金卡"
+  },
+  {
+    id: "bankVisa",
+    type: "bank",
+    label: "VISA用户专享优先购票资格",
+    shortLabel: "VISA优先购",
+    displayTime: "2026/07/09 周四 10:30",
+    sortAt: 630,
+    canVerify: true,
+    desc: "VISA信用卡用户专享优先购票资格，输入银行卡 BIN 后自动识别是否符合活动范围。",
+    scope: "VISA 信用卡指定卡种"
+  },
+  {
+    id: "memberCardPatron",
+    type: "memberCard",
+    label: "香港故宫文化博物馆赞助人",
+    shortLabel: "会员卡优先购",
+    displayTime: "2026/07/09 周四 10:30",
+    sortAt: 630,
+    canVerify: false,
+    desc: "指定会员卡持有人可参与该项目优先购。"
+  },
+  {
+    id: "memberCardFriend",
+    type: "memberCard",
+    label: "香港故宫之友",
+    shortLabel: "会员卡优先购",
+    displayTime: "2026/07/09 周四 11:30",
+    sortAt: 690,
+    canVerify: false,
+    desc: "指定会员卡持有人可参与该项目优先购。"
+  },
+  {
+    id: "storedQinghe",
+    type: "storedValue",
+    label: "清和 3000 元艺文储值卡",
+    shortLabel: "储值卡优先购",
+    displayTime: "2026/07/09 周四 10:30",
+    sortAt: 630,
+    canVerify: false,
+    desc: "指定储值卡持有人可参与该项目优先购。"
+  },
+  {
+    id: "storedYunshang",
+    type: "storedValue",
+    label: "云赏 10000 元典藏储值卡",
+    shortLabel: "储值卡优先购",
+    displayTime: "2026/07/09 周四 11:30",
+    sortAt: 690,
+    canVerify: false,
+    desc: "指定储值卡持有人可参与该项目优先购。"
+  },
+  {
+    id: "memberLevelPlus",
+    type: "memberLevel",
+    label: "尊享PLUS会员",
+    shortLabel: "会员等级优先购",
+    displayTime: "2026/07/09 周四 11:30",
+    sortAt: 690,
+    canVerify: false,
+    desc: "指定会员等级用户可参与该项目优先购。"
+  },
+  {
+    id: "memberLevelEnjoy",
+    type: "memberLevel",
+    label: "乐享会员",
+    shortLabel: "会员等级优先购",
+    displayTime: "2026/07/09 周四 11:45",
+    sortAt: 720,
+    canVerify: false,
+    desc: "指定会员等级用户可参与该项目优先购。"
+  }
+];
+
+presalePolicies.forEach((policy, index)=>{
+  policy.sequence = index;
+  policy.priority = groupMeta[policy.type].priority;
+  policy.groupLabel = groupMeta[policy.type].label;
+});
+
+const scenarioHits = {
+  none: [],
+  memberLevel: ["memberLevelPlus"],
+  memberCard: ["memberCardPatron"],
+  storedValue: ["storedQinghe"],
+  bankVerified: ["bankVisa"],
+  multi: ["memberCardPatron", "storedQinghe", "memberLevelPlus"]
+};
+
+const statusMeta = {
+  hit: { label: "已具备", tone: "green", variant: "hit" },
+  verifiable: { label: "可验证", tone: "amber", variant: "verifiable" },
+  unavailable: { label: "未具备", tone: "gray", variant: "" }
+};
+
+function isRegistered(){
+  return state.identity === "registered";
+}
+
+function sortByValue(items){
+  return [...items].sort((a,b)=> a.sortAt - b.sortAt || a.priority - b.priority || a.sequence - b.sequence);
+}
+
+function getHitIdSet(){
+  const hitIds = new Set();
+  if(!isRegistered()) return hitIds;
+  (scenarioHits[state.presale] || []).forEach(id => hitIds.add(id));
+  state.verifiedBankPolicyIds.forEach(id => hitIds.add(id));
+  return hitIds;
+}
+
+function hitPolicies(){
+  const hitIds = getHitIdSet();
+  return sortByValue(presalePolicies.filter(item => hitIds.has(item.id)));
+}
+
+function selectDisplayOpportunity(){
+  if(!isRegistered()) return null;
+  const hits = hitPolicies();
+  const bestHit = hits[0] || null;
+  const hitIds = getHitIdSet();
+  let candidates = presalePolicies.filter(item => item.canVerify && !hitIds.has(item.id));
+
+  if(bestHit){
+    candidates = candidates.filter(item => item.sortAt < bestHit.sortAt);
+  }
+
+  if(candidates.length){
+    return {
+      policy: sortByValue(candidates)[0],
+      status: "verify",
+      bestHit,
+      hitCount: hits.length
+    };
+  }
+
+  if(bestHit){
+    return {
+      policy: bestHit,
+      status: "hit",
+      bestHit,
+      hitCount: hits.length
+    };
+  }
+
+  const fallback = sortByValue(presalePolicies.filter(item => item.canVerify))[0] || null;
+  return fallback ? { policy: fallback, status: "verify", bestHit: null, hitCount: 0 } : null;
+}
+
+function isPublicOpen(){
+  return state.phase === "publicOpen";
+}
+
+function isUserSaleOpen(){
+  return isPublicOpen();
+}
+
+function setButtonActive(button, active){
+  button.classList.toggle("disabled", !active);
+  button.disabled = !active;
+}
+
+function countdownHtml(){
+  return `<span class="countdown">剩余 <b>0</b> 天 <b>14</b> : <b>38</b> : <b>36</b></span>`;
+}
+
+function renderSaleBox(){
+  const box = document.getElementById("saleBox");
+  const decision = selectDisplayOpportunity();
+  const hasConfirmedHit = decision && (decision.status === "hit" || decision.bestHit);
+  if(!state.countdown || state.phase === "publicOpen"){
+    box.innerHTML = "";
+    box.style.display = "none";
+    return;
+  }
+
+  box.style.display = "block";
+  const lines = [];
+  if(isRegistered() && hasConfirmedHit){
+    const displayPolicy = decision.bestHit || decision.policy;
+    const displayLabel = displayPolicy.shortLabel || displayPolicy.groupLabel;
+    lines.push(`
+      <div class="sale-line highlight">
+        <div class="sale-icon">优</div>
+        <div class="sale-main">
+          <div class="sale-title">开售：${displayPolicy.displayTime || "2026/07/09 周四 10:30"} <span>${displayLabel}</span></div>
+          <div class="sale-sub">当前账号已命中该优先购资格</div>
+        </div>
+        ${state.phase === "beforePresale" ? countdownHtml() : ""}
+      </div>
+    `);
+  }
+
+  lines.push(`
+    <div class="sale-line public">
+      <div class="sale-icon">公</div>
+      <div class="sale-main">
+        <div class="sale-title">开售：2026/07/09 周四 12:00 <span>公众开售</span></div>
+        <div class="sale-sub">${isPublicOpen() ? "已进入公众开售" : "未命中或未验证用户按公众开售状态购票"}</div>
+      </div>
+      ${state.phase !== "publicOpen" && !hasConfirmedHit ? countdownHtml() : ""}
+    </div>
+  `);
+  box.innerHTML = lines.join("");
+}
+
+function getGroupStatus(group, hitIds){
+  if(!isRegistered()) return null;
+  const hitCount = group.items.filter(policy => hitIds.has(policy.id)).length;
+  if(hitCount){
+    return {
+      key: "hit",
+      label: `已具备 ${hitCount} 项`,
+      tone: statusMeta.hit.tone,
+      variant: statusMeta.hit.variant
+    };
+  }
+  if(group.items.some(policy => policy.canVerify)){
+    return {
+      key: "verifiable",
+      label: statusMeta.verifiable.label,
+      tone: statusMeta.verifiable.tone,
+      variant: statusMeta.verifiable.variant
+    };
+  }
+  return {
+    key: "unavailable",
+    label: statusMeta.unavailable.label,
+    tone: statusMeta.unavailable.tone,
+    variant: statusMeta.unavailable.variant
+  };
+}
+
+function sortPoliciesForDisplay(items, hitIds){
+  return [...items].sort((a,b)=>{
+    const hitDiff = Number(hitIds.has(b.id)) - Number(hitIds.has(a.id));
+    if(hitDiff) return hitDiff;
+    const timeDiff = a.sortAt - b.sortAt;
+    if(timeDiff) return timeDiff;
+    return a.sequence - b.sequence;
+  });
+}
+
+function isPolicyHit(policy, hitIds){
+  return isRegistered() && hitIds.has(policy.id);
+}
+
+function policyItem(policy, hitIds){
+  const isHit = isPolicyHit(policy, hitIds);
+  const showDesc = policy.type === "bank";
+  const verifyAction = policy.type === "bank" && !isHit
+    ? `<button type="button" class="policy-action policy-item-action" data-action="bankVerify" data-policy-id="${policy.id}">立即验证</button>`
+    : "";
+  const imageHtml = policy.type === "bank"
+    ? `<div class="policy-image ${policy.id === "bankVisa" ? "visa" : ""}" aria-label="银行卡图片占位">${policy.id === "bankVisa" ? "VISA" : "银行<br>Logo"}</div>`
+    : "";
+  return `
+    <div class="policy-item ${policy.type === "bank" ? "bank" : ""} ${isHit ? "hit" : "muted"}">
+      <span class="policy-check" aria-hidden="true">✓</span>
+      ${imageHtml}
+      <div>
+        <div class="policy-name">${policy.label}</div>
+        ${showDesc ? `<span class="policy-desc">${policy.desc}</span>` : ""}
+        ${verifyAction}
+      </div>
+    </div>
+  `;
+}
+
+function getGroupSortMeta(group, hitIds, bestHitSortAt){
+  const hitItems = group.items.filter(policy => isPolicyHit(policy, hitIds));
+  const earliestHitSortAt = hitItems.length ? Math.min(...hitItems.map(policy => policy.sortAt)) : Infinity;
+  const earliestSortAt = Math.min(...group.items.map(policy => policy.sortAt));
+  const earliestVerifiableSortAt = group.type === "bank"
+    ? Math.min(...group.items.filter(policy => policy.canVerify && !isPolicyHit(policy, hitIds)).map(policy => policy.sortAt), Infinity)
+    : Infinity;
+
+  if(earliestVerifiableSortAt < bestHitSortAt){
+    return { rank: 0, sortAt: earliestVerifiableSortAt };
+  }
+  if(hitItems.length){
+    return { rank: 1, sortAt: earliestHitSortAt };
+  }
+  return { rank: 2, sortAt: earliestSortAt };
+}
+
+function renderPolicyGroups(){
+  const hitIds = getHitIdSet();
+  const decision = selectDisplayOpportunity();
+  const primaryPolicyId = decision ? decision.policy.id : "";
+  const hitItems = presalePolicies.filter(policy => isPolicyHit(policy, hitIds));
+  const bestHitSortAt = hitItems.length ? Math.min(...hitItems.map(policy => policy.sortAt)) : Infinity;
+  const groups = Object.keys(groupMeta).map(type => {
+    const items = presalePolicies.filter(policy => policy.type === type);
+    const group = {
+      type,
+      label: groupMeta[type].label,
+      desc: groupMeta[type].desc,
+      firstSortAt: Math.min(...items.map(policy => policy.sortAt)),
+      items: sortPoliciesForDisplay(items, hitIds)
+    };
+    return {
+      ...group,
+      sortMeta: getGroupSortMeta(group, hitIds, bestHitSortAt)
+    };
+  }).filter(group => group.items.length);
+
+  groups.sort((a,b)=>
+    a.sortMeta.rank - b.sortMeta.rank ||
+    a.sortMeta.sortAt - b.sortMeta.sortAt ||
+    groupMeta[a.type].priority - groupMeta[b.type].priority
+  );
+
+  return `
+    <div class="policy-list">
+      ${groups.map(group => {
+        const groupStatus = getGroupStatus(group, hitIds);
+        const hasPrimary = group.items.some(policy => policy.id === primaryPolicyId);
+        const unhitCount = group.items.filter(policy => !isPolicyHit(policy, hitIds)).length;
+        const getQualificationAction = ["memberCard", "storedValue"].includes(group.type) && unhitCount > 0
+          ? `<button type="button" class="policy-action policy-card-action" data-action="getQualification" data-type="${group.type}">获取资格</button>`
+          : "";
+        return `
+          <div class="policy-group-card ${groupStatus ? groupStatus.variant : ""} ${hasPrimary ? "primary" : ""}">
+            <div class="policy-group-head">
+              <div class="policy-group-info">
+                <div class="policy-group-title">${group.label}</div>
+                <p class="policy-group-desc">${group.desc}</p>
+              </div>
+              ${groupStatus ? `<span class="policy-group-status ${groupStatus.tone}">${groupStatus.label}</span>` : ""}
+            </div>
+            <div class="policy-group-body">
+              ${group.items.map(policy => policyItem(policy, hitIds)).join("")}
+              ${getQualificationAction}
+              ${group.type === "bank" ? `<div class="bank-card-note">说明：资格验证仅用于确认是否可进入优先购流程。请在支付时使用符合本次优先购条件的银行卡。受银行卡属性、卡片状态、支付风控、发卡行或第三方支付机构实时校验等因素影响，资格验证结果不代表最终支付成功或订单完成。</div>` : ""}
+            </div>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function renderPresaleZone(){
+  const tag = document.getElementById("zoneTag");
+  const body = document.getElementById("zoneBody");
+  const headTag = document.getElementById("headPresaleTag");
+  headTag.textContent = "当前项目开启优先购";
+
+  const hitCount = hitPolicies().length;
+  const verifiableCount = isRegistered()
+    ? presalePolicies.filter(policy => policy.canVerify && !getHitIdSet().has(policy.id)).length
+    : 0;
+
+  let title = "当前项目支持以下优先购政策";
+  let desc = "以下展示当前项目完整优先购政策，系统会根据账号状态标记每项资格。";
+
+  if(state.identity === "guest"){
+    tag.className = "tag gray";
+    tag.textContent = "登录后查看";
+    desc = "未登录用户可查看项目开启的优先购政策；优先购资格判断和银行卡验证需登录后进行。";
+  }else if(state.identity === "tourist"){
+    tag.className = "tag gray";
+    tag.textContent = "当前身份暂不支持识别";
+    desc = "游客或临时账号可查看项目开启的优先购政策，请使用正式注册账号登录后查看资格状态。";
+  }else if(hitCount){
+    tag.className = "tag green";
+    tag.textContent = `已具备 ${hitCount} 项`;
+    desc = verifiableCount
+      ? "已具备的优先购资格已高亮；银行卡优先购仍可继续验证，验证通过后按对应项目标记。"
+      : "已具备的优先购资格已高亮，购票时仍需满足实时库存、开票状态和项目规则。";
+  }else if(verifiableCount){
+    tag.className = "tag amber";
+    tag.textContent = "可验证";
+    desc = "当前账号暂未具备优先购资格；银行卡优先购可输入银行卡 BIN 进行验证。";
+  }else{
+    tag.className = "tag gray";
+    tag.textContent = "未具备";
+    desc = "当前账号暂未具备本项目优先购资格。";
+  }
+
+  body.innerHTML = `
+    <p class="status-title">${title}</p>
+    <p class="status-desc">${desc}</p>
+    ${renderPolicyGroups()}
+    <div class="notice">具体购票时间请查看网站公告。优先购不保证一定购得门票，进入购票流程仍需满足实时库存、开票状态和项目购票规则。</div>
+  `;
+}
+
+function renderEligibility(){
+  const strip = document.getElementById("qualStrip");
+  strip.className = "qual-strip";
+  strip.textContent = "购票资格将按既有流程独立校验。";
+}
+
+function renderBuyButton(){
+  const btn = document.getElementById("buyButton");
+  const note = document.getElementById("buttonNote");
+  const saleOpen = isUserSaleOpen();
+  const decision = selectDisplayOpportunity();
+
+  if(!saleOpen){
+    btn.textContent = "即将开票";
+    setButtonActive(btn, false);
+    if(decision && decision.status === "verify" && !decision.bestHit){
+      note.textContent = "可先完成银行卡验证，验证通过且到达开票时间后才可购票。";
+    }else{
+      note.textContent = state.countdown ? "" : "倒计时关闭时不展示静态时间，到点后按钮自动变为可点击。";
+    }
+    return;
+  }
+
+  if(state.identity === "guest"){
+    btn.textContent = "登录后购票";
+    setButtonActive(btn, true);
+    note.textContent = "登录成功后返回当前项目页重新判断优先购与购票资格。";
+    return;
+  }
+
+  if(state.identity === "tourist"){
+    btn.textContent = "立即购票";
+    setButtonActive(btn, true);
+    note.textContent = "点击后提示当前身份暂不支持相关操作。";
+    return;
+  }
+
+  btn.textContent = "立即购票";
+  setButtonActive(btn, true);
+  note.textContent = "点击后进入既有场次/票种/选座流程。";
+}
+
+function renderControls(){
+  document.querySelectorAll("#identityControls button").forEach(btn=>{
+    btn.classList.toggle("active", btn.dataset.identity === state.identity);
+  });
+  const activePresale = state.presale === "none" && state.verifiedBankPolicyIds.length ? "bankVerified" : state.presale;
+  document.querySelectorAll("#presaleControls button").forEach(btn=>{
+    btn.classList.toggle("active", btn.dataset.presale === activePresale);
+  });
+  document.querySelectorAll("#timeControls button").forEach(btn=>{
+    btn.classList.toggle("active", btn.dataset.phase === state.phase);
+  });
+  document.getElementById("countdownToggle").checked = state.countdown;
+}
+
+function renderAll(){
+  renderControls();
+  renderSaleBox();
+  renderPresaleZone();
+  renderEligibility();
+  renderBuyButton();
+  bindDynamicActions();
+}
+
+function modalAction(label, type){
+  return `<button type="button" class="${type === "primary" ? "primary-btn" : "secondary-btn"}" data-modal-action="${label}">${label}</button>`;
+}
+
+function showMessageModal(title, body, actions){
+  const backdrop = document.getElementById("modalBackdrop");
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalBody").innerHTML = body;
+  const actionBox = document.getElementById("modalActions");
+  actionBox.innerHTML = actions || modalAction("确认", "primary");
+  backdrop.classList.add("show");
+  backdrop.setAttribute("aria-hidden","false");
+}
+
+function showBankModal(policyId){
+  showMessageModal(
+    "验证银行卡优先购",
+    `
+      <div class="bank-important">
+        <strong>【重要提醒】</strong><br>
+        本次资格验证将根据优先购规则进行初步判断，仅用于确认是否可进入优先购流程。请在支付时使用符合本次优先购条件的银行卡。优先购资格将在支付时再次校验，受银行卡属性、卡片状态、支付风控、发卡行或第三方支付机构实时校验等因素影响，资格验证结果不代表最终支付成功或订单完成。
+      </div>
+      <div class="bank-support">
+        <strong>当前支持验证的银行卡范围包括：</strong>
+        <span>合作卡组织：Visa</span>
+        <span>支持卡种：62、48等开头卡号</span>
+      </div>
+      <div class="form-row">
+        <label for="binInput">银行卡 BIN</label>
+        <div class="input-line">
+          <input id="binInput" inputmode="numeric" maxlength="8" placeholder="请输入前 6 位" />
+          <button type="button" class="primary-btn" id="submitBin">验证</button>
+        </div>
+        <div class="field-msg" id="fieldMsg"></div>
+        <div class="result-msg" id="resultMsg"></div>
+      </div>
+    `,
+    modalAction("关闭", "secondary")
+  );
+  const input = document.getElementById("binInput");
+  input.focus();
+  document.getElementById("submitBin").addEventListener("click", handleBinSubmit);
+  input.addEventListener("input", ()=>{
+    input.value = input.value.replace(/\D/g,"").slice(0,8);
+    document.getElementById("fieldMsg").textContent = "";
+  });
+}
+
+function handleBinSubmit(){
+  const input = document.getElementById("binInput");
+  const field = document.getElementById("fieldMsg");
+  const result = document.getElementById("resultMsg");
+  const value = input.value.trim();
+  result.className = "result-msg";
+  result.textContent = "";
+  if(value.length !== 6){
+    field.textContent = "当前活动需输入银行卡前 6 位。";
+    return;
+  }
+  field.textContent = "";
+  const matchedPolicyId = acceptedBinRules[value];
+  if(matchedPolicyId){
+    if(!state.verifiedBankPolicyIds.includes(matchedPolicyId)){
+      state.verifiedBankPolicyIds.push(matchedPolicyId);
+    }
+    state.bankVerificationFailed = false;
+    const matchedPolicy = presalePolicies.find(policy => policy.id === matchedPolicyId);
+    result.className = "result-msg ok";
+    result.textContent = `验证通过。已获得${matchedPolicy.label}，关闭弹窗后将刷新当前项目页状态。`;
+    document.getElementById("modalActions").innerHTML = modalAction("确认", "primary");
+  }else{
+    state.bankVerificationFailed = true;
+    result.className = "result-msg fail";
+    result.textContent = "验证未通过。当前账号仍显示未验证，可继续输入其他银行卡 BIN 尝试；也可关闭弹窗返回页面。";
+  }
+}
+
+function closeModal(){
+  const backdrop = document.getElementById("modalBackdrop");
+  backdrop.classList.remove("show");
+  backdrop.setAttribute("aria-hidden","true");
+  renderAll();
+}
+
+function showLoginGuideModal(){
+  showMessageModal("请先登录", "<p>请使用正式注册账号登录。登录成功后可查看优先购资格状态，或继续验证/获取对应资格。</p>");
+}
+
+function bindDynamicActions(){
+  document.querySelectorAll("[data-action='bankVerify']").forEach(btn=>{
+    btn.onclick = ()=>{
+      if(state.identity === "guest" || state.identity === "tourist"){
+        showLoginGuideModal();
+        return;
+      }
+      showBankModal(btn.dataset.policyId);
+    };
+  });
+
+  document.querySelectorAll("[data-action='getQualification']").forEach(btn=>{
+    btn.onclick = ()=>{
+      if(state.identity === "guest" || state.identity === "tourist"){
+        showLoginGuideModal();
+        return;
+      }
+      const typeName = btn.dataset.type === "storedValue" ? "储值卡" : "会员卡";
+      showMessageModal(
+        "获取优先购资格",
+        `<p>将跳转至${typeName}办理页面。办理完成并返回项目页后，系统会重新判断当前账号是否具备对应优先购资格。</p>`,
+        modalAction("确认", "primary")
+      );
+    };
+  });
+}
+
+document.getElementById("identityControls").addEventListener("click", event=>{
+  const btn = event.target.closest("button[data-identity]");
+  if(!btn) return;
+  state.identity = btn.dataset.identity;
+  if(state.identity !== "registered"){
+    state.verifiedBankPolicyIds = [];
+    state.bankVerificationFailed = false;
+  }
+  renderAll();
+});
+
+document.getElementById("presaleControls").addEventListener("click", event=>{
+  const btn = event.target.closest("button[data-presale]");
+  if(!btn) return;
+  state.presale = btn.dataset.presale;
+  state.verifiedBankPolicyIds = [];
+  state.bankVerificationFailed = false;
+  if(state.identity !== "registered") state.identity = "registered";
+  renderAll();
+});
+
+document.getElementById("timeControls").addEventListener("click", event=>{
+  const btn = event.target.closest("button[data-phase]");
+  if(!btn) return;
+  state.phase = btn.dataset.phase;
+  renderAll();
+});
+
+document.getElementById("countdownToggle").addEventListener("change", event=>{
+  state.countdown = event.target.checked;
+  renderAll();
+});
+
+
+document.getElementById("buyButton").addEventListener("click", ()=>{
+  if(!isUserSaleOpen()) return;
+  if(state.identity === "guest"){
+    showMessageModal("请先登录", "<p>登录成功后将返回当前项目页，系统重新判断优先购和购票资格状态。</p>", modalAction("确认", "primary"));
+    return;
+  }
+  if(state.identity === "tourist"){
+    showMessageModal("当前身份暂不支持", "<p>游客或临时账号暂不支持受限购票操作，请使用正式注册账号登录后再试。</p>", modalAction("确认", "primary"));
+    return;
+  }
+  showMessageModal("进入购票流程", "<p>已达到当前项目开售状态。后续进入既有场次、票种或选座流程，购票资格将按既有流程独立校验。</p>", modalAction("确认", "primary"));
+});
+
+document.getElementById("closeModal").addEventListener("click", closeModal);
+document.getElementById("modalBackdrop").addEventListener("click", event=>{
+  if(event.target.id === "modalBackdrop") closeModal();
+});
+document.getElementById("modalActions").addEventListener("click", event=>{
+  if(event.target.closest("button")) closeModal();
+});
+document.addEventListener("keydown", event=>{
+  if(event.key === "Escape") closeModal();
+});
+
+renderAll();
+</script>
+<script src="presale-i18n.js"></script>
+</body>
+</html>

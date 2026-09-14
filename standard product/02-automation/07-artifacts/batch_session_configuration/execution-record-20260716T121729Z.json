@@ -1,0 +1,140 @@
+{
+  "suite": "standard_product_batch_session_configuration",
+  "requirement_package": "04-Configuration Related/2026-07-15",
+  "assessment_review": "D:/Workspace/standard product/01-requirements/02-subprojects/01-domestic projects/02-modules/04-Configuration Related/2026-07-15/05-execution/automation-assessment-review-batch-session-configuration.docx",
+  "started_at": "2026-07-16T12:17:22Z",
+  "finished_at": "2026-07-16T12:17:29Z",
+  "exitstatus": 0,
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "skipped": 0,
+  "results": [
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_seat_selection_sessions_can_update_saleable_ticket_group",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-003"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_admission_ticket_sessions_can_update_saleable_ticket_group",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-004"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_no_seat_sessions_can_update_saleable_ticket_group",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-005"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_seat_selection_sessions_can_update_calendar_display",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-006"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_admission_ticket_sessions_can_update_calendar_display",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-007"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_no_seat_sessions_can_update_calendar_display",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-008"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_seat_selection_sessions_can_update_session_list_display",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-009"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_admission_ticket_sessions_can_update_session_list_display",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-010"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_no_seat_sessions_can_update_session_list_display",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-011"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/api/api_contract/test_batch_session_configuration.py::test_pre_generation_requires_target_value_for_each_batch_action",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-012"
+      ],
+      "layer": "api_contract",
+      "status": "passed",
+      "duration_seconds": 0.0
+    },
+    {
+      "nodeid": "02-tests/ui/test_batch_session_configuration_ui.py::test_selected_sessions_can_open_batch_operation_menu",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-001"
+      ],
+      "layer": "ui_smoke",
+      "status": "passed",
+      "duration_seconds": 0.282
+    },
+    {
+      "nodeid": "02-tests/ui/test_batch_session_configuration_ui.py::test_batch_operation_menu_is_blocked_without_selection",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-002"
+      ],
+      "layer": "ui_smoke",
+      "status": "passed",
+      "duration_seconds": 0.094
+    },
+    {
+      "nodeid": "02-tests/ui/test_batch_session_configuration_ui.py::test_cancel_and_close_preview_do_not_save_changes",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-014"
+      ],
+      "layer": "ui_smoke",
+      "status": "passed",
+      "duration_seconds": 0.558
+    },
+    {
+      "nodeid": "02-tests/api_ui_mixed/test_batch_session_configuration_mixed.py::test_deleted_preview_row_is_excluded_from_submission",
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-013"
+      ],
+      "layer": "api_ui_mixed",
+      "status": "passed",
+      "duration_seconds": 0.323
+    }
+  ]
+}

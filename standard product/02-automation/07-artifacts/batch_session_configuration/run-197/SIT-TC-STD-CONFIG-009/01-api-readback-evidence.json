@@ -1,0 +1,178 @@
+{
+  "scenario": "SIT-TC-STD-CONFIG-009 Verify that seat-selection sessions can be batch-updated for session-list display type",
+  "feature": "Batch Session Configuration real automation",
+  "flow_key": "seat session list display",
+  "selected_ids": [
+    "19839",
+    "19837"
+  ],
+  "expected_field": "display",
+  "expected_value": "Y",
+  "assertion": {
+    "result": "PASS",
+    "logic": "schedule_list_field",
+    "message": "Precondition differed from target and post-write readback matched expected value."
+  },
+  "source_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/ticket/program/get.xhtml",
+      "params": {
+        "id": "225198"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/ticket/program/get.xhtml?id=225198",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "dynamicStatus",
+          "program",
+          "programLimitCount",
+          "programPackPriceCount",
+          "programPriceCount",
+          "saleStatus",
+          "saleUserGroupCount",
+          "scheduleActiveNumsMap",
+          "scheduleNumsMap",
+          "schedulePriceGroupCount",
+          "specialPackPriceCount",
+          "stadium"
+        ]
+      }
+    }
+  ],
+  "setup_requests": [
+    {
+      "method": "POST",
+      "path": "/theatre/home/schedule/op/batchUpdateDisplay.xhtml",
+      "params": {
+        "scheduleIds": "19839,19837",
+        "display": "N"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/schedule/op/batchUpdateDisplay.xhtml?scheduleIds=19839%2C19837&display=N",
+      "status_code": 200,
+      "response_summary": {
+        "success": true
+      }
+    }
+  ],
+  "before_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/schedule/list.xhtml",
+      "params": {
+        "programId": "225198",
+        "playTimeFrom": "",
+        "playTimeEnd": "",
+        "keyword": "",
+        "scheduleId": "",
+        "status": "",
+        "overdue": "",
+        "ticketTypeIds": "",
+        "pageNo": "1",
+        "pageSize": "10"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/schedule/list.xhtml?programId=225198&playTimeFrom=&playTimeEnd=&keyword=&scheduleId=&status=&overdue=&ticketTypeIds=&pageNo=1&pageSize=10",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "buList",
+          "groupType",
+          "layoutList",
+          "page",
+          "program",
+          "scheduleList",
+          "schedulePriceCount",
+          "scheduleSaleCount",
+          "seatPlanList",
+          "stadium",
+          "supportBuNamesMap",
+          "userGroupCount"
+        ]
+      }
+    }
+  ],
+  "write_request": {
+    "method": "POST",
+    "path": "/theatre/home/schedule/op/batchUpdateDisplay.xhtml",
+    "params": {
+      "scheduleIds": "19839,19837",
+      "display": "Y"
+    },
+    "url": "https://anticket.lengliwh.com/theatre/home/schedule/op/batchUpdateDisplay.xhtml?scheduleIds=19839%2C19837&display=Y"
+  },
+  "write_response": {
+    "success": true,
+    "status_code": 200
+  },
+  "readback_requests": [
+    {
+      "method": "GET",
+      "path": "/theatre/home/schedule/list.xhtml",
+      "params": {
+        "programId": "225198",
+        "playTimeFrom": "",
+        "playTimeEnd": "",
+        "keyword": "",
+        "scheduleId": "",
+        "status": "",
+        "overdue": "",
+        "ticketTypeIds": "",
+        "pageNo": "1",
+        "pageSize": "10"
+      },
+      "url": "https://anticket.lengliwh.com/theatre/home/schedule/list.xhtml?programId=225198&playTimeFrom=&playTimeEnd=&keyword=&scheduleId=&status=&overdue=&ticketTypeIds=&pageNo=1&pageSize=10",
+      "status_code": 200,
+      "response_summary": {
+        "success": true,
+        "data_keys": [
+          "buList",
+          "groupType",
+          "layoutList",
+          "page",
+          "program",
+          "scheduleList",
+          "schedulePriceCount",
+          "scheduleSaleCount",
+          "seatPlanList",
+          "stadium",
+          "supportBuNamesMap",
+          "userGroupCount"
+        ]
+      }
+    }
+  ],
+  "observations": [
+    {
+      "selected_id": "19839",
+      "field": "display",
+      "expected_value": "Y",
+      "actual_value": "Y",
+      "raw_actual": "Y",
+      "comparison": "equals",
+      "passed": true,
+      "before_value": "N",
+      "before_raw_actual": "N",
+      "before_matched_target": false,
+      "changed_from_before": true
+    },
+    {
+      "selected_id": "19837",
+      "field": "display",
+      "expected_value": "Y",
+      "actual_value": "Y",
+      "raw_actual": "Y",
+      "comparison": "equals",
+      "passed": true,
+      "before_value": "N",
+      "before_raw_actual": "N",
+      "before_matched_target": false,
+      "changed_from_before": true
+    }
+  ],
+  "case_id": "SIT-TC-STD-CONFIG-009",
+  "run_id": "197",
+  "captured_at": "2026-07-18T16:15:53+08:00",
+  "evidence_kind": "api-readback-assertion"
+}

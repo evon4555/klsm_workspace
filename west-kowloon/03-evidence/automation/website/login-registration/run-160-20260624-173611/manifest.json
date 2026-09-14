@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "wk-evidence-manifest/v1",
+  "packageId": "run-160-20260624-173611",
+  "project": "west-kowloon",
+  "subproject": "website",
+  "module": "website/login-registration",
+  "evidenceType": "automation-regression",
+  "status": "selected-for-review",
+  "promotedAt": "2026-06-24T09:36:11Z",
+  "promotedBy": "klsm",
+  "environment": "SIT",
+  "build": "",
+  "source": {
+    "dashboardRunId": 160,
+    "automationArtifacts": "D:/Workspace/west-kowloon/02-automation/07-artifacts",
+    "runFile": "D:/Workspace/west-kowloon/02-automation/07-artifacts/run_160.json"
+  },
+  "summary": {
+    "featureCount": 16,
+    "scenarioCount": 1,
+    "executed": 1,
+    "passed": 1,
+    "failed": 0,
+    "errored": 0,
+    "skipped": 0,
+    "passRate": 100.0,
+    "statusCounts": {
+      "passed": 1,
+      "failed": 0,
+      "errored": 0,
+      "skipped": 0,
+      "undefined": 0
+    },
+    "testCaseIds": [
+      "SIT-TC-WEB-AUTH-021",
+      "SIT-TC-WEB-AUTH-022"
+    ],
+    "scenarios": [
+      {
+        "feature": "Website 游客登录 / Guest login (SIT-TC-WEB-AUTH-021, 022, 023, 025)",
+        "name": "SIT-TC-WEB-AUTH-022 Failed robot verification blocks guest login",
+        "status": "passed",
+        "location": "01-features/ui_e2e/antank_guest_login.feature:25",
+        "tags": [
+          "ui",
+          "guest"
+        ]
+      }
+    ]
+  },
+  "qualityDeliverables": [
+    "p5-d1",
+    "p5-d2",
+    "p5-d4",
+    "p6-d3",
+    "p6-d4"
+  ],
+  "traceability": {
+    "requirements": [],
+    "testCaseIds": [
+      "SIT-TC-WEB-AUTH-021",
+      "SIT-TC-WEB-AUTH-022"
+    ]
+  },
+  "defects": [],
+  "knownRisks": [],
+  "artifacts": [
+    {
+      "kind": "run-json",
+      "path": "automation/website/login-registration/run-160-20260624-173611/raw/run_160.json",
+      "sourcePath": "D:/Workspace/west-kowloon/02-automation/07-artifacts/run_160.json",
+      "sha256": "d145273c8092ff4f52e844e5b4907548142df0af3db0cf536841893b59124e87",
+      "sizeBytes": 4550
+    },
+    {
+      "kind": "screenshot",
+      "path": "automation/website/login-registration/run-160-20260624-173611/screenshots/guest_20260623_103052/01_guest_panel_opened.png",
+      "sourcePath": "D:/Workspace/west-kowloon/02-automation/07-artifacts/screenshots/guest_20260623_103052/01_guest_panel_opened.png",
+      "sha256": "6f7d7f8ea68be5d35eeb2ba3ebad34139e699948a96110c246757d9f7e2da96d",
+      "sizeBytes": 36402
+    },
+    {
+      "kind": "screenshot",
+      "path": "automation/website/login-registration/run-160-20260624-173611/screenshots/guest_20260623_103052/02_robot_verification_skipped.png",
+      "sourcePath": "D:/Workspace/west-kowloon/02-automation/07-artifacts/screenshots/guest_20260623_103052/02_robot_verification_skipped.png",
+      "sha256": "6db6571137ee15c33ebfdf42839b44f9384a6520b12fb72544e283ac9ff6a651",
+      "sizeBytes": 36659
+    },
+    {
+      "kind": "screenshot",
+      "path": "automation/website/login-registration/run-160-20260624-173611/screenshots/guest_20260623_103052/03_guest_submit_without_verification.png",
+      "sourcePath": "D:/Workspace/west-kowloon/02-automation/07-artifacts/screenshots/guest_20260623_103052/03_guest_submit_without_verification.png",
+      "sha256": "320b931aef0a8ed049295a53bab973f582ab4d7f08528f27758a833176810a36",
+      "sizeBytes": 36702
+    }
+  ],
+  "gate": {
+    "status": "FAIL",
+    "trusted": false,
+    "blockingIssues": [
+      "build/version is required"
+    ],
+    "warnings": [
+      "no log file was promoted"
+    ],
+    "checkedAt": "2026-06-24T09:36:11Z"
+  }
+}

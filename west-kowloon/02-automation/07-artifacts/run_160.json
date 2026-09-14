@@ -1,0 +1,33 @@
+[
+{"keyword": "Feature", "name": "Website API+UI mixed validation - registered login", "tags": [], "location": "01-features/api_ui_mixed/antank_api_first_ui.feature:13", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Website API+UI mixed ticketing order cancellation", "tags": [], "location": "01-features/api_ui_mixed/antank_api_ui_mixed_order.feature:13", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Website Bind Contact retired for first-version scope", "tags": [], "location": "01-features/ui_e2e/antank_bind_contact.feature:12", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Website \u4fee\u6539\u5bc6\u7801 / Change Password (SIT-TC-WEB-AUTH-088 .. 093)", "tags": [], "location": "01-features/ui_e2e/antank_change_password.feature:15", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Documented-only registration / login cases (no automation)", "tags": [], "location": "01-features/ui_e2e/antank_documented_na.feature:34", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Documented-only cookies cases (no automation)", "tags": [], "location": "01-features/ui_e2e/antank_documented_na_cookies.feature:9", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Documented-only home cases (no automation)", "tags": [], "location": "01-features/ui_e2e/antank_documented_na_home.feature:9", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Documented-only seat cases (no automation)", "tags": [], "location": "01-features/ui_e2e/antank_documented_na_seat.feature:9", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Documented-only tkt cases (no automation)", "tags": [], "location": "01-features/ui_e2e/antank_documented_na_tkt.feature:9", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Website \u767b\u5f55 / Login \u2014 password mode (SIT-TC-WEB-AUTH-009-012, 026, 031, 048-050, 077)", "tags": [], "location": "01-features/ui_e2e/antank_email_login.feature:28", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Website \u5fd8\u8bb0\u5bc6\u7801 / Forgot password (SIT-TC-WEB-AUTH-015, 016, 033)", "tags": [], "location": "01-features/ui_e2e/antank_forgot_password.feature:16", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Website \u6e38\u5ba2\u767b\u5f55 / Guest login (SIT-TC-WEB-AUTH-021, 022, 023, 025)", "tags": [], "location": "01-features/ui_e2e/antank_guest_login.feature:14", "status": "passed", "elements": [{"type": "scenario", "keyword": "Scenario", "name": "SIT-TC-WEB-AUTH-022 Failed robot verification blocks guest login", "tags": ["ui", "guest"], "location": "01-features/ui_e2e/antank_guest_login.feature:25", "steps": [{"keyword": "Given", "step_type": "given", "name": "the Website guest-login panel is open", "location": "01-features/ui_e2e/antank_guest_login.feature:26", "match": {"location": "01-features/steps/antank_guest_login_steps.py:30", "arguments": []}, "result": {"status": "passed", "duration": 5.574690818786621}}, {"keyword": "When", "step_type": "when", "name": "I continue as guest without completing the robot verification", "location": "01-features/ui_e2e/antank_guest_login.feature:27", "match": {"location": "01-features/steps/antank_guest_login_steps.py:76", "arguments": []}, "result": {"status": "passed", "duration": 0.2617800235748291}}, {"keyword": "Then", "step_type": "then", "name": "guest login is blocked", "location": "01-features/ui_e2e/antank_guest_login.feature:28", "match": {"location": "01-features/steps/antank_guest_login_steps.py:86", "arguments": []}, "result": {"status": "passed", "duration": 0.00026297569274902344}}], "status": "passed"}]},
+
+{"keyword": "Feature", "name": "Website \u6e38\u5ba2\u8f6c\u4f1a\u5458 / Guest-to-Member conversion (SIT-TC-WEB-AUTH-100 .. 109)", "tags": [], "location": "01-features/ui_e2e/antank_guest_to_member.feature:16", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Website \u6ce8\u518c / Native registration (SIT-TC-WEB-AUTH-001-006, 008, 029-030, 042, 044, 045, 057)", "tags": [], "location": "01-features/ui_e2e/antank_registration.feature:27", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Website \u4f1a\u8bdd\u4e0e\u754c\u9762 / Session & UI (SIT-TC-WEB-AUTH-013, 027, 028)", "tags": [], "location": "01-features/ui_e2e/antank_session_ui.feature:10", "status": "skipped"},
+
+{"keyword": "Feature", "name": "Website \u7b2c\u4e09\u65b9\u767b\u5f55 / Third-party login + Link Your Account binding (SIT-TC-WEB-AUTH-017, 018, 059-063, 078-087)", "tags": [], "location": "01-features/ui_e2e/antank_third_party_login.feature:36", "status": "skipped"}
+]

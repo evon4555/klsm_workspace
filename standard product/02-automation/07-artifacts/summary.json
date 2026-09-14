@@ -1,0 +1,11 @@
+{
+  "started_at": "2026-07-16T12:18:56Z",
+  "finished_at": "2026-07-16T12:18:59Z",
+  "duration_seconds": 0.0,
+  "env": "local",
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "skipped": 0,
+  "errors": 0
+}

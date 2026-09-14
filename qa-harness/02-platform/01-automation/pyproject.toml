@@ -1,0 +1,117 @@
+[project]
+name = "test-automation"
+version = "0.1.0"
+description = "Test Automation scaffold (behave BDD + api/web/app + allure)"
+readme = "README.md"
+requires-python = ">=3.10"
+
+# ---------------------------------------------------------------------------
+# Core runtime dependencies -- installed for all test types.
+# ---------------------------------------------------------------------------
+dependencies = [
+  # Test runner -- plain pytest for API / app tests; Behave handles BDD web tests.
+  "pytest>=8.0.0",
+
+  # Allure reporting adapter -- generates JSON reports consumed by `allure serve`.
+  "allure-pytest>=2.13.2",
+
+  # Settings / data validation -- reads env vars and .env files into typed objects.
+  "pydantic>=2.7.0",
+  "pydantic-settings>=2.2.1",
+
+  # .env file loader -- loads envs/.env.<ENV> at startup.
+  "python-dotenv>=1.0.1",
+
+  # Structured logging -- replaces the standard logging module.
+  "loguru>=0.7.0",
+
+  # BDD framework -- run with `behave` or `behave features/<name>.feature`.
+  # Feature files live in features/; step definitions in features/steps/.
+  "behave>=1.2.6",
+
+  # AES encryption -- used by project adapters that must mirror encrypted login flows.
+  "pycryptodome>=3.20.0",
+
+  # OCR captcha solver -- used by project adapters that must read captcha images.
+  "ddddocr>=1.4.0",
+
+  # YAML reader -- config/users.yml.
+  "PyYAML>=6.0",
+
+  # HTTP client -- used by project delivery tools and dashboard backend.
+  "requests>=2.32.0",
+
+  # Excel reader/writer -- xlsx test case files, used by qa-system validators
+  # and by tools/update_evidence.py for embedding screenshots in cells.
+  "openpyxl>=3.1.0",
+]
+
+# ---------------------------------------------------------------------------
+# CLI shortcuts -- installed as executable scripts by pip.
+# Usage: ta-run-api / ta-run-web / ta-run-app
+# ---------------------------------------------------------------------------
+[project.scripts]
+ta-run-api    = "test_automation.cli:main_api"      # runs behave --tags=@api
+ta-run-web    = "test_automation.cli:main_web"      # runs behave --tags=@hybrid,@ui
+ta-run-app    = "test_automation.cli:main_app"      # runs pytest -m app
+ta-run-all    = "test_automation.cli:main_all"      # runs all behave scenarios
+
+# ---------------------------------------------------------------------------
+# Optional dependency groups -- install only what you need:
+#   pip install -e ".[web]"   for browser tests
+#   pip install -e ".[app]"   for mobile/Appium tests
+# ---------------------------------------------------------------------------
+[project.optional-dependencies]
+
+# Playwright -- browser automation used by Behave web scenarios.
+# Managed directly in features/environment.py (no pytest fixtures needed).
+# After install, also run: playwright install chromium
+web = [
+  "playwright>=1.44.0",
+]
+
+# Appium client -- mobile app test automation (Android / iOS).
+app = [
+  "Appium-Python-Client>=4.0.0",
+]
+
+# Dashboard backend -- FastAPI/SQLAlchemy/Locust stack.
+# Use on machines (incl. servers) that run dashboard/backend/main.py.
+# Mirrors dashboard/backend/requirements.txt.
+dashboard = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.30.0",
+  "sqlalchemy>=2.0.0",
+  "websockets>=12.0",
+  "httpx>=0.27.0",
+  "locust>=2.32.0",
+  "prometheus-client>=0.20.0",
+]
+
+# ---------------------------------------------------------------------------
+# pytest configuration (used for API and app tests; BDD tests use behave.ini)
+# ---------------------------------------------------------------------------
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests/app", "tests/web"]   # platform self-tests only; project API tests run from project automation
+addopts   = "-ra -s"
+
+# Custom markers -- decorate tests with @pytest.mark.<name> to filter runs.
+markers = [
+  # NOTE: BDD scenario tags (@hybrid, @ui, @api, project tags) live in .feature files
+  # and are filtered via Behave CLI (e.g. behave --tags=@hybrid).
+  # The markers below are for the remaining plain pytest tests only.
+  "app: Mobile app tests (appium)",
+  "web: Browser UI tests (playwright)",
+  "slow: Slow tests",
+]
+
+# ---------------------------------------------------------------------------
+# Build system -- uses hatchling to build the src/ layout as a wheel.
+# ---------------------------------------------------------------------------
+[build-system]
+requires      = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/test_automation"]

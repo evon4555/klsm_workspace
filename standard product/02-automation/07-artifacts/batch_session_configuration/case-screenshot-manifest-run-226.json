@@ -1,0 +1,154 @@
+{
+  "schema": "case-screenshot-manifest/v1",
+  "project": "standard product",
+  "suite": "batch_session_configuration",
+  "run_id": "226",
+  "artifact_root": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration",
+  "created_at": "2026-07-20T14:24:01+08:00",
+  "updated_at": "2026-07-20T14:25:37+08:00",
+  "cases": {
+    "SIT-TC-STD-CONFIG-013": {
+      "case_id": "SIT-TC-STD-CONFIG-013",
+      "screenshots": [
+        {
+          "label": "mixed-api-call-summary",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "evidence_json_relative_path": "run-226/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "Remaining row changes through the API action; deleted preview row stays unchanged.",
+            "message": "API setup/action/readback passed. Final user-facing check is captured in the following UI screenshot."
+          },
+          "captured_at": "2026-07-20T14:24:00+08:00"
+        },
+        {
+          "label": "mixed-final-ui-assertion",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-013/02-mixed-final-ui-assertion.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-013/02-mixed-final-ui-assertion.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/mixed-row-exclusion-ui-evidence.png",
+          "captured_at": "2026-07-20T14:24:12+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-013 Verify that deleting a row from the preview excludes that session from submission",
+      "feature": "Batch Session Configuration API plus UI mixed automation",
+      "tags": [
+        "batch_session_configuration",
+        "mixed"
+      ],
+      "api_evidence": [
+        {
+          "label": "mixed-api-call-summary",
+          "kind": "api-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.png",
+          "evidence_json": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "evidence_json_relative_path": "run-226/SIT-TC-STD-CONFIG-013/01-mixed-api-call-summary.json",
+          "assertion": {
+            "result": "PASS",
+            "logic": "Remaining row changes through the API action; deleted preview row stays unchanged.",
+            "message": "API setup/action/readback passed. Final user-facing check is captured in the following UI screenshot."
+          },
+          "captured_at": "2026-07-20T14:24:00+08:00"
+        }
+      ],
+      "has_screenshot": true,
+      "has_api_evidence": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T14:24:13+08:00"
+    },
+    "SIT-TC-STD-CONFIG-001": {
+      "case_id": "SIT-TC-STD-CONFIG-001",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T14:24:28+08:00"
+        },
+        {
+          "label": "ui-batch-operation-menu",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-batch-operation-menu.png",
+          "captured_at": "2026-07-20T14:24:29+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-001 Verify that an admin user can open the session batch operation menu after selecting sessions",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T14:24:29+08:00"
+    },
+    "SIT-TC-STD-CONFIG-012": {
+      "case_id": "SIT-TC-STD-CONFIG-012",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T14:24:51+08:00"
+        },
+        {
+          "label": "ui-target-group-required",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-target-group-required.png",
+          "captured_at": "2026-07-20T14:24:55+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-012 Verify that pre-generation is blocked when a required target value is missing",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T14:24:55+08:00"
+    },
+    "SIT-TC-STD-CONFIG-014": {
+      "case_id": "SIT-TC-STD-CONFIG-014",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T14:25:19+08:00"
+        },
+        {
+          "label": "ui-preview-return-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-return-before-close.png",
+          "captured_at": "2026-07-20T14:25:23+08:00"
+        },
+        {
+          "label": "ui-preview-close-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-226/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "relative_path": "run-226/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-close-before-close.png",
+          "captured_at": "2026-07-20T14:25:37+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-014 Verify that canceling or closing the preview does not save changes",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T14:25:37+08:00"
+    }
+  }
+}

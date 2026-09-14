@@ -1,0 +1,39 @@
+{
+  "schema": "case-screenshot-manifest/v1",
+  "project": "standard product",
+  "suite": "batch_session_configuration",
+  "run_id": "220",
+  "artifact_root": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration",
+  "created_at": "2026-07-20T14:01:13+08:00",
+  "updated_at": "2026-07-20T14:01:15+08:00",
+  "cases": {
+    "SIT-TC-STD-CONFIG-001": {
+      "case_id": "SIT-TC-STD-CONFIG-001",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-220/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-220/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-20T14:01:13+08:00"
+        },
+        {
+          "label": "ui-batch-operation-menu",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-220/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "relative_path": "run-220/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-batch-operation-menu.png",
+          "captured_at": "2026-07-20T14:01:15+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-001 Verify that an admin user can open the session batch operation menu after selecting sessions",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-20T14:01:15+08:00"
+    }
+  }
+}

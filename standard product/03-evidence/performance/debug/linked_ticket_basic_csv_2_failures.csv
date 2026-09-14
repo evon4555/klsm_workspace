@@ -1,0 +1,10 @@
+Method,Name,Error,Occurrences,First Seen,Last Seen
+TXN,01 - Prepare Clean Cart,RuntimeError('tradeNo not found'),4,2026-07-21T06:04:54Z,2026-07-21T06:05:01Z
+POST,Add Seat Item - linked seat,CatchResponseError('addSeatItems HTTP status is not 200: 401'),3,2026-07-21T06:04:56Z,2026-07-21T06:05:01Z
+POST,Get Cart Number,CatchResponseError('HTTP 401'),4,2026-07-21T06:04:54Z,2026-07-21T06:05:01Z
+POST,Add Show Item - linked admission,CatchResponseError('addShowItems HTTP status is not 200: 401'),4,2026-07-21T06:04:54Z,2026-07-21T06:05:01Z
+POST,Cancel Show Ticket,CatchResponseError('Cancel Show Ticket HTTP status is not 200: 401'),4,2026-07-21T06:04:54Z,2026-07-21T06:05:01Z
+POST,Cancel Seat Ticket,CatchResponseError('Cancel Seat Ticket HTTP status is not 200: 401'),4,2026-07-21T06:04:54Z,2026-07-21T06:05:01Z
+TXN,02 - Add / Remove Linked Ticket project,RuntimeError('Add Show Item failed'),3,2026-07-21T06:04:56Z,2026-07-21T06:05:01Z
+POST,Cancel Seat Ticket - linked seat,CatchResponseError('Cancel Seat Ticket - linked seat HTTP status is not 200: 401'),3,2026-07-21T06:04:56Z,2026-07-21T06:05:01Z
+POST,Cancel Show Ticket - linked admission,CatchResponseError('Cancel Show Ticket - linked admission HTTP status is not 200: 401'),3,2026-07-21T06:04:56Z,2026-07-21T06:05:01Z

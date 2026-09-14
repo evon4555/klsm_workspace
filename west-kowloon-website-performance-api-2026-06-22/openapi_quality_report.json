@@ -1,0 +1,2807 @@
+{
+  "total_operations": 300,
+  "by_evidence_status": {
+    "observed": 60,
+    "registeredOnly": 10,
+    "staticOnly": 230
+  },
+  "by_schema_status": {
+    "observedResponseSample": 58,
+    "requestShapeOnly": 8,
+    "schemaUnknown": 234
+  },
+  "by_load_test_level": {
+    "Do Not Load Test": 202,
+    "Ready": 25,
+    "Scenario Ready": 30,
+    "Smoke First": 43
+  },
+  "schema_unknown_operations": [
+    {
+      "method": "GET",
+      "path": "/ucenter/getCaptchaId.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/member/bindEmail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/member/bindMobile.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/ucenter/member/getUpHeadToken.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/ucenter/openapi/openlogin/getAuthUrl.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/openapi/openlogin/pollResult.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/createAndLoginWithBindEmail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/createAndLoginWithBindMobile.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/ucenter/rest/logout.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/logout.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/sendBindMsg.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/sendEmailDynamic.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/campaign/getCachedCampaign.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/campaign/getChargeType.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/campaign/order/getCampaignOrderConstant.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/address/getMemberAddressById.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/address/remove.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/address/save.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/campaign/approval/approvalDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/campaign/approval/cancel.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/approval/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/certification/getVerifyType.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/clearMember/checkCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/clearMember/checkCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/clearMember/confirm.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/clearMember/reasonList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/clearMember/sendCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/clearMember/sendCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/clearMember/validateWay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/clearMember/validateWay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/common/getFreightByArea.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/coupon/getByStatus.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/coupon/orderDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/donation/addDonation.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/donation/cancelDonation.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/donation/getDonationConfig.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/favorites/deleteFavoriteById.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/favorites/saveFavorites.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/general/getShowTicketInfo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/getPaymentGatewayList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/getPaymentGatewayList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/mall/getFreightByArea.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/memberRemindEvent/list.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/memberRemindEvent/save.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/activeMembership.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/activeMembershipWithPersionInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/bindPerson/acceptBind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/bindPerson/startBind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/cancelOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/getMembershipDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/getMembershipEncode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/getMembershipPersonEncode.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/getOrderDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/getOrderList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/gotoPay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/sendActiveEmail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/sendActiveMobile.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/transfer/acceptTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/transfer/listTransferRecords.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/transfer/startTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membershiporder/refund/applay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/partnerMember/available/list.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/partnerMember/identity/bind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/partnerMember/identity/list.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/partnerMember/identity/unbind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/removeCertification.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/subscription/record/v2/save.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/toggleSelf.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/transfer/pageList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/wxMsg/cancle/subscribe/schedule/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/wxMsg/subscribe/schedule/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/campaign/order/cancelOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/order/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/order/orderDetail.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/order/pageList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/order/pay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/order/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/order/discount/cancelDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/order/discount/confirmDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/order/discount/getDiscountRepo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/order/discount/useDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/order/discount/usePoint.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/order/renewPayOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/order/budgetTicketsRefundPlan.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/order/getTicketInfo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/order/refundOrderDetails.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/cancelOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/orderDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/pay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/repeatedPayOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/updateContact.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/updateDelivery.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/updateTransport.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/order/budgetTicketsRefundPlan.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/order/changeOrderCerts.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/order/orderDetail.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/pay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/refundOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/refundOrderDetails.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/order/saveOutOfStockRegistration.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/updateShowOrderContactName.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/updateShowOrderExpressFee.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/updateShowOrderTransport.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/autoLock.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/cancelOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/changeOrderCerts.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/createOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/detail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/payOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/refundOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/unLockSeat.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/updateTicketOrderContactName.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/updateTicketOrderExpressFee.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/updateTicketOrderTransport.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/adinfo/getAdContentByIds.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/common/getCityList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/common/getCountryAllList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/common/getCountyList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/common/getProvinceAllList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/common/getProvinceList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/common/getServerTime.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/common/prepareUpload.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/dynamicvalue/getDynamicValueListByField.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/favorites/memberFavoritesCategory.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/getCaptchaId.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/mall/getCulturalProductDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/membership/bindPerson/getBind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/membership/getDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/membership/transfer/getTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/wxMsg/schedule/v2/remind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/cancel.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/cart/cancelCartItem.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/cart/cancelCartItemsBySession.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/cancelPackOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/clearShippingInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/confirmCart.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/addPromoCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/cancel.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/confirm.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/getRepo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/removePromoCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/use.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/usePoint.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/validatePromoCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/getPackOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setContactInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setDonation.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setShippingInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setShippingInfoBySubOrders.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setSingleOrderCert.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/show/addShowItems.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/ticket/addSeatItems.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/ticket/autoAddSeatItems.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/ticket/changeSeatPack.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/ticket/cleanSeatPack.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/updateItemCert.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/upsertCartCert.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/addon/addonSplicing.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/addon/createAddonCulturalOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/addon/getAddonDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/addon/getAvaiableAddonProductList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/getChangeDetailInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/getContainer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/getOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/preCreate.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/selectSeats.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/combo/options.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/date.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/dateListWithSellOut.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/discount/addItemToRepoByCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/discount/cancelDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/discount/confirmDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/discount/getDiscountRepo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/discount/removeItemFromRepoByCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/discount/useDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/discount/usePoint.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/eticketTemplate/findByProgram.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/transfer/acceptTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/transfer/startTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/addon/addonSplicing.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/addon/createAddonCulturalOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/addon/getAddonDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/addon/getAvaiableAddonProductList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/getContainer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/getOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/getSeatInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/preCreate.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/selectSeats.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/addItemToRepoByCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/cancelDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/discount/confirmDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/discount/getDiscountRepo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/removeItemFromRepoByCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/useDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/usePoint.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/getAvailableSeats2.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/getGeneralAreaStats.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/getScheduleInfo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/getSchedulePrices.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/getSeatImages.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/getSpecialSeatEnableConfig.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/packorder/activeOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/packorder/payOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/scheduleDateList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/addPackDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/cancelPackDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/cancelPackOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/computeDiscount.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/confirmOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/createOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/getOrder.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/getSelected.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/seasonpack/processLastOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/updateContact.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/transfer/acceptTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/transfer/startTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/wxMsg/cancle/subscribe/show/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/wxMsg/subscribe/show/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/show/combo/getShowTicketTypes.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/show/combo/listBydate.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/show/supportReserveProgramShowList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/show/transfer/getTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/stand/program/show/countdown.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/ticket/program/getVenueProgramCount.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/ticket/program/v2/getHomeCountdownProgramList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/ticket/seasonpack/detail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/ticket/seasonpack/getSchedules.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/ticket/supportReserveProgramScheduleList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/ticket/transfer/getTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/wxMsg/show/v2/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    }
+  ],
+  "static_only_operations": [
+    {
+      "method": "POST",
+      "path": "/ucenter/guest/createAndLogin.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/member/bindEmail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/member/bindMobile.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/member/bindWxUserInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/ucenter/member/getUpHeadToken.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/ucenter/openapi/openlogin/getAuthUrl.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/openapi/openlogin/pollResult.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/createAndLoginWithBindEmail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/createAndLoginWithBindMobile.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/logout.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/sendBindMsg.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/ucenter/rest/sendEmailDynamic.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/campaign/getCachedCampaign.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/campaign/getChargeType.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/campaign/order/getCampaignOrderConstant.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/address/getMemberAddressById.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/address/remove.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/address/save.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/campaign/approval/approvalDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/campaign/approval/cancel.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/approval/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/certification/getVerifyType.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/clearMember/checkCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/clearMember/sendCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/clearMember/validateWay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/common/getDynamicCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/common/getFreightByArea.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/coupon/getByStatus.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/coupon/orderDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/donation/addDonation.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/donation/cancelDonation.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/donation/getDonationConfig.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/favorites/deleteFavoriteById.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/favorites/saveFavorites.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/general/getShowTicketInfo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/getPaymentGatewayList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/getPaymentGatewayList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/mall/getFreightByArea.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/memberRemindEvent/list.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/memberRemindEvent/save.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/activeMembership.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/activeMembershipWithPersionInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/bindPerson/acceptBind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/bindPerson/startBind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/cancelOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/getMembershipDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/getMembershipEncode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/getMembershipPersonEncode.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/getOrderDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/getOrderList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/gotoPay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/sendActiveEmail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/sendActiveMobile.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/transfer/acceptTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/transfer/listTransferRecords.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/transfer/startTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membershiporder/refund/applay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/partnerMember/available/list.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/partnerMember/identity/bind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/partnerMember/identity/list.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/partnerMember/identity/unbind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/removeCertification.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/subscription/record/v2/save.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/toggleSelf.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/transfer/pageList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/wxMsg/cancle/subscribe/schedule/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/wxMsg/subscribe/schedule/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/campaign/order/cancelOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/order/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/order/orderDetail.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/order/pageList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/campaign/order/pay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/order/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/order/discount/cancelDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/order/discount/confirmDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/order/discount/getDiscountRepo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/order/discount/useDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/membership/order/discount/usePoint.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/membership/order/renewPayOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/order/budgetTicketsRefundPlan.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/order/getTicketInfo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/order/refundOrderDetails.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/cancelOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/orderDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/pay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/repeatedPayOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/updateContact.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/updateDelivery.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/combo/order/updateTransport.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/order/budgetTicketsRefundPlan.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/order/changeOrderCerts.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/order/orderDetail.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/pay.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/refundOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/refundOrderDetails.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/order/saveOutOfStockRegistration.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/updateShowOrderContactName.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/updateShowOrderExpressFee.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/order/updateShowOrderTransport.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/autoLock.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/cancelOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/changeOrderCerts.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/createOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/detail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/payOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/refundOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/order/unLockSeat.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/updateTicketOrderContactName.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/updateTicketOrderExpressFee.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/order/updateTicketOrderTransport.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/pay/cybersource/payment/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/sms/common/commonUpload.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/adinfo/getAdContentByIds.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/common/getCityList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/common/getCountryAllList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/common/getCountyList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/common/getProvinceAllList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/common/getProvinceList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/common/getServerTime.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/common/prepareUpload.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/dynamicvalue/getDynamicValueListByField.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/favorites/memberFavoritesCategory.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/getCaptchaId.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/mall/getCulturalProductDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/membership/bindPerson/getBind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/membership/getDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/membership/transfer/getTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/tools/qrcode.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/wxMsg/schedule/v2/remind.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/cancel.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/cart/cancelCartItem.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/cart/cancelCartItemsBySession.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/cancelPackOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/clearShippingInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/confirmCart.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/addPromoCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/cancel.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/confirm.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/getRepo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/removePromoCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/use.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/usePoint.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/discount/validatePromoCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/getPackOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setContactInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setDonation.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setShippingInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setShippingInfoBySubOrders.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/setSingleOrderCert.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/show/addShowItems.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/ticket/addSeatItems.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/ticket/autoAddSeatItems.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/ticket/changeSeatPack.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/ticket/cleanSeatPack.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/updateItemCert.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/cart/upsertCartCert.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/addon/addonSplicing.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/addon/createAddonCulturalOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/addon/getAddonDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/addon/getAvaiableAddonProductList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/getChangeDetailInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/getContainer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/getOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/preCreate.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/change/selectSeats.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/combo/options.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/date.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/dateListWithSellOut.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/discount/addItemToRepoByCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/discount/cancelDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/discount/confirmDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/discount/getDiscountRepo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/discount/removeItemFromRepoByCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/discount/useDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/discount/usePoint.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/show/eticketTemplate/findByProgram.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/transfer/acceptTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/show/transfer/startTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/addon/addonSplicing.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/addon/createAddonCulturalOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/addon/getAddonDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/addon/getAvaiableAddonProductList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/create.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/getContainer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/getOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/getSeatInfo.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/preCreate.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/change/selectSeats.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/addItemToRepoByCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/cancelDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/discount/confirmDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/discount/getDiscountRepo.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/removeItemFromRepoByCode.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/useDiscount.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/discount/usePoint.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/getGeneralAreaStats.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/getSeatImages.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/getSpecialSeatEnableConfig.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/packorder/activeOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/packorder/payOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/scheduleDateList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/addPackDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/cancelPackDetail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/cancelPackOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/computeDiscount.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/confirmOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/createOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/getOrder.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/getSelected.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/seasonpack/processLastOrder.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/ticket/seasonpack/updateContact.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/transfer/acceptTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/member/ticket/transfer/startTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/wxMsg/cancle/subscribe/show/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/member/wxMsg/subscribe/show/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/show/combo/getShowTicketTypes.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/show/combo/listBydate.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/show/supportReserveProgramShowList.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/show/transfer/getTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/stand/program/show/countdown.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/ticket/program/getVenueProgramCount.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/ticket/program/v2/getHomeCountdownProgramList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/ticket/seasonpack/detail.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/ticket/seasonpack/getSchedules.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/ticket/supportReserveProgramScheduleList.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    },
+    {
+      "method": "POST",
+      "path": "/thvendor/ticket/transfer/getTransfer.xhtml",
+      "load_test_level": "Do Not Load Test",
+      "risk_level": "high"
+    },
+    {
+      "method": "GET",
+      "path": "/thvendor/wxMsg/show/v2/remind.xhtml",
+      "load_test_level": "Smoke First",
+      "risk_level": "low"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+# ---------------------------------------------------------------------------
+# qa-harness .gitignore
+#
+# Goal: each contributor clones this repo, runs bootstrap.ps1, and gets a
+# working local environment. Anything generated/regenerated locally lives
+# OUTSIDE git. Anything secret stays OUTSIDE git.
+# ---------------------------------------------------------------------------
+
+# --- Python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*$py.class
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+build/
+dist/
+.python-version
+
+# --- Virtual environments --------------------------------------------------
+# Each developer runs `python -m venv 02-platform/01-automation/.venv` themselves.
+.venv/
+02-platform/01-automation/.venv/
+venv/
+env/
+ENV/
+
+# --- Node / frontend -------------------------------------------------------
+# Each developer runs `npm install` in 02-platform/02-dashboard/frontend themselves.
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+.vite/
+dashboard/frontend/dist/
+02-platform/02-dashboard/frontend/dist/
+02-platform/02-dashboard/frontend/node_modules/
+
+# --- Secrets ---------------------------------------------------------------
+# Real credentials NEVER go in git, even on an internal repo.
+# Keep envs/.env.example as the template; copy it to .env.<env> locally.
+automation/envs/.env
+automation/envs/.env.*
+!automation/envs/.env.example
+02-platform/01-automation/envs/.env
+02-platform/01-automation/envs/.env.*
+!02-platform/01-automation/envs/.env.example
+
+# --- Large binary source documents -----------------------------------------
+# PRDs, functional specs, onboarding decks live locally + on SharePoint/OneDrive.
+# Keep .md / .png / .xlsx in source-documents/ since they're light and diff-able.
+**/01-source-documents/**/*.pdf
+**/01-source-documents/**/*.doc
+**/01-source-documents/**/*.docx
+**/01-source-documents/**/*.ppt
+**/01-source-documents/**/*.pptx
+
+# --- Test execution evidence screenshots -----------------------------------
+# Each test run produces a fresh batch of screenshots; they are already
+# embedded into the test-cases-*.xlsx via update_evidence.py, so the
+# delivery package keeps the evidence even when the raw PNGs aren't in git.
+# A .gitkeep in each evidence/ dir preserves the structure for new clones.
+**/05-execution/evidence/*.png
+**/05-execution/evidence/*.jpg
+**/05-execution/evidence/*.jpeg
+**/05-execution/evidence/*.gif
+
+# --- Local databases / runtime data ----------------------------------------
+# dashboard.db is per-developer test history; regenerated as tests run.
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# --- Test outputs / artifacts ----------------------------------------------
+# Per-run outputs: screenshots, allure results, logs, locust reports.
+automation/artifacts/
+02-platform/01-automation/artifacts/
+dashboard/logs/
+02-platform/02-dashboard/logs/
+artifacts/
+06-artifacts/
+allure-results/
+allure-report/
+locust_report*.html
+*.locust.log
+
+# --- Behave / pytest logs --------------------------------------------------
+behave.log
+pytest.log
+*.log
+
+# --- Backup files (created by writeback_results.py / update_evidence.py) ---
+*.bak
+*.bak-*
+*~
+
+# --- Excel lock files ------------------------------------------------------
+~$*.xlsx
+~$*.docx
+~$*.pptx
+
+# --- Observability runtime (Windows-native infra) --------------------------
+# Prometheus/Loki/Grafana store their own data dirs under infra/ when running.
+infra/prometheus/data/
+infra/loki/data/
+infra/grafana/data/
+infra/*/wal/
+infra/*.exe
+02-platform/03-infra/prometheus/data/
+02-platform/03-infra/loki/data/
+02-platform/03-infra/grafana/data/
+02-platform/03-infra/*/wal/
+02-platform/03-infra/*.exe
+
+# --- OS junk ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# --- IDE / editor ----------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~.nib
+.claude/
+
+# --- Misc scratch / one-off output -----------------------------------------
+debug.log
+pretty.output
+scratch/
+tmp/
+/evidence/
+automation/tools/_*.py
+02-platform/01-automation/03-tools/_*.py
+02-platform/01-automation/tools/_*.py
+
+# --- Retired compatibility aliases -----------------------------------------
+# The numbered workspace directories are now the physical tracked layout.
+# Retired aliases remain ignored if they are recreated locally by old tooling.
+/automation/
+/dashboard/
+/infra/
+/qa-system/
+/platform/
+/system/
+/company/
+/requirements/*/
+
+# Retired project workspace aliases and module change junctions.
+/company/
+/requirements/*/01-requirements/
+/requirements/*/02-automation/
+/requirements/*/03-evidence/
+/requirements/*/automation/
+/requirements/*/evidence/
+/requirements/*/requirements/
+/requirements/*/01-source-documents/01-it-pmo/
+/requirements/*/01-source-documents/02-templates/
+/requirements/*/Website/01-source-documents/01-mindmap/
+/requirements/*/Website/01-source-documents/02-prd/
+/requirements/*/Website/03-changes/
+/requirements/*/Website/02-modules/*/01-changes/*/
+
+# Imported assistant memory may contain historical credential examples or
+# machine-specific personal notes. Promote sanitized lessons into top-level
+# memory files instead of tracking the raw import archive.
+/memory/claude-import/
+/05-memory/claude-import/

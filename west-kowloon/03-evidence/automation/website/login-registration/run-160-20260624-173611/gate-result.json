@@ -1,0 +1,11 @@
+{
+  "status": "FAIL",
+  "trusted": false,
+  "blockingIssues": [
+    "build/version is required"
+  ],
+  "warnings": [
+    "no log file was promoted"
+  ],
+  "checkedAt": "2026-06-24T09:36:11Z"
+}

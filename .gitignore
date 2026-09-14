@@ -1,0 +1,89 @@
+# Workspace-level Git policy
+# Keep generated environments, caches, raw run output, and credentials out of
+# the top-level backup repository. Source documents, code, Markdown, and
+# structured evidence remain trackable unless a narrower rule below applies.
+
+# Repository metadata (qa-harness keeps its old repository separately)
+**/.git/
+.git-nested-backup-*/
+
+# Python / test caches and local environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+.tox/
+.nox/
+.venv/
+venv/
+env/
+ENV/
+
+# JavaScript dependencies and build output
+node_modules/
+dist/
+build/
+.vite/
+.next/
+.parcel-cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Secrets and local configuration
+**/.env
+**/.env.*
+!**/.env.example
+**/*.local.properties
+**/*.local.yml
+**/*.local.yaml
+**/*credentials*.json
+**/*secret*.json
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/*.har
+
+# Runtime databases, logs, and scratch files
+*.db
+*.db-*
+*.db-journal
+*.sqlite
+*.sqlite3
+*.log
+*.tmp
+*.bak
+*.bak-*
+*~
+scratch/
+tmp/
+output/
+outputs/
+.playwright-cli/
+
+# Raw execution screenshots may contain credentials, CAPTCHA, or tokens.
+# Structured reports and source evidence remain included.
+**/07-artifacts/**/*.png
+**/07-artifacts/**/*.jpg
+**/07-artifacts/**/*.jpeg
+**/07-artifacts/**/*.gif
+**/*credentials*.png
+**/*captcha*.png
+**/*token*.png
+
+# OS / IDE files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+.claude/
+
+# GitHub rejects blobs over 100 MB; keep this source deck in local/SharePoint
+# storage unless Git LFS is explicitly configured.
+qa-harness/03-context/company/01-source-documents/onboarding/2025Q3新员工培训20250818.pptx

@@ -1,0 +1,12 @@
+apiVersion: 1
+
+providers:
+  - name: "Test Automation"
+    orgId: 1
+    folder: ""
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: $QA_GRAFANA_DASHBOARDS
+      foldersFromFilesStructure: false

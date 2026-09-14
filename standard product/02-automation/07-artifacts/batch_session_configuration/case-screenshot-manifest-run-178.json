@@ -1,0 +1,259 @@
+{
+  "schema": "case-screenshot-manifest/v1",
+  "project": "standard product",
+  "suite": "batch_session_configuration",
+  "run_id": "178",
+  "artifact_root": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration",
+  "created_at": "2026-07-17T21:05:42+08:00",
+  "updated_at": "2026-07-17T21:07:04+08:00",
+  "cases": {
+    "SIT-TC-STD-CONFIG-003": {
+      "case_id": "SIT-TC-STD-CONFIG-003",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-003 Verify that seat-selection sessions can be batch-updated to a new saleable ticket group",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:42+08:00"
+    },
+    "SIT-TC-STD-CONFIG-004": {
+      "case_id": "SIT-TC-STD-CONFIG-004",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-004 Verify that admission-ticket sessions can be batch-updated to a new saleable ticket group",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:42+08:00"
+    },
+    "SIT-TC-STD-CONFIG-005": {
+      "case_id": "SIT-TC-STD-CONFIG-005",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-005 Verify that no-seat sessions can be batch-updated to a new saleable ticket group",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:43+08:00"
+    },
+    "SIT-TC-STD-CONFIG-006": {
+      "case_id": "SIT-TC-STD-CONFIG-006",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-006 Verify that seat-selection sessions can be batch-updated for calendar display",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:43+08:00"
+    },
+    "SIT-TC-STD-CONFIG-007": {
+      "case_id": "SIT-TC-STD-CONFIG-007",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-007 Verify that admission-ticket sessions can be batch-updated for calendar display",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:44+08:00"
+    },
+    "SIT-TC-STD-CONFIG-008": {
+      "case_id": "SIT-TC-STD-CONFIG-008",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-008 Verify that no-seat sessions can be batch-updated for calendar display",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:44+08:00"
+    },
+    "SIT-TC-STD-CONFIG-009": {
+      "case_id": "SIT-TC-STD-CONFIG-009",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-009 Verify that seat-selection sessions can be batch-updated for session-list display type",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:45+08:00"
+    },
+    "SIT-TC-STD-CONFIG-010": {
+      "case_id": "SIT-TC-STD-CONFIG-010",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-010 Verify that admission-ticket sessions can be batch-updated for session-list display type",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:45+08:00"
+    },
+    "SIT-TC-STD-CONFIG-011": {
+      "case_id": "SIT-TC-STD-CONFIG-011",
+      "screenshots": [],
+      "scenario": "SIT-TC-STD-CONFIG-011 Verify that no-seat sessions can be batch-updated for session-list display type",
+      "feature": "Batch Session Configuration real automation",
+      "tags": [
+        "api",
+        "batch_session_configuration"
+      ],
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:45+08:00"
+    },
+    "SIT-TC-STD-CONFIG-013": {
+      "case_id": "SIT-TC-STD-CONFIG-013",
+      "screenshots": [
+        {
+          "label": "mixed-row-exclusion-ui-evidence",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-013/01-mixed-row-exclusion-ui-evidence.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-013/01-mixed-row-exclusion-ui-evidence.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/mixed-row-exclusion-ui-evidence.png",
+          "captured_at": "2026-07-17T21:05:51+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-013 Verify that deleting a row from the preview excludes that session from submission",
+      "feature": "Batch Session Configuration API plus UI mixed automation",
+      "tags": [
+        "batch_session_configuration",
+        "mixed"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-17T21:05:51+08:00"
+    },
+    "SIT-TC-STD-CONFIG-001": {
+      "case_id": "SIT-TC-STD-CONFIG-001",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-001/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-17T21:06:08+08:00"
+        },
+        {
+          "label": "ui-batch-operation-menu",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-001/02-ui-batch-operation-menu.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-batch-operation-menu.png",
+          "captured_at": "2026-07-17T21:06:09+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-001 Verify that an admin user can open the session batch operation menu after selecting sessions",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-17T21:06:09+08:00"
+    },
+    "SIT-TC-STD-CONFIG-002": {
+      "case_id": "SIT-TC-STD-CONFIG-002",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-no-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-002/01-ui-no-seat-no-session-rows.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-002/01-ui-no-seat-no-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-no-session-rows.png",
+          "captured_at": "2026-07-17T21:06:20+08:00"
+        },
+        {
+          "label": "ui-no-session-blocked",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-002/02-ui-no-session-blocked.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-002/02-ui-no-session-blocked.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-session-blocked.png",
+          "captured_at": "2026-07-17T21:06:23+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-002 Verify that batch operations cannot be started when no session is selected",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-17T21:06:23+08:00"
+    },
+    "SIT-TC-STD-CONFIG-012": {
+      "case_id": "SIT-TC-STD-CONFIG-012",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-012/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-17T21:06:36+08:00"
+        },
+        {
+          "label": "ui-target-group-required",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-012/02-ui-target-group-required.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-target-group-required.png",
+          "captured_at": "2026-07-17T21:06:39+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-012 Verify that pre-generation is blocked when a required target value is missing",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-17T21:06:39+08:00"
+    },
+    "SIT-TC-STD-CONFIG-014": {
+      "case_id": "SIT-TC-STD-CONFIG-014",
+      "screenshots": [
+        {
+          "label": "ui-no-seat-session-rows",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-014/01-ui-no-seat-session-rows.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-no-seat-session-rows.png",
+          "captured_at": "2026-07-17T21:06:51+08:00"
+        },
+        {
+          "label": "ui-preview-return-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-014/02-ui-preview-return-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-return-before-close.png",
+          "captured_at": "2026-07-17T21:06:54+08:00"
+        },
+        {
+          "label": "ui-preview-close-before-close",
+          "path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/run-178/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "relative_path": "run-178/SIT-TC-STD-CONFIG-014/03-ui-preview-close-before-close.png",
+          "legacy_path": "D:/Workspace/standard product/02-automation/07-artifacts/batch_session_configuration/ui-preview-close-before-close.png",
+          "captured_at": "2026-07-17T21:07:03+08:00"
+        }
+      ],
+      "scenario": "SIT-TC-STD-CONFIG-014 Verify that canceling or closing the preview does not save changes",
+      "feature": "Batch Session Configuration real UI automation",
+      "tags": [
+        "batch_session_configuration",
+        "ui"
+      ],
+      "has_screenshot": true,
+      "status": "passed",
+      "finished_at": "2026-07-17T21:07:04+08:00"
+    }
+  }
+}

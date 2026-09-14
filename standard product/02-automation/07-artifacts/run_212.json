@@ -1,0 +1,3 @@
+[
+{"keyword": "Feature", "name": "Batch Session Configuration API plus UI mixed automation", "tags": [], "location": "01-features/api_ui_mixed/batch_session_configuration_mixed.feature:1", "status": "skipped", "elements": [{"type": "scenario", "keyword": "Scenario", "name": "SIT-TC-STD-CONFIG-013 Verify that deleting a row from the preview excludes that session from submission", "tags": ["batch_session_configuration", "mixed"], "location": "01-features/api_ui_mixed/batch_session_configuration_mixed.feature:4", "steps": [], "status": "skipped"}]}
+]

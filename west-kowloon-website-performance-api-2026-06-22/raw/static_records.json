@@ -1,0 +1,4416 @@
+{
+  "POST /ucenter/member/globalConfig/telephoneCountryCodes.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/member/globalConfig/telephoneCountryCodes.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "POST /thvendor/member/clearMember/sendCode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/clearMember/sendCode.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "POST /thvendor/member/clearMember/checkCode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/clearMember/checkCode.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "GET /thvendor/member/clearMember/confirm.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/clearMember/confirm.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "GET /thvendor/member/clearMember/reasonList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/clearMember/reasonList.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "POST /thvendor/member/clearMember/validateWay.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/clearMember/validateWay.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "POST /ucenter/member/bindWxUserInfo.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/member/bindWxUserInfo.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {
+      "_front_end_data_object": "静态推断；需按微信绑定流程补字段"
+    },
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [],
+    "purpose": "绑定微信用户信息"
+  },
+  "GET /ucenter/member/getUpHeadToken.xhtml": {
+    "method": "GET",
+    "path": "/ucenter/member/getUpHeadToken.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [],
+    "purpose": "获取头像/图片上传 token"
+  },
+  "POST /pay/cybersource/payment/create.xhtml": {
+    "method": "POST",
+    "path": "/pay/cybersource/payment/create.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {
+      "_payment_payload": "静态推断；本次未走支付页，需支付流程抓包补完整字段"
+    },
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [],
+    "purpose": "创建 CyberSource 支付请求/支付参数"
+  },
+  "POST /ucenter/guest/createAndLogin.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/guest/createAndLogin.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {
+      "_front_end_data_object": "静态推断；需按实际游客登录/绑定流程补字段"
+    },
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [],
+    "purpose": "游客账号创建并登录"
+  },
+  "POST /thvendor/member/ticket/addon/getAvaiableAddonProductList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/addon/getAvaiableAddonProductList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/addon/getAvaiableAddonProductList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/addon/getAvaiableAddonProductList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/addon/createAddonCulturalOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/addon/createAddonCulturalOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/addon/createAddonCulturalOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/addon/createAddonCulturalOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/addon/addonSplicing.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/addon/addonSplicing.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/addon/addonSplicing.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/addon/addonSplicing.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/addon/getAddonDiscount.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/addon/getAddonDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/addon/getAddonDiscount.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/addon/getAddonDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/coupon/orderDetail.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/coupon/orderDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/mall/getCulturalProductDetail.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/mall/getCulturalProductDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/ad/getNewAdList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/ad/getNewAdList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/adinfo/getAdContentByIds.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/adinfo/getAdContentByIds.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/adinfo/getAdInfoById.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/adinfo/getAdInfoById.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/campaign/listCachedCampaign.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/campaign/listCachedCampaign.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/campaign/getCachedCampaign.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/campaign/getCachedCampaign.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/campaign/getChargeType.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/campaign/getChargeType.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/campaignLabel/listCampaignLabel.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/campaignLabel/listCampaignLabel.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/dynamicvalue/getDynamicValueListByField.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/dynamicvalue/getDynamicValueListByField.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/campaign/order/create.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/campaign/order/create.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/campaign/approval/create.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/campaign/approval/create.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/campaign/order/pageList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/campaign/order/pageList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/campaign/order/orderDetail.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/campaign/order/orderDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/campaign/approval/approvalDetail.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/campaign/approval/approvalDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/campaign/order/cancelOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/campaign/order/cancelOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/campaign/approval/cancel.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/campaign/approval/cancel.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/campaign/order/getCampaignOrderConstant.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/campaign/order/getCampaignOrderConstant.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/campaign/order/pay.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/campaign/order/pay.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/initTicketCart.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/initTicketCart.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/cart/getCartDetail.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/cart/getCartDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/getPackOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/getPackOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/show/addShowItems.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/show/addShowItems.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/ticket/addSeatItems.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/ticket/addSeatItems.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/ticket/autoAddSeatItems.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/ticket/autoAddSeatItems.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/cart/cancelCartItem.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/cart/cancelCartItem.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/cart/cancelCartItemsBySession.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/cart/cancelCartItemsBySession.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/cancel.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/cancel.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/cancelPackOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/cancelPackOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/updateItemCert.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/updateItemCert.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/upsertCartCert.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/upsertCartCert.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/ticket/changeSeatPack.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/ticket/changeSeatPack.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/ticket/cleanSeatPack.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/ticket/cleanSeatPack.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/confirmCart.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/confirmCart.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/setContactInfo.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/setContactInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/setDonation.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/setDonation.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/setSingleOrderCert.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/setSingleOrderCert.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/discount/getRepo.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/discount/getRepo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/discount/use.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/discount/use.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/discount/cancel.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/discount/cancel.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/discount/usePoint.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/discount/usePoint.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/discount/addPromoCode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/discount/addPromoCode.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/discount/removePromoCode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/discount/removePromoCode.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/discount/confirm.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/discount/confirm.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/discount/validatePromoCode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/discount/validatePromoCode.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/setShippingInfo.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/setShippingInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/setShippingInfoBySubOrders.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/setShippingInfoBySubOrders.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/cart/clearShippingInfo.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/cart/clearShippingInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/change/getOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/change/getOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/change/preCreate.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/change/preCreate.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/change/create.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/change/create.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/change/getContainer.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/change/getContainer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/change/selectSeats.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/change/selectSeats.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/change/getChangeDetailInfo.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/change/getChangeDetailInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/change/getOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/change/getOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/change/preCreate.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/change/preCreate.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/change/create.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/change/create.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/change/getContainer.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/change/getContainer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/change/selectSeats.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/change/selectSeats.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/change/getSeatInfo.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/change/getSeatInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/ticket/program/getHotProgramList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/ticket/program/getHotProgramList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/program/getCategoryList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/program/getCategoryList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/programcalendar/querySchedulesByDate.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/programcalendar/querySchedulesByDate.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/trans/program/getListByIds.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/trans/program/getListByIds.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/common/getCountryAllList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/common/getCountryAllList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/common/getProvinceList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/common/getProvinceList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/common/getProvinceAllList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/common/getProvinceAllList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/common/getCityList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/common/getCityList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/common/getCountyList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/common/getCountyList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/common/getServerTime.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/common/getServerTime.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/getStadiums.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/getStadiums.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/sendActiveEmail.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/sendActiveEmail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/sendActiveMobile.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/sendActiveMobile.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/getCaptchaId.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/getCaptchaId.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/ticket/program/v2/getHomeCountdownProgramList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/ticket/program/v2/getHomeCountdownProgramList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/donation/getDonationConfig.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/donation/getDonationConfig.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/donation/addDonation.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/donation/addDonation.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/donation/cancelDonation.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/donation/cancelDonation.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/common/getFreightByArea.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/common/getFreightByArea.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/common/getDynamicCode.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/common/getDynamicCode.xhtml",
+    "source": [
+      "current_spa_static_template",
+      "current_spa_static_template",
+      "current_spa_static"
+    ],
+    "query_params": {
+      "uuid": "${uuid}",
+      "needServiceTime": "true"
+    },
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发",
+      "静态模板路径展开；本次未必现场触发"
+    ],
+    "purpose": "获取电子票动态码"
+  },
+  "POST /thvendor/companyBaseInfo/getDisplayConfig.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/companyBaseInfo/getDisplayConfig.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/coupon/getMemberCouponsByStatus.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/coupon/getMemberCouponsByStatus.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/coupon/getByStatus.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/coupon/getByStatus.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/getGeneralAreaStats.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/getGeneralAreaStats.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/transfer/startTransfer.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/transfer/startTransfer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/show/transfer/getTransfer.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/show/transfer/getTransfer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/transfer/acceptTransfer.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/transfer/acceptTransfer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/transfer/startTransfer.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/transfer/startTransfer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/ticket/transfer/getTransfer.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/ticket/transfer/getTransfer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/transfer/acceptTransfer.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/transfer/acceptTransfer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/transfer/rule/times.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/transfer/rule/times.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/transfer/pageList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/transfer/pageList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/show/combo/entry/list.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/show/combo/entry/list.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/combo/options.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/combo/options.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/show/combo/listBydate.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/show/combo/listBydate.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/show/combo/getShowTicketTypes.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/show/combo/getShowTicketTypes.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/combo/order/create.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/combo/order/create.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/combo/order/pay.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/combo/order/pay.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/combo/order/updateContact.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/combo/order/updateContact.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/combo/order/updateDelivery.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/combo/order/updateDelivery.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/combo/order/updateTransport.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/combo/order/updateTransport.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/combo/order/orderDetail.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/combo/order/orderDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/combo/order/repeatedPayOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/combo/order/repeatedPayOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/combo/order/cancelOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/combo/order/cancelOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/getCaptchaId.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/getCaptchaId.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/rest/sendBindMsg.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/rest/sendBindMsg.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/rest/sendEmailDynamic.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/rest/sendEmailDynamic.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/rest/createAndLoginWithBindMobile.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/rest/createAndLoginWithBindMobile.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/rest/createAndLoginWithBindEmail.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/rest/createAndLoginWithBindEmail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/member/bindMobile.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/member/bindMobile.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/member/bindEmail.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/member/bindEmail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/rest/pcLoginByPass.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/rest/pcLoginByPass.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /ucenter/rest/getLogonInfo.xhtml": {
+    "method": "GET",
+    "path": "/ucenter/rest/getLogonInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /ucenter/openapi/openlogin/getAuthUrl.xhtml": {
+    "method": "GET",
+    "path": "/ucenter/openapi/openlogin/getAuthUrl.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/openapi/openlogin/pollResult.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/openapi/openlogin/pollResult.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /ucenter/rest/logout.xhtml": {
+    "method": "POST",
+    "path": "/ucenter/rest/logout.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/favorites/isFavorites.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/favorites/isFavorites.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/favorites/deleteFavoriteById.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/favorites/deleteFavoriteById.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/favorites/saveFavorites.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/favorites/saveFavorites.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/favorites/getFavoritesTotal.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/favorites/getFavoritesTotal.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/address/getMemberAddressList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/address/getMemberAddressList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/address/save.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/address/save.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/address/remove.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/address/remove.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/address/getMemberAddressById.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/address/getMemberAddressById.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/mall/getFreightByArea.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/mall/getFreightByArea.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/membership/getList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/membership/getList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/membership/getDetail.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/membership/getDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/order/create.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/order/create.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/getOrderDetail.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/getOrderDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/getPaymentGatewayList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/getPaymentGatewayList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/order/discount/getDiscountRepo.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/order/discount/getDiscountRepo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/order/discount/useDiscount.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/order/discount/useDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/order/discount/cancelDiscount.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/order/discount/cancelDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/order/discount/usePoint.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/order/discount/usePoint.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/order/discount/confirmDiscount.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/order/discount/confirmDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/gotoPay.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/gotoPay.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/cancelOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/cancelOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/activeMembership.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/activeMembership.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/getCertificationList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/getCertificationList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/saveCertification.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/saveCertification.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/removeCertification.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/removeCertification.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/certification/getVerifyType.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/certification/getVerifyType.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/toggleSelf.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/toggleSelf.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/activeMembershipWithPersionInfo.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/activeMembershipWithPersionInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/getOrderList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/getOrderList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/getMemberships.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/getMemberships.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/getMembershipDetail.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/getMembershipDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/getMembershipEncode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/getMembershipEncode.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/getMembershipPersonEncode.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/getMembershipPersonEncode.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/order/renewPayOrder.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/order/renewPayOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membershiporder/refund/applay.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membershiporder/refund/applay.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/transfer/startTransfer.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/transfer/startTransfer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/membership/transfer/getTransfer.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/membership/transfer/getTransfer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/transfer/acceptTransfer.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/transfer/acceptTransfer.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/transfer/listTransferRecords.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/transfer/listTransferRecords.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/membership/bindPerson/startBind.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/membership/bindPerson/startBind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/membership/bindPerson/getBind.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/membership/bindPerson/getBind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/membership/bindPerson/acceptBind.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/membership/bindPerson/acceptBind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/favorites/listFavorites.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/favorites/listFavorites.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/favorites/memberFavoritesCategory.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/favorites/memberFavoritesCategory.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/info/getMemberInfo.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/info/getMemberInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/record/getMemberRemainPointBeforeTime.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/record/getMemberRemainPointBeforeTime.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/partnerMember/available/list.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/partnerMember/available/list.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/partnerMember/identity/list.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/partnerMember/identity/list.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/partnerMember/identity/bind.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/partnerMember/identity/bind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/partnerMember/identity/unbind.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/partnerMember/identity/unbind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/getPaymentGatewayList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/getPaymentGatewayList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/record/listMemberPointReceiveRecord.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/record/listMemberPointReceiveRecord.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/program/promotion/coupon/list.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/program/promotion/coupon/list.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/program/promotion/member/list.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/program/promotion/member/list.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/program/promotion/activity/list.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/program/promotion/activity/list.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/program/promotion/package/ticket/list.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/program/promotion/package/ticket/list.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/ticket/seasonpack/detail.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/ticket/seasonpack/detail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/ticket/seasonpack/getSchedules.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/ticket/seasonpack/getSchedules.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/seasonpack/processLastOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/seasonpack/processLastOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seasonpack/getSelected.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seasonpack/getSelected.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seasonpack/getOrder.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seasonpack/getOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seasonpack/computeDiscount.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seasonpack/computeDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/packorder/activeOrder.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/packorder/activeOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seasonpack/confirmOrder.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seasonpack/confirmOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seasonpack/updateContact.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seasonpack/updateContact.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/packorder/payOrder.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/packorder/payOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seasonpack/cancelPackOrder.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seasonpack/cancelPackOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seasonpack/createOrder.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seasonpack/createOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seasonpack/addPackDetail.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seasonpack/addPackDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seasonpack/cancelPackDetail.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seasonpack/cancelPackDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/scheduleDateList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/scheduleDateList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/scheduleDateListWithSellOut.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/scheduleDateListWithSellOut.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/listScheduleByDate.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/listScheduleByDate.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/getSchedulePrices.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/getSchedulePrices.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/getScheduleInfo.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/getScheduleInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/getAvailableSeats2.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/getAvailableSeats2.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/discount/getDiscountRepo.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/discount/getDiscountRepo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/discount/cancelDiscount.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/discount/cancelDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/discount/usePoint.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/discount/usePoint.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/discount/useDiscount.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/discount/useDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/discount/confirmDiscount.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/discount/confirmDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/order/updateTicketOrderExpressFee.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/order/updateTicketOrderExpressFee.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/order/updateTicketOrderTransport.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/order/updateTicketOrderTransport.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/order/updateTicketOrderContactName.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/order/updateTicketOrderContactName.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/order/payOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/order/payOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/order/cancelOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/order/cancelOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/order/detail.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/order/detail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/order/create2.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/order/create2.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/order/create.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/order/create.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/order/createOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/order/createOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/order/autoLock.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/order/autoLock.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/order/unLockSeat.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/order/unLockSeat.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/discount/addItemToRepoByCode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/discount/addItemToRepoByCode.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/discount/removeItemFromRepoByCode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/discount/removeItemFromRepoByCode.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/order/changeOrderCerts.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/order/changeOrderCerts.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/getSpecialSeatOverlay.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/getSpecialSeatOverlay.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/getSpecialSeatEnableConfig.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/getSpecialSeatEnableConfig.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/order/budgetTicketsRefundPlan.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/order/budgetTicketsRefundPlan.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/order/refundOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/order/refundOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/order/refundOrderDetails.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/order/refundOrderDetails.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/ticket/seat/discount/query2.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/ticket/seat/discount/query2.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/ticket/program/getProgramById.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/ticket/program/getProgramById.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/program/content/getProgramContentInfo.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/program/content/getProgramContentInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/date.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/date.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/dateListWithSellOut.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/dateListWithSellOut.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/listBydate.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/listBydate.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/tickettype/list.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/tickettype/list.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/order/create.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/order/create.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/order/orderDetail.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/order/orderDetail.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/discount/getDiscountRepo.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/discount/getDiscountRepo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/discount/useDiscount.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/discount/useDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/discount/usePoint.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/discount/usePoint.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/discount/cancelDiscount.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/discount/cancelDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/discount/confirmDiscount.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/discount/confirmDiscount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/order/updateShowOrderExpressFee.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/order/updateShowOrderExpressFee.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/order/updateShowOrderTransport.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/order/updateShowOrderTransport.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/order/updateShowOrderContactName.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/order/updateShowOrderContactName.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/order/pay.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/order/pay.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/order/getMemberOrderList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/order/getMemberOrderList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/order/cancelOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/order/cancelOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/discount/addItemToRepoByCode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/discount/addItemToRepoByCode.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/discount/removeItemFromRepoByCode.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/discount/removeItemFromRepoByCode.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/order/changeOrderCerts.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/order/changeOrderCerts.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/order/budgetTicketsRefundPlan.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/order/budgetTicketsRefundPlan.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/order/refundOrder.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/order/refundOrder.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/show/order/refundOrderDetails.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/show/order/refundOrderDetails.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/subscription/record/eventMsg/mine.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/subscription/record/eventMsg/mine.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/wxMsg/schedule/v2/remind.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/wxMsg/schedule/v2/remind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/wxMsg/show/v2/remind.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/wxMsg/show/v2/remind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/wxMsg/subscribe/schedule/remind.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/wxMsg/subscribe/schedule/remind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/wxMsg/subscribe/show/remind.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/wxMsg/subscribe/show/remind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/wxMsg/cancle/subscribe/schedule/remind.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/wxMsg/cancle/subscribe/schedule/remind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/wxMsg/cancle/subscribe/show/remind.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/wxMsg/cancle/subscribe/show/remind.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/seat/program/countdown.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/seat/program/countdown.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/stand/program/countdown.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/stand/program/countdown.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/seat/program/schedule/countdown.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/seat/program/schedule/countdown.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/stand/program/show/countdown.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/stand/program/show/countdown.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/memberRemindEvent/list.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/memberRemindEvent/list.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/memberRemindEvent/save.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/memberRemindEvent/save.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/subscription/record/v2/save.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/subscription/record/v2/save.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/subscription/record/eventMsg/getLastSubscriptionRecord.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/subscription/record/eventMsg/getLastSubscriptionRecord.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/ticket/supportReserveProgramScheduleList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/ticket/supportReserveProgramScheduleList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/show/supportReserveProgramShowList.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/show/supportReserveProgramShowList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/order/getAllValidTicketList.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/order/getAllValidTicketList.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/order/getTicketInfo.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/order/getTicketInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/general/getShowTicketInfo.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/general/getShowTicketInfo.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/eticketTemplate/findByProgram.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/eticketTemplate/findByProgram.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/member/show/order/saveOutOfStockRegistration.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/member/show/order/saveOutOfStockRegistration.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/ticket/program/getVenueProgramCount.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/ticket/program/getVenueProgramCount.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "GET /thvendor/program/getProgramNumByStadium.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/program/getProgramNumByStadium.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /thvendor/member/ticket/getSeatImages.xhtml": {
+    "method": "POST",
+    "path": "/thvendor/member/ticket/getSeatImages.xhtml",
+    "source": [
+      "current_spa_static_template"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [
+      "静态模板路径展开；本次未必现场触发"
+    ]
+  },
+  "POST /sms/common/commonUpload.xhtml": {
+    "method": "POST",
+    "path": "/sms/common/commonUpload.xhtml",
+    "source": [
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {
+      "file": "<binary>",
+      "uploadToken": "***REDACTED***"
+    },
+    "headers": {
+      "content-type": "multipart/form-data"
+    },
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [],
+    "purpose": "通用文件上传"
+  },
+  "UNKNOWN /ucenter/captcha.xhtml": {
+    "method": "UNKNOWN",
+    "path": "/ucenter/captcha.xhtml",
+    "source": [
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "GET /thvendor/tools/qrcode.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/tools/qrcode.xhtml",
+    "source": [
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static",
+      "current_spa_static"
+    ],
+    "query_params": {
+      "text": "${text}",
+      "backColor": "ffffff",
+      "frontColor": "000000"
+    },
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [],
+    "purpose": "生成二维码图片"
+  },
+  "HEAD /thvendor/member/subscription/record/eventMsg/mine.xhtml": {
+    "method": "HEAD",
+    "path": "/thvendor/member/subscription/record/eventMsg/mine.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "UNKNOWN /thvendor/member/ticket/getSchedulePrices.xhtml": {
+    "method": "UNKNOWN",
+    "path": "/thvendor/member/ticket/getSchedulePrices.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "UNKNOWN /thvendor/member/ticket/getScheduleInfo.xhtml": {
+    "method": "UNKNOWN",
+    "path": "/thvendor/member/ticket/getScheduleInfo.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "UNKNOWN /thvendor/member/ticket/getAvailableSeats2.xhtml": {
+    "method": "UNKNOWN",
+    "path": "/thvendor/member/ticket/getAvailableSeats2.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  },
+  "GET /thvendor/common/prepareUpload.xhtml": {
+    "method": "GET",
+    "path": "/thvendor/common/prepareUpload.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": [],
+    "purpose": "准备上传并获取 uploadToken"
+  },
+  "UNKNOWN /ucenter/member/globalConfig/telephoneCountryCodes.xhtml": {
+    "method": "UNKNOWN",
+    "path": "/ucenter/member/globalConfig/telephoneCountryCodes.xhtml",
+    "source": [
+      "current_spa_static"
+    ],
+    "query_params": {},
+    "body_params": {},
+    "headers": {},
+    "response_sample": null,
+    "status_samples": [],
+    "notes": []
+  }
+}

@@ -1,0 +1,128 @@
+name: Test Suite
+
+# ---------------------------------------------------------------------------
+# Triggers: run on every push to main and on all pull requests.
+# ---------------------------------------------------------------------------
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    # All `run:` steps execute from automation/ so paths in pyproject.toml,
+    # behave.ini, tests/, features/, and artifacts/ resolve correctly.
+    defaults:
+      run:
+        working-directory: automation
+
+    # Run the full suite once per environment in parallel (matrix strategy).
+    # Add more envs here (e.g. staging) without duplicating job definitions.
+    strategy:
+      fail-fast: false
+      matrix:
+        env: [sit, uat]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Install the package with the [web] extras to get Playwright.
+      - name: Install dependencies
+        run: pip install -e ".[web]"
+
+      # Playwright needs browser binaries downloaded separately after pip install.
+      - name: Install Playwright browsers
+        run: playwright install chromium
+
+      # --- API tests (pytest) ---
+      # Runs plain pytest tests in tests/api/ and tests/app/.
+      - name: Run API tests (${{ matrix.env }})
+        env:
+          ENV: ${{ matrix.env }}
+          TA_WEBSITE_USERNAME: ${{ secrets.TA_WEBSITE_USERNAME }}
+          TA_WEBSITE_PASSWORD: ${{ secrets.TA_WEBSITE_PASSWORD }}
+          ALIMAIL_PASSWORD: ${{ secrets.ALIMAIL_PASSWORD }}
+        run: pytest tests/ -v --alluredir=artifacts/allure-results
+
+      # --- BDD web tests (Behave) ---
+      # Runs all .feature files in features/ using the Behave runner.
+      # Filter by tag with: behave --tags=@api  or  behave --tags=@antank
+      - name: Run BDD tests (${{ matrix.env }})
+        env:
+          ENV: ${{ matrix.env }}
+          TA_WEBSITE_USERNAME: ${{ secrets.TA_WEBSITE_USERNAME }}
+          TA_WEBSITE_PASSWORD: ${{ secrets.TA_WEBSITE_PASSWORD }}
+          ALIMAIL_PASSWORD: ${{ secrets.ALIMAIL_PASSWORD }}
+        run: behave --no-capture
+
+      # Upload Allure results even when tests fail, so failures can be triaged.
+      # `path:` is relative to checkout root, not working-directory.
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-${{ matrix.env }}
+          path: automation/artifacts/allure-results
+
+  # ---------------------------------------------------------------------------
+  # Harness contract gate — runs the 4 read-only validators from
+  # qa-system/tools/gate.py. Needs no secrets and no network; just checks
+  # that xlsx ↔ .feature ↔ dashboard.db are consistent and every skill /
+  # template is wired to a step in 02-qa-workflow.md. This is the job that
+  # should be a required check on PRs.
+  # ---------------------------------------------------------------------------
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validator dependencies
+        working-directory: automation
+        run: pip install -e .
+
+      - name: Run harness gate
+        run: python qa-system/tools/gate.py
+
+  # ---------------------------------------------------------------------------
+  # API smoke + contract — runs from the same automation/ venv. Hybrid and
+  # functional layers are skipped here because they need a logged-in
+  # storage_state.json which only exists on developer machines (the headless
+  # login captcha-OCR flow can't run reliably on a generic GHA runner).
+  # ---------------------------------------------------------------------------
+  api-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        working-directory: automation
+        run: pip install -e .
+
+      - name: Run API smoke (monitoring) + api_tests (anonymous subset)
+        # Auth-required tests inside api_tests/ skip cleanly when
+        # storage_state.json doesn't exist (GHA runner has no logged-in cookie).
+        working-directory: automation
+        run: pytest tests/api/smoke tests/api/api_tests -v --tb=short
+
+      - name: Upload smoke result JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-smoke-result
+          path: |
+            automation/artifacts/api_smoke/latest.json
+            automation/artifacts/api_smoke/layer_summary.json

@@ -1,0 +1,68 @@
+{
+  "suite": "standard_product_batch_session_configuration",
+  "requirement_package": "04-Configuration Related/2026-07-15",
+  "status": "passed",
+  "valid_behave_execution": true,
+  "dashboard_run_id": 175,
+  "project_key": "standard product",
+  "env": "sit",
+  "started_at_utc": "2026-07-16T14:22:27.366163",
+  "finished_at_utc": "2026-07-16T14:28:01.106930",
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "errored": 0,
+  "skipped": 0,
+  "behave_artifact": "D:\\Workspace\\standard product\\02-automation\\07-artifacts\\batch_session_configuration\\latest-full-behave.json",
+  "dashboard_api": "http://127.0.0.1:5173/api/runs?project=standard%20product",
+  "layers": {
+    "api": {
+      "total": 9,
+      "passed": 9,
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-003",
+        "SIT-TC-STD-CONFIG-004",
+        "SIT-TC-STD-CONFIG-005",
+        "SIT-TC-STD-CONFIG-006",
+        "SIT-TC-STD-CONFIG-007",
+        "SIT-TC-STD-CONFIG-008",
+        "SIT-TC-STD-CONFIG-009",
+        "SIT-TC-STD-CONFIG-010",
+        "SIT-TC-STD-CONFIG-011"
+      ]
+    },
+    "ui": {
+      "total": 4,
+      "passed": 4,
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-001",
+        "SIT-TC-STD-CONFIG-002",
+        "SIT-TC-STD-CONFIG-012",
+        "SIT-TC-STD-CONFIG-014"
+      ]
+    },
+    "mixed": {
+      "total": 1,
+      "passed": 1,
+      "case_ids": [
+        "SIT-TC-STD-CONFIG-013"
+      ]
+    }
+  },
+  "results": [
+    {"case_id": "SIT-TC-STD-CONFIG-001", "layer": "ui", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-002", "layer": "ui", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-003", "layer": "api", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-004", "layer": "api", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-005", "layer": "api", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-006", "layer": "api", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-007", "layer": "api", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-008", "layer": "api", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-009", "layer": "api", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-010", "layer": "api", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-011", "layer": "api", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-012", "layer": "ui", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-013", "layer": "mixed", "status": "passed"},
+    {"case_id": "SIT-TC-STD-CONFIG-014", "layer": "ui", "status": "passed"}
+  ]
+}

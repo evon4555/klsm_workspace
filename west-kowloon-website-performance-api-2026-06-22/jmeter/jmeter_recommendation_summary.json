@@ -1,0 +1,12 @@
+{
+  "total": 300,
+  "single_api_candidates": 25,
+  "scenario_steps": 16,
+  "excluded_risky_apis": 202,
+  "levels": {
+    "Do Not Load Test": 202,
+    "Ready": 25,
+    "Scenario Ready": 30,
+    "Smoke First": 43
+  }
+}

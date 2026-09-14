@@ -1,0 +1,301 @@
+﻿method,path,group,purpose,auth_required,query_params,body_params,headers,response_keys,status_samples,source
+GET,/ucenter/captcha.xhtml,auth,静态包发现，未在本次抓包中拿到业务说明,False,"{""captchaId"": ""***REDACTED***"", ""r"": ""1782122352227""}",{},"{""accept"": ""image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8""}",,200,"current_playwright_crawl,current_spa_static"
+GET,/ucenter/getCaptchaId.xhtml,auth,Issues a captcha session id used by login / register flows.,False,{},{},{},,,local_wk_endpoints_registry
+POST,/ucenter/getCaptchaId.xhtml,auth,获取验证码会话 ID,False,{},{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har"
+POST,/ucenter/guest/createAndLogin.xhtml,auth,游客账号创建并登录,False,{},"{""_front_end_data_object"": ""静态推断；需按实际游客登录/绑定流程补字段""}",{},,,current_spa_static
+POST,/ucenter/member/bindEmail.xhtml,auth,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/ucenter/member/bindMobile.xhtml,auth,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/ucenter/member/bindWxUserInfo.xhtml,auth,绑定微信用户信息,False,{},"{""_front_end_data_object"": ""静态推断；需按微信绑定流程补字段""}",{},,,current_spa_static
+GET,/ucenter/member/getUpHeadToken.xhtml,auth,获取头像/图片上传 token,False,{},{},{},,,current_spa_static
+GET,/ucenter/member/globalConfig/telephoneCountryCodes.xhtml,auth,Returns the list of supported country codes shown in the phone dropdown.,False,{},{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static,legacy_anticket_har,local_wk_endpoints_registry"
+GET,/ucenter/openapi/openlogin/getAuthUrl.xhtml,auth,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/ucenter/openapi/openlogin/pollResult.xhtml,auth,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/ucenter/rest/createAndLoginWithBindEmail.xhtml,auth,创建/保存相关接口,False,{},{},{},,,current_spa_static_template
+POST,/ucenter/rest/createAndLoginWithBindMobile.xhtml,auth,创建/保存相关接口,False,{},{},{},,,current_spa_static_template
+POST,/ucenter/rest/getLogonInfo.xhtml,auth,获取当前登录会员信息,True,{},{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,legacy_anticket_har"
+GET,/ucenter/rest/logout.xhtml,auth,Logout endpoint.,False,{},{},{},,,local_wk_endpoints_registry
+POST,/ucenter/rest/logout.xhtml,auth,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/ucenter/rest/pcLoginByPass.xhtml,auth,账号密码登录，带图片验证码,False,{},"{""mobileOrEmail"": ""***REDACTED***"", ""password"": ""***REDACTED***"", ""captchaId"": ""***REDACTED***"", ""captcha"": ""***REDACTED***""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har"
+POST,/ucenter/rest/sendBindMsg.xhtml,auth,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/ucenter/rest/sendEmailDynamic.xhtml,auth,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/ad/getNewAdList.xhtml,cms,[crawler] Banner / ad list shown on home + landing pages.,False,{},"{""adflag"": ""cardlist"", ""originType"": ""PC""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,legacy_anticket_har,local_wk_endpoints_registry"
+POST,/thvendor/campaign/getCachedCampaign.xhtml,cms,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/campaign/getChargeType.xhtml,cms,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/campaign/listCachedCampaign.xhtml,cms,[crawler] Cached campaign list (homepage).,False,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+GET,/thvendor/campaign/order/getCampaignOrderConstant.xhtml,cms,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/address/getMemberAddressById.xhtml,member,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/address/getMemberAddressList.xhtml,member,[crawler] Member shipping address list.,True,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+POST,/thvendor/member/address/remove.xhtml,member,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/address/save.xhtml,member,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/campaign/approval/approvalDetail.xhtml,member,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/campaign/approval/cancel.xhtml,member,取消/撤销相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/campaign/approval/create.xhtml,member,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/certification/getVerifyType.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/clearMember/checkCode.xhtml,member,Step 3 of account-deletion — verify the entered code.,True,{},{},{},,,local_wk_endpoints_registry
+POST,/thvendor/member/clearMember/checkCode.xhtml,member,删除/移除相关接口,True,{},{},{},,,current_spa_static
+GET,/thvendor/member/clearMember/confirm.xhtml,member,Final step of account-deletion — submit deletion request.,True,{},{},{},,,"current_spa_static,local_wk_endpoints_registry"
+GET,/thvendor/member/clearMember/reasonList.xhtml,member,List of selectable reasons for leaving (account deletion).,True,{},{},{},,,"current_spa_static,local_wk_endpoints_registry"
+GET,/thvendor/member/clearMember/sendCode.xhtml,member,Step 2 of account-deletion — send the verification code.,True,{},{},{},,,local_wk_endpoints_registry
+POST,/thvendor/member/clearMember/sendCode.xhtml,member,删除/移除相关接口,True,{},{},{},,,current_spa_static
+GET,/thvendor/member/clearMember/validateWay.xhtml,member,Step 1 of account-deletion — which channel (email/SMS) to verify on.,True,{},{},{},,,local_wk_endpoints_registry
+POST,/thvendor/member/clearMember/validateWay.xhtml,member,删除/移除相关接口,True,{},{},{},,,current_spa_static
+GET,/thvendor/member/common/getDynamicCode.xhtml,member,获取电子票动态码,True,"{""uuid"": ""${uuid}"", ""needServiceTime"": ""true""}",{},{},,,"current_spa_static,current_spa_static_template"
+GET,/thvendor/member/common/getFreightByArea.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/coupon/getByStatus.xhtml,member,优惠/折扣相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/coupon/getMemberCouponsByStatus.xhtml,member,"[crawler] My coupons, filtered by status (notStart / inUse / expired).",True,"{""status"": ""notStart""}",{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,local_wk_endpoints_registry"
+POST,/thvendor/member/coupon/orderDetail.xhtml,member,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/donation/addDonation.xhtml,member,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/donation/cancelDonation.xhtml,member,取消/撤销相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/donation/getDonationConfig.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/favorites/deleteFavoriteById.xhtml,member,删除/移除相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/favorites/isFavorites.xhtml,member,[deep-crawler] Did the logged-in member favourite this program.,True,{},"{""relatedId"": ""225529"", ""tag"": ""program"", ""showToast"": ""noMsg""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","msg,errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+GET,/thvendor/member/favorites/listFavorites.xhtml,member,[crawler] My wishlist / favorites.,True,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+GET,/thvendor/member/favorites/saveFavorites.xhtml,member,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/general/getShowTicketInfo.xhtml,member,详情查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/getCertificationList.xhtml,member,[crawler] ID certification status (real-name).,True,{},{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,legacy_anticket_har,local_wk_endpoints_registry"
+GET,/thvendor/member/getPaymentGatewayList.xhtml,member,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/getPaymentGatewayList.xhtml,member,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/info/getMemberInfo.xhtml,member,[crawler] Logged-in member's core info bundle.,True,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+GET,/thvendor/member/info/getPersonalInfo.xhtml,member,[crawler] Profile page data.,True,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+GET,/thvendor/member/info/getPersonalInfoDynamicField.xhtml,member,[crawler] Dynamic / custom profile fields.,True,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+POST,/thvendor/member/mall/getFreightByArea.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/memberRemindEvent/list.xhtml,member,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/memberRemindEvent/save.xhtml,member,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/activeMembership.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/activeMembershipWithPersionInfo.xhtml,member,详情查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/bindPerson/acceptBind.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/bindPerson/startBind.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/cancelOrder.xhtml,member,取消未支付订单,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/getMembershipDetail.xhtml,member,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/getMembershipEncode.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/getMembershipPersonEncode.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/getMemberships.xhtml,member,[crawler] My membership cards list.,True,"{""pageNo"": ""1"", ""pageSize"": ""60"", ""status"": ""new""}",{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+POST,/thvendor/member/membership/getOrderDetail.xhtml,member,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/getOrderList.xhtml,member,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/gotoPay.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/sendActiveEmail.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/sendActiveMobile.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/transfer/acceptTransfer.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/transfer/listTransferRecords.xhtml,member,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/transfer/startTransfer.xhtml,member,会员卡/会员权益相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membershiporder/refund/applay.xhtml,member,退票/退款相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/partnerMember/available/list.xhtml,member,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/partnerMember/identity/bind.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/partnerMember/identity/list.xhtml,member,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/partnerMember/identity/unbind.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/record/getMemberRemainPointBeforeTime.xhtml,member,[crawler] Remaining points expiring soon.,True,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","msg,errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,local_wk_endpoints_registry"
+POST,/thvendor/member/record/listMemberPointReceiveRecord.xhtml,member,[crawler] Point-earning history.,True,{},"{""fluctuationType"": ""increase"", ""pageSize"": ""10"", ""pageNo"": ""1""}","{""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,local_wk_endpoints_registry"
+GET,/thvendor/member/removeCertification.xhtml,member,删除/移除相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/saveCertification.xhtml,member,创建/保存相关接口,True,{},"{""realname"": ""***REDACTED***"", ""certificateType"": ""***REDACTED***"", ""certificateNo"": ""***REDACTED***"", ""selfFlag"": ""N""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_spa_static_template,legacy_anticket_har"
+GET,/thvendor/member/subscription/record/eventMsg/getLastSubscriptionRecord.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,"{""programId"": ""225518""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_spa_static_template,legacy_anticket_har"
+GET,/thvendor/member/subscription/record/eventMsg/mine.xhtml,member,My event subscriptions / message inbox.,True,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+HEAD,/thvendor/member/subscription/record/eventMsg/mine.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},"{""accept"": ""*/*""}",,200,"current_playwright_crawl,current_spa_static"
+GET,/thvendor/member/subscription/record/v2/save.xhtml,member,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/toggleSelf.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/transfer/pageList.xhtml,member,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/transfer/rule/times.xhtml,member,[crawler] Ticket-transfer rule: allowed times per ticket.,True,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+GET,/thvendor/member/wxMsg/cancle/subscribe/schedule/remind.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/wxMsg/subscribe/schedule/remind.xhtml,member,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/campaign/order/cancelOrder.xhtml,member-order,取消未支付订单,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/campaign/order/create.xhtml,member-order,创建非座位类订单,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/campaign/order/orderDetail.xhtml,member-order,详情查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/campaign/order/pageList.xhtml,member-order,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/campaign/order/pay.xhtml,member-order,支付/重新支付相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/order/create.xhtml,member-order,创建非座位类订单,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/order/discount/cancelDiscount.xhtml,member-order,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/order/discount/confirmDiscount.xhtml,member-order,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/order/discount/getDiscountRepo.xhtml,member-order,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/order/discount/useDiscount.xhtml,member-order,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/membership/order/discount/usePoint.xhtml,member-order,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/membership/order/renewPayOrder.xhtml,member-order,支付/重新支付相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/order/budgetTicketsRefundPlan.xhtml,member-order,退票/退款相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/order/getAllValidTicketList.xhtml,member-order,[crawler] My valid tickets (entry-ready).,True,"{""showToast"": ""noMsg""}",{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,local_wk_endpoints_registry"
+GET,/thvendor/member/order/getMemberOrderList.xhtml,member-order,"[crawler] My orders, paginated + filterable by status.",True,"{""pageNo"": ""1"", ""pageSize"": ""10"", ""status"": ""paid"", ""expireFlag"": ""N""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,legacy_anticket_har,local_wk_endpoints_registry"
+GET,/thvendor/member/order/getTicketInfo.xhtml,member-order,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/order/refundOrderDetails.xhtml,member-order,退票/退款相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/combo/order/cancelOrder.xhtml,member-order,取消未支付订单,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/combo/order/create.xhtml,member-order,创建非座位类订单,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/combo/order/orderDetail.xhtml,member-order,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/combo/order/pay.xhtml,member-order,支付/重新支付相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/combo/order/repeatedPayOrder.xhtml,member-order,支付/重新支付相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/combo/order/updateContact.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/combo/order/updateDelivery.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/combo/order/updateTransport.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/order/budgetTicketsRefundPlan.xhtml,member-order,退票/退款相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/order/cancelOrder.xhtml,member-order,取消未支付订单,True,"{""tradeNo"": ""412606061541241407"", ""showToast"": ""noMsg""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","msg,errcode,data,success",200,legacy_anticket_har
+GET,/thvendor/member/show/order/changeOrderCerts.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/order/create.xhtml,member-order,创建非座位类订单,True,{},"{""command"": {""platform"": ""PC"", ""requestType"": ""encryption"", ""showId"": ""90051589"", ""items"": [{""ticketTypeId"": ""54604"", ""ticketType"": ""normal"", ""quantity"": 1}]}, ""showToast"": ""noMsg""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en"", ""orderkey"": ""2606061541jcmzfpcdfe0b69332e5690""}","errcode,data,success",200,legacy_anticket_har
+GET,/thvendor/member/show/order/orderDetail.xhtml,member-order,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/order/pay.xhtml,member-order,支付/重新支付相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/order/refundOrder.xhtml,member-order,退票/退款相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/order/refundOrderDetails.xhtml,member-order,退票/退款相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/order/saveOutOfStockRegistration.xhtml,member-order,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/order/updateShowOrderContactName.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/order/updateShowOrderExpressFee.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/order/updateShowOrderTransport.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/order/autoLock.xhtml,member-order,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/order/cancelOrder.xhtml,member-order,取消未支付订单,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/order/changeOrderCerts.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/order/create.xhtml,member-order,创建非座位类订单,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/order/create2.xhtml,member-order,创建座位类订单,True,{},"{""requestType"": ""encryption"", ""createOrderReq"": {""platform"": ""PC"", ""scheduleId"": ""19614"", ""seats"": [{""ticketPriceId"": 62852, ""ticketPrice"": 10, ""venueAreaId"": 6339, ""packCode"": null, ""rowNo"": ""1"", ""colNo"": ""12""}]}, ""showToast"": ""noMsg""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en"", ""orderkey"": ""2606061539ssmxphe20dfd4812d8c37a""}","errcode,data,success",200,legacy_anticket_har
+POST,/thvendor/member/ticket/order/createOrder.xhtml,member-order,创建非座位类订单,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/order/detail.xhtml,member-order,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/order/payOrder.xhtml,member-order,支付/重新支付相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/order/refundOrder.xhtml,member-order,退票/退款相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/order/unLockSeat.xhtml,member-order,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/order/updateTicketOrderContactName.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/order/updateTicketOrderExpressFee.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/order/updateTicketOrderTransport.xhtml,member-order,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/pay/cybersource/payment/create.xhtml,payment,创建 CyberSource 支付请求/支付参数,False,{},"{""_payment_payload"": ""静态推断；本次未走支付页，需支付流程抓包补完整字段""}",{},,,current_spa_static
+POST,/sms/common/commonUpload.xhtml,sms,通用文件上传,False,{},"{""file"": ""<binary>"", ""uploadToken"": ""***REDACTED***""}","{""content-type"": ""multipart/form-data""}",,,current_spa_static
+GET,/thvendor/adinfo/getAdContentByIds.xhtml,thvendor,详情查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/adinfo/getAdInfoById.xhtml,thvendor,详情查询接口,False,{},"{""id"": ""23343""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,legacy_anticket_har"
+GET,/thvendor/campaignLabel/listCampaignLabel.xhtml,thvendor,[crawler] Campaign labels / categories.,False,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,local_wk_endpoints_registry"
+GET,/thvendor/common/getCityList.xhtml,thvendor,列表/分页查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/common/getCountryAllList.xhtml,thvendor,列表/分页查询接口,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/common/getCountyList.xhtml,thvendor,列表/分页查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/common/getProvinceAllList.xhtml,thvendor,列表/分页查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/common/getProvinceList.xhtml,thvendor,列表/分页查询接口,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/common/getServerTime.xhtml,thvendor,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/common/prepareUpload.xhtml,thvendor,准备上传并获取 uploadToken,False,{},{},{},,,current_spa_static
+GET,/thvendor/companyBaseInfo/getDisplayConfig.xhtml,thvendor,[crawler] Per-site display config loaded on every page entry.,False,{},{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+GET,/thvendor/dynamicvalue/getDynamicValueListByField.xhtml,thvendor,列表/分页查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/favorites/getFavoritesTotal.xhtml,thvendor,[deep-crawler] Aggregate favourite count for a program.,False,{},"{""tag"": ""program"", ""relatedId"": ""225529""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+GET,/thvendor/favorites/memberFavoritesCategory.xhtml,thvendor,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/getCaptchaId.xhtml,thvendor,获取验证码会话 ID,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/getStadiums.xhtml,thvendor,[crawler] Venue / stadium list.,False,{},{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+POST,/thvendor/mall/getCulturalProductDetail.xhtml,thvendor,详情查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/membership/bindPerson/getBind.xhtml,thvendor,会员卡/会员权益相关接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/membership/getDetail.xhtml,thvendor,详情查询接口,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/membership/getList.xhtml,thvendor,[crawler] Public membership plans list (anonymous browse).,False,"{""tag"": ""PA会员""}",{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,local_wk_endpoints_registry"
+GET,/thvendor/membership/transfer/getTransfer.xhtml,thvendor,会员卡/会员权益相关接口,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/programcalendar/querySchedulesByDate.xhtml,thvendor,静态包发现，未在本次抓包中拿到业务说明,False,"{""dateFrom"": ""2026-06-01"", ""dateTo"": ""2026-06-30""}",{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,current_playwright_crawl
+GET,/thvendor/tools/qrcode.xhtml,thvendor,生成二维码图片,False,"{""text"": ""${text}"", ""backColor"": ""ffffff"", ""frontColor"": ""000000""}",{},{},,,current_spa_static
+POST,/thvendor/wxMsg/schedule/v2/remind.xhtml,thvendor,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/cancel.xhtml,ticketing,取消/撤销相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/cart/cancelCartItem.xhtml,ticketing,取消/撤销相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/cart/cancelCartItemsBySession.xhtml,ticketing,取消/撤销相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/cancelPackOrder.xhtml,ticketing,取消/撤销相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/clearShippingInfo.xhtml,ticketing,删除/移除相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/confirmCart.xhtml,ticketing,购物车相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/discount/addPromoCode.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/discount/cancel.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/discount/confirm.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/discount/getRepo.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/discount/removePromoCode.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/discount/use.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/discount/usePoint.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/discount/validatePromoCode.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/getCartDetail.xhtml,ticketing,[crawler] Current cart contents.,True,{},"{""tradeNo"": ""CT2606221555266452""}","{""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,"current_playwright_crawl,local_wk_endpoints_registry"
+POST,/thvendor/member/cart/getPackOrder.xhtml,ticketing,购物车相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/initTicketCart.xhtml,ticketing,[crawler] Initialise a ticket cart session.,True,{},"{""platform"": ""PC""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+POST,/thvendor/member/cart/setContactInfo.xhtml,ticketing,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/setDonation.xhtml,ticketing,购物车相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/setShippingInfo.xhtml,ticketing,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/setShippingInfoBySubOrders.xhtml,ticketing,详情查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/setSingleOrderCert.xhtml,ticketing,购物车相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/show/addShowItems.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/ticket/addSeatItems.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/ticket/autoAddSeatItems.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/ticket/changeSeatPack.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/ticket/cleanSeatPack.xhtml,ticketing,购物车相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/updateItemCert.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/cart/upsertCartCert.xhtml,ticketing,购物车相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/addon/addonSplicing.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/addon/createAddonCulturalOrder.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/addon/getAddonDiscount.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/addon/getAvaiableAddonProductList.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/change/create.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/change/getChangeDetailInfo.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/change/getContainer.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/change/getOrder.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/change/preCreate.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/change/selectSeats.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/combo/options.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/date.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/dateListWithSellOut.xhtml,ticketing,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/discount/addItemToRepoByCode.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/discount/cancelDiscount.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/discount/confirmDiscount.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/discount/getDiscountRepo.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/discount/removeItemFromRepoByCode.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/discount/useDiscount.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/discount/usePoint.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/eticketTemplate/findByProgram.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/show/listBydate.xhtml,ticketing,获取非座位类场次列表,True,"{""programKey"": ""2606061541vgbsbb71999a0099d8ee95"", ""programId"": ""225518""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_spa_static_template,legacy_anticket_har"
+GET,/thvendor/member/show/tickettype/list.xhtml,ticketing,获取非座位类票种列表,True,"{""sessionKey"": ""***REDACTED***"", ""programKey"": ""2606061541vgbsbb71999a0099d8ee95"", ""showId"": ""90051589""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_spa_static_template,legacy_anticket_har"
+POST,/thvendor/member/show/transfer/acceptTransfer.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/show/transfer/startTransfer.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/addon/addonSplicing.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/addon/createAddonCulturalOrder.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/addon/getAddonDiscount.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/addon/getAvaiableAddonProductList.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/change/create.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/change/getContainer.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/change/getOrder.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/change/getSeatInfo.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/change/preCreate.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/change/selectSeats.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/discount/addItemToRepoByCode.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/discount/cancelDiscount.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/discount/confirmDiscount.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/discount/getDiscountRepo.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/discount/removeItemFromRepoByCode.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/discount/useDiscount.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/discount/usePoint.xhtml,ticketing,查询座位/票价优惠,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/getAvailableSeats2.xhtml,ticketing,Get seat-map availability for a given schedule.,True,{},{},{},,,"current_spa_static,local_wk_endpoints_registry"
+POST,/thvendor/member/ticket/getAvailableSeats2.xhtml,ticketing,获取座位图可售座位和 orderKey,True,{},"{""scheduleId"": ""19614"", ""promotionCode"": """", ""watchServer"": ""true"", ""showToast"": ""noMsg""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded"", ""lang"": ""en""}","errcode,data,success",200,"current_spa_static_template,legacy_anticket_har"
+GET,/thvendor/member/ticket/getGeneralAreaStats.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/getScheduleInfo.xhtml,ticketing,Get show schedule info for a given product.,True,{},{},{},,,"current_spa_static,local_wk_endpoints_registry"
+POST,/thvendor/member/ticket/getScheduleInfo.xhtml,ticketing,获取座位类场次信息,True,{},"{""watchServer"": ""true"", ""scheduleId"": ""19614"", ""showToast"": ""noMsg""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_spa_static_template,legacy_anticket_har"
+GET,/thvendor/member/ticket/getSchedulePrices.xhtml,ticketing,Get ticket price tiers for a given schedule.,True,{},{},{},,,"current_spa_static,local_wk_endpoints_registry"
+POST,/thvendor/member/ticket/getSchedulePrices.xhtml,ticketing,获取座位类票价,True,{},"{""scheduleId"": ""19614"", ""promotionCode"": """", ""watchServer"": ""true"", ""showToast"": ""noMsg"", ""sessionKey"": ""***REDACTED***"", ""programKey"": ""2606061539tgmbzse51f95398fbb4541""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_spa_static_template,legacy_anticket_har"
+POST,/thvendor/member/ticket/getSeatImages.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/getSpecialSeatEnableConfig.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/getSpecialSeatOverlay.xhtml,ticketing,获取特殊座位覆盖层,True,"{""scheduleId"": ""19614""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,legacy_anticket_har
+POST,/thvendor/member/ticket/listScheduleByDate.xhtml,ticketing,按日期获取座位类场次,True,{},"{""programKey"": ""2606061539tgmbzse51f95398fbb4541"", ""programId"": ""225199"", ""date"": ""2026-06-30""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_spa_static_template,legacy_anticket_har"
+GET,/thvendor/member/ticket/packorder/activeOrder.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/packorder/payOrder.xhtml,ticketing,支付/重新支付相关接口,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/scheduleDateList.xhtml,ticketing,列表/分页查询接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/scheduleDateListWithSellOut.xhtml,ticketing,获取有售罄标记的场次日期,True,"{""programId"": ""225472""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,legacy_anticket_har
+GET,/thvendor/member/ticket/seasonpack/addPackDetail.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/seasonpack/cancelPackDetail.xhtml,ticketing,取消/撤销相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/seasonpack/cancelPackOrder.xhtml,ticketing,取消/撤销相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/seasonpack/computeDiscount.xhtml,ticketing,优惠/折扣相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/seasonpack/confirmOrder.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/seasonpack/createOrder.xhtml,ticketing,创建/保存相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/seasonpack/getOrder.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/seasonpack/getSelected.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/seasonpack/processLastOrder.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/seasonpack/updateContact.xhtml,ticketing,更新/变更相关接口,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/ticket/seat/discount/query2.xhtml,ticketing,查询座位/票价优惠,True,"{""command"": ""{\""scheduleId\"":\""19614\"",\""seats\"":[{\""rowNo\"":\""1\"",\""colNo\"":\""12\"",\""venueAreaId\"":6339,\""packCode\"":null}]}""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_spa_static_template,legacy_anticket_har"
+POST,/thvendor/member/ticket/transfer/acceptTransfer.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+POST,/thvendor/member/ticket/transfer/startTransfer.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/wxMsg/cancle/subscribe/show/remind.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/member/wxMsg/subscribe/show/remind.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,True,{},{},{},,,current_spa_static_template
+GET,/thvendor/program/content/getProgramContentInfo.xhtml,ticketing,"[deep-crawler] Static program detail content (description, images).",False,"{""programId"": ""225529""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+POST,/thvendor/program/getCategoryList.xhtml,ticketing,[crawler] Program / show categories.,False,{},{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+GET,/thvendor/program/getProgramNumByStadium.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,"{""stadiumId"": ""69719""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har"
+POST,/thvendor/program/promotion/activity/list.xhtml,ticketing,列表/分页查询接口,False,{},"{""programId"": ""225529""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har"
+POST,/thvendor/program/promotion/coupon/list.xhtml,ticketing,列表/分页查询接口,False,{},"{""programId"": ""225529"", ""showToast"": ""noMsg""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har"
+POST,/thvendor/program/promotion/member/list.xhtml,ticketing,[deep-crawler] Membership-tier discount info shown on program page.,False,{},"{""programId"": ""225529""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+POST,/thvendor/program/promotion/package/ticket/list.xhtml,ticketing,[deep-crawler] Combo / package ticket options for a program.,False,{},"{""programId"": ""225529""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+GET,/thvendor/seat/program/countdown.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,"{""programId"": ""225528""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,legacy_anticket_har"
+GET,/thvendor/seat/program/schedule/countdown.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,"{""programId"": ""225199"", ""scheduleId"": ""19614""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,legacy_anticket_har
+POST,/thvendor/show/combo/entry/list.xhtml,ticketing,列表/分页查询接口,False,{},"{""programId"": ""225529"", ""advanceMin"": ""0"", ""showToast"": ""noMsg""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""content-type"": ""application/x-www-form-urlencoded;charset=UTF-8"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har"
+GET,/thvendor/show/combo/getShowTicketTypes.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/show/combo/listBydate.xhtml,ticketing,获取非座位类场次列表,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/show/supportReserveProgramShowList.xhtml,ticketing,列表/分页查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/show/transfer/getTransfer.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/stand/program/countdown.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,"{""programId"": ""225528""}",{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,current_playwright_crawl
+POST,/thvendor/stand/program/show/countdown.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/ticket/program/getHotProgramList.xhtml,ticketing,[crawler] Hot programs (PC recList) — homepage carousel data.,False,"{""showSite"": ""Weblist"", ""dynamicValueList"": ""[]"", ""stadiumId"": """", ""categoryIds"": ""1030""}","{""showSite"": ""PCrecList1""}","{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""content-type"": ""application/json""}","errcode,data,success",200,"current_playwright_crawl,current_spa_static_template,legacy_anticket_har,local_wk_endpoints_registry"
+GET,/thvendor/ticket/program/getProgramById.xhtml,ticketing,获取项目详情主数据,False,"{""programId"": ""225529""}",{},"{""accept"": ""application/json, text/plain, */*"", ""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en""}","errcode,data,success",200,"current_playwright_crawl,legacy_anticket_har"
+GET,/thvendor/ticket/program/getVenueProgramCount.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/ticket/program/v2/getHomeCountdownProgramList.xhtml,ticketing,列表/分页查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/ticket/seasonpack/detail.xhtml,ticketing,详情查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/ticket/seasonpack/getSchedules.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/ticket/supportReserveProgramScheduleList.xhtml,ticketing,列表/分页查询接口,False,{},{},{},,,current_spa_static_template
+POST,/thvendor/ticket/transfer/getTransfer.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template
+GET,/thvendor/trans/program/getListByIds.xhtml,ticketing,列表/分页查询接口,False,"{""programIds"": ""225562,225518,225201,225539,225528,225678,225530,225693,225531,225517,225655,225198,225197,225199,225472,225585,225454,225622"", ""TRANS"": ""en"", ""notCover"": ""Y""}",{},"{""cmpappkey"": ""ShanghaiCS"", ""lang"": ""en"", ""accept"": ""application/json, text/plain, */*""}","errcode,data,success",200,current_playwright_crawl
+GET,/thvendor/wxMsg/show/v2/remind.xhtml,ticketing,静态包发现，未在本次抓包中拿到业务说明,False,{},{},{},,,current_spa_static_template

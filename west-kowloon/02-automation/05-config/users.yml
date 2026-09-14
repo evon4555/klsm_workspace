@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------------------
+# config/users.yml - test user mapping per environment.
+#
+# Keep this file safe to commit. Usernames and passwords must be environment
+# variable placeholders; real values belong in ignored envs/.env.<env> files
+# or a secrets manager.
+#
+# Structure:
+#   <env>:
+#     <user_key>:
+#       username: "${ENV_VAR}"
+#       password: "${ENV_VAR}"
+#       role:     admin | editor | viewer | website
+# ---------------------------------------------------------------------------
+
+local:
+  user1:
+    username: "${TA_USER1_USERNAME}"
+    password: "${TA_USER1_PASSWORD}"
+    role: "admin"
+  user2:
+    username: "${TA_USER2_USERNAME}"
+    password: "${TA_USER2_PASSWORD}"
+    role: "editor"
+  user3:
+    username: "${TA_USER3_USERNAME}"
+    password: "${TA_USER3_PASSWORD}"
+    role: "viewer"
+  website_user:
+    username: "${TA_WEBSITE_USERNAME}"
+    password: "${TA_WEBSITE_PASSWORD}"
+    role: "website"
+
+sit:
+  user1:
+    username: "${TA_USER1_USERNAME}"
+    password: "${TA_USER1_PASSWORD}"
+    role: "admin"
+  user2:
+    username: "${TA_USER2_USERNAME}"
+    password: "${TA_USER2_PASSWORD}"
+    role: "editor"
+  user3:
+    username: "${TA_USER3_USERNAME}"
+    password: "${TA_USER3_PASSWORD}"
+    role: "viewer"
+  website_user:
+    username: "${TA_WEBSITE_USERNAME}"
+    password: "${TA_WEBSITE_PASSWORD}"
+    role: "website"
+
+uat:
+  user1:
+    username: "${TA_USER1_USERNAME}"
+    password: "${TA_USER1_PASSWORD}"
+    role: "admin"
+  user2:
+    username: "${TA_USER2_USERNAME}"
+    password: "${TA_USER2_PASSWORD}"
+    role: "editor"
+  user3:
+    username: "${TA_USER3_USERNAME}"
+    password: "${TA_USER3_PASSWORD}"
+    role: "viewer"
+  website_user:
+    username: "${TA_WEBSITE_USERNAME}"
+    password: "${TA_WEBSITE_PASSWORD}"
+    role: "website"

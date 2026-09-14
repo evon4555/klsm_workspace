@@ -1,0 +1,20 @@
+Method,Name,Error,Occurrences,First Seen,Last Seen
+POST,Cancel Seat Ticket,CatchResponseError('Cancel Seat Ticket business failed: errcode=1125 success=False msg=Operations are too frequent. Please try again later.'),222,2026-07-21T06:46:27Z,2026-07-21T06:47:25Z
+POST,Add Seat Item - linked seat,"CatchResponseError('addSeatItems business failed: errcode=1125 success=False msg=操作过快,请稍后重试')",462,2026-07-21T06:46:30Z,2026-07-21T06:47:26Z
+TXN,01 - Prepare Clean Cart,RuntimeError('tradeNo not found'),226,2026-07-21T06:46:27Z,2026-07-21T06:47:25Z
+POST,Add Show Item - linked admission,CatchResponseError('addShowItems business failed: errcode=1125 success=False msg=Operations are too frequent. Please try again later.'),6,2026-07-21T06:46:29Z,2026-07-21T06:47:18Z
+POST,Cancel Show Ticket,CatchResponseError('Cancel Show Ticket business failed: errcode=1125 success=False msg=Operations are too frequent. Please try again later.'),218,2026-07-21T06:46:27Z,2026-07-21T06:47:25Z
+TXN,01 - Prepare Clean Cart,RuntimeError('Cancel Show Ticket failed'),113,2026-07-21T06:46:27Z,2026-07-21T06:47:25Z
+TXN,02 - Add / Remove Linked Ticket project,RuntimeError('Add Seat Item failed'),4,2026-07-21T06:46:47Z,2026-07-21T06:47:25Z
+POST,Cancel Show Ticket - linked admission,CatchResponseError('Cancel Show Ticket - linked admission business failed: errcode=1125 success=False msg=Operations are too frequent. Please try again later.'),221,2026-07-21T06:46:30Z,2026-07-21T06:47:26Z
+POST,Add Seat Item - linked seat,CatchResponseError('addSeatItems business failed: errcode=1122 success=False msg=Cart does not exist'),4,2026-07-21T06:46:51Z,2026-07-21T06:47:12Z
+POST,Cancel Show Ticket,CatchResponseError('Cancel Show Ticket business failed: errcode=1122 success=False msg=Cart does not exist'),121,2026-07-21T06:46:27Z,2026-07-21T06:47:25Z
+TXN,01 - Prepare Clean Cart,RuntimeError('Cancel Seat Ticket failed'),67,2026-07-21T06:46:29Z,2026-07-21T06:47:25Z
+POST,Add Show Item - linked admission,"CatchResponseError('addShowItems business failed: errcode=1125 success=False msg=操作过快,请稍后重试')",473,2026-07-21T06:46:27Z,2026-07-21T06:47:25Z
+TXN,02 - Add / Remove Linked Ticket project,RuntimeError('Add Show Item failed'),465,2026-07-21T06:46:30Z,2026-07-21T06:47:26Z
+POST,Cancel Show Ticket - linked admission,CatchResponseError('Cancel Show Ticket - linked admission business failed: errcode=1122 success=False msg=Cart does not exist'),137,2026-07-21T06:46:30Z,2026-07-21T06:47:24Z
+POST,Get Cart Number,CatchResponseError('tradeNo not found'),226,2026-07-21T06:46:27Z,2026-07-21T06:47:25Z
+POST,Cancel Seat Ticket,CatchResponseError('Cancel Seat Ticket business failed: errcode=1122 success=False msg=Cart does not exist'),139,2026-07-21T06:46:27Z,2026-07-21T06:47:25Z
+POST,Cancel Seat Ticket - linked seat,CatchResponseError('Cancel Seat Ticket - linked seat business failed: errcode=1125 success=False msg=Operations are too frequent. Please try again later.'),202,2026-07-21T06:46:30Z,2026-07-21T06:47:26Z
+POST,Cancel Seat Ticket - linked seat,CatchResponseError('Cancel Seat Ticket - linked seat business failed: errcode=1122 success=False msg=Cart does not exist'),134,2026-07-21T06:46:30Z,2026-07-21T06:47:25Z
+POST,Add Show Item - linked admission,CatchResponseError('addShowItems business failed: errcode=1122 success=False msg=Cart does not exist'),6,2026-07-21T06:46:27Z,2026-07-21T06:47:08Z

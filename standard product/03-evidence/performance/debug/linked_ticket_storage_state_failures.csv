@@ -1,0 +1,5 @@
+Method,Name,Error,Occurrences,First Seen,Last Seen
+TXN,02 - Add / Remove Linked Ticket project,RuntimeError('Add Seat Item failed'),1,2026-07-21T06:11:26Z,2026-07-21T06:11:26Z
+POST,Add Show Item - linked admission,"CatchResponseError('addShowItems business failed: errcode=1125 success=False msg=操作过快,请稍后重试')",3,2026-07-21T06:11:26Z,2026-07-21T06:11:31Z
+POST,Add Seat Item - linked seat,CatchResponseError('addSeatItems business failed: errcode=1125 success=False msg=Sales have not started yet. Please wait.'),3,2026-07-21T06:11:25Z,2026-07-21T06:11:30Z
+TXN,02 - Add / Remove Linked Ticket project,RuntimeError('Add Show Item failed'),2,2026-07-21T06:11:28Z,2026-07-21T06:11:31Z
