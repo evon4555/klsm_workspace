@@ -305,7 +305,12 @@ def list_runs(
     kind: str = "full",
     include_reruns: bool = False,
 ):
-    """List recent test runs. Defaults to user-visible full/performance runs."""
+    """List recent functional test runs for the Test Run page.
+
+    Performance runs belong to the dedicated Performance Test page. Mixing
+    them into this history makes transaction metrics look like functional
+    scenarios, which leaves Case ID and automation metadata empty.
+    """
     project_key = _project_key(project)
     requested_kind = (kind or "full").strip().lower()
     db = get_db()
@@ -315,7 +320,7 @@ def list_runs(
             if not include_reruns:
                 query = query.filter(~TestRun.run_kind.in_(["rerun_single", "rerun_failed"]))
         elif requested_kind in {"full", "dashboard", "history"}:
-            visible_kinds = ["full", "performance"]
+            visible_kinds = ["full"]
             if include_reruns:
                 visible_kinds.extend(["rerun_single", "rerun_failed"])
             query = query.filter(TestRun.run_kind.in_(visible_kinds))
@@ -1594,6 +1599,10 @@ def _enrich_bug_statuses(scenario_dicts: list[dict]) -> list[dict]:
     """For each scenario's `bugs[]` list, add a `status` field per bug from
     ZenTao (active | resolved | closed | unknown). Sequential fetch but each
     bug is cached for 30s so reloads are cheap."""
+    # Most runs have no linked ZenTao bugs. Avoid token refresh/network work in
+    # that common path so loading functional scenarios never waits on ZenTao.
+    if not any(s.get("bugs") for s in scenario_dicts):
+        return scenario_dicts
     token = _zentao_token()
     if not token:
         return scenario_dicts
