@@ -46,7 +46,10 @@ export async function listRuns(project = 'west-kowloon') {
 
 /** Get full details (summary + scenario list) for one run. */
 export async function getRunDetail(runId) {
-  return requestJson(`/api/runs/${runId}`)
+  // Run selection must stay responsive. The stored scenario already contains
+  // its Case ID, name, status, and timing; loading every historical workbook
+  // just to enrich display text can take more than a minute on large projects.
+  return requestJson(`/api/runs/${runId}?include_case_metadata=false`)
 }
 
 /** Rerun failed or errored scenarios from a previous run. Returns { id, status }. */

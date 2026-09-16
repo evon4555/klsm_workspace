@@ -437,7 +437,7 @@ def list_runs(
 
 
 @app.get("/api/runs/{run_id}")
-def get_run_detail(run_id: int):
+def get_run_detail(run_id: int, include_case_metadata: bool = True):
     """Get a single run's summary + all its scenario results.
 
     Scenarios linked to a ZenTao bug get a live `zentao_bug_status` field
@@ -458,13 +458,26 @@ def get_run_detail(run_id: int):
         # both irrelevant and expensive for an 80+ row API suite.
         latest_attempts = (
             {} if (run.run_kind or "full") == "api"
-            else _scenario_latest_attempts(db, scenarios, run.project_key)
+            else _scenario_latest_attempts(db, scenarios, run)
+        )
+        case_metadata_index = (
+            _case_metadata_for_project(run.project_key)
+            if include_case_metadata and (run.run_kind or "full") != "api"
+            else {}
+        )
+        feature_location_index = (
+            _feature_locations_for_project(run.project_key)
+            if (run.run_kind or "full") != "api"
+            else {}
         )
         scenario_dicts = _enrich_bug_statuses([
             _scenario_dict(
                 s,
                 run.project_key,
                 run=run,
+                include_case_metadata=include_case_metadata,
+                case_metadata_index=case_metadata_index,
+                feature_location_index=feature_location_index,
                 latest_attempt=latest_attempts.get(
                     _scenario_case_id(s)
                 ),
@@ -1666,12 +1679,17 @@ def _feature_locations_for_project(project: str | None) -> dict[str, list[dict]]
     return locations
 
 
-def _automation_location_for_scenario(s: TestScenario, project: str | None = None) -> dict | None:
+def _automation_location_for_scenario(
+    s: TestScenario,
+    project: str | None = None,
+    locations: dict[str, list[dict]] | None = None,
+) -> dict | None:
     project_key = _project_key(project)
     case_id = _case_id_from_scenario_fields(s.name, s.tags)
     if not case_id:
         return None
-    candidates = _feature_locations_for_project(project_key).get(case_id, [])
+    location_index = locations if locations is not None else _feature_locations_for_project(project_key)
+    candidates = location_index.get(case_id, [])
     if not candidates:
         return None
     for item in candidates:
@@ -2667,12 +2685,18 @@ def _run_event_timestamp(r: TestRun) -> datetime | None:
 def _scenario_latest_attempts(
     db,
     scenarios: list[TestScenario],
-    project: str | None,
+    selected_run: TestRun,
 ) -> dict[str, dict]:
-    """Latest per-case attempt metadata across full runs and reruns."""
+    """Latest per-case attempt metadata inside one full-run lineage.
+
+    A historical run must never inherit the status of a later independent
+    full run. Only the selected full run and reruns whose parent points to it
+    belong to the same result view.
+    """
     from sqlalchemy import or_
 
-    project_key = _project_key(project)
+    project_key = _project_key(selected_run.project_key)
+    root_run_id = selected_run.parent_run_id or selected_run.id
     case_ids = sorted({
         cid for cid in (
             _scenario_case_id(s) for s in scenarios
@@ -2691,7 +2715,11 @@ def _scenario_latest_attempts(
     rows = (
         db.query(TestScenario, TestRun)
         .join(TestRun, TestScenario.run_id == TestRun.id)
-        .filter(TestRun.project_key == project_key, or_(*conditions))
+        .filter(
+            TestRun.project_key == project_key,
+            or_(TestRun.id == root_run_id, TestRun.parent_run_id == root_run_id),
+            or_(*conditions),
+        )
         .all()
     )
 
@@ -2764,6 +2792,9 @@ def _scenario_dict(
     s: TestScenario,
     project: str | None = None,
     run: TestRun | None = None,
+    include_case_metadata: bool = True,
+    case_metadata_index: dict[str, dict] | None = None,
+    feature_location_index: dict[str, list[dict]] | None = None,
     latest_attempt: dict | None = None,
 ) -> dict:
     """Serialize a scenario row, including ALL of its ZenTao bugs (the
@@ -2779,8 +2810,12 @@ def _scenario_dict(
     run_kind = (run.run_kind if run else None) or "full"
     is_api_run = run_kind == "api"
     case_meta = (
-        _case_metadata_for_project(project).get(case_id, {})
-        if case_id and project and not is_api_run else {}
+        (
+            case_metadata_index
+            if case_metadata_index is not None
+            else _case_metadata_for_project(project)
+        ).get(case_id, {})
+        if case_id and project and not is_api_run and include_case_metadata else {}
     )
     payload = {
         "id": s.id,
@@ -2803,7 +2838,13 @@ def _scenario_dict(
         "automation_type": case_meta.get("automation_type") or _automation_type_from_tags(s.tags),
         "automation_location": (
             None if is_api_run
-            else (_automation_location_for_scenario(s, project) if project else None)
+            else (
+                _automation_location_for_scenario(
+                    s,
+                    project,
+                    locations=feature_location_index,
+                ) if project else None
+            )
         ),
         "case_metadata_source": case_meta.get("case_metadata_source"),
         "automation_metadata_source": case_meta.get("automation_metadata_source"),

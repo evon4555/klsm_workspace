@@ -57,6 +57,48 @@ def test_test_run_history_includes_api_and_excludes_performance(tmp_path, monkey
         assert [run["id"] for run in default_history] == [api_id, functional_id]
         assert {run["id"] for run in all_history} == {functional_id, performance_id, api_id}
 
+        db = main.get_db()
+        historical = main.TestScenario(
+            run_id=functional_id,
+            case_id="SIT-TC-WEB-AUTH-001",
+            feature="Login",
+            name="SIT-TC-WEB-AUTH-001 historical failure",
+            status="failed",
+            duration_s=1.5,
+            tags="ui",
+        )
+        later_full = main.TestRun(
+            started_at=started_at + timedelta(hours=3),
+            finished_at=started_at + timedelta(hours=3, minutes=1),
+            status="passed",
+            env="sit",
+            project_key="west-kowloon",
+            run_kind="full",
+            total=1,
+            passed=1,
+        )
+        db.add_all([historical, later_full])
+        db.flush()
+        db.add(main.TestScenario(
+            run_id=later_full.id,
+            case_id="SIT-TC-WEB-AUTH-001",
+            feature="Login",
+            name="SIT-TC-WEB-AUTH-001 later success",
+            status="passed",
+            duration_s=1.0,
+            tags="ui",
+        ))
+        db.commit()
+        db.close()
+
+        historical_detail = main.get_run_detail(
+            functional_id,
+            include_case_metadata=False,
+        )
+        assert historical_detail["scenarios"][0]["status"] == "failed"
+        assert historical_detail["scenarios"][0]["last_run_status"] == "failed"
+        assert historical_detail["scenarios"][0]["last_run_id"] == functional_id
+
         def fail_if_token_is_requested():
             raise AssertionError("ZenTao token lookup must be skipped when no bugs exist")
 

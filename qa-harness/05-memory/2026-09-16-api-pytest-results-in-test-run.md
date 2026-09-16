@@ -22,3 +22,7 @@
 - Sync rule: completed API imports must appear in both Test Run and the main
   Dashboard. Both pages poll for external pytest imports; Test Run follows a
   new latest run only while the user is not intentionally viewing history.
+- Historical-run rule: selecting a run must show that run's stored results,
+  plus only reruns belonging to the same full-run lineage. Never overwrite a
+  historical run with a later independent run's status, and do not block the
+  result view on bulk Excel metadata enrichment.
