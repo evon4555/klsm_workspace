@@ -128,6 +128,12 @@ Stage           Backed by
 07-release-feedback  post-release feedback / incident / monitoring files in 07-release-feedback/
 ```
 
+The frontend also distinguishes requirement changes from duplicate-looking
+rows. Packages are grouped by project, subproject, and module. The earliest
+dated package in each group is treated as the initial package; every later
+dated package receives a `Requirement Change` tag in the grid and drill-down.
+Modules with the same name in different subprojects are evaluated separately.
+
 Per-package case-IDs → dashboard.db join (Phase 2.5):
 
 ```

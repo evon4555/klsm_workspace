@@ -15,6 +15,7 @@ import {
   fetchPackageExecutions, promotePackageExecution,
 } from '../api'
 import { formatDashboardTime } from '../utils/time.js'
+import { annotateRequirementChanges } from '../utils/packageHealth.js'
 
 const { Title, Text, Paragraph } = Typography
 
@@ -263,7 +264,18 @@ export default function PackageHealthPage({ activeProject }) {
       width: 260,
       render: (_, r) => (
         <Space direction="vertical" size={0}>
-          <Text strong>{r.module}</Text>
+          <Space size={6} wrap>
+            <Text strong>{r.module}</Text>
+            {r.is_requirement_change && (
+              <Tooltip
+                title={`Later package for the same module; baseline package: ${r.requirement_baseline_date}`}
+              >
+                <Tag color="purple" style={{ margin: 0, fontSize: 11 }}>
+                  Requirement Change
+                </Tag>
+              </Tooltip>
+            )}
+          </Space>
           <Text type="secondary" style={{ fontSize: 12 }}>
             {r.date_slug} / {r.subproject}
           </Text>
@@ -299,7 +311,7 @@ export default function PackageHealthPage({ activeProject }) {
     },
   ]
 
-  const packages = data?.packages || []
+  const packages = annotateRequirementChanges(data?.packages || [])
   const readinessCounts = packages.reduce((acc, p) => {
     const value = p.qa_readiness || (p.verdict === 'complete' ? 'ready' : p.verdict)
     acc[value] = (acc[value] || 0) + 1
@@ -444,6 +456,17 @@ export default function PackageHealthPage({ activeProject }) {
                 <Descriptions.Item label="Subproject">{detail.subproject}</Descriptions.Item>
                 <Descriptions.Item label="Module">{detail.module}</Descriptions.Item>
                 <Descriptions.Item label="Date">{detail.date_slug}</Descriptions.Item>
+                <Descriptions.Item label="Package type">
+                  {(() => {
+                    const annotated = packages.find(pkg => pkg.id === detail.id)
+                    if (!annotated?.is_requirement_change) return <Tag>Initial Package</Tag>
+                    return (
+                      <Tooltip title={`Baseline package: ${annotated.requirement_baseline_date}`}>
+                        <Tag color="purple">Requirement Change</Tag>
+                      </Tooltip>
+                    )
+                  })()}
+                </Descriptions.Item>
                 <Descriptions.Item label="QA readiness">
                   {(() => {
                     const value = detail.qa_readiness || (detail.verdict === 'complete' ? 'ready' : detail.verdict)
