@@ -304,6 +304,53 @@ def test_zentao_unmapped_project_dashboard_contract(monkeypatch):
     assert "No ZenTao product or execution is mapped" in payload["meta"]["error"]
 
 
+def test_zentao_mapped_execution_is_default_not_the_only_option(monkeypatch):
+    _configure_zentao()
+    monkeypatch.setattr(
+        zentao,
+        "_project_config",
+        lambda project: {
+            "key": "west-kowloon",
+            "zentaoProductId": 146,
+            "zentaoExecutionId": 614,
+        },
+    )
+    monkeypatch.setattr(zentao, "_zentao_token", lambda: "test-token")
+    monkeypatch.setattr(zentao, "_ZT_DASHBOARD_CACHE", {})
+
+    def fake_get(path, token, params=None, critical=False):
+        if path == "/executions" and (params or {}).get("status") == "doing":
+            return {
+                "executions": [
+                    {"id": 700, "name": "Another active project", "status": "doing"},
+                    {"id": 614, "name": "International Website V1.0", "status": "doing"},
+                ]
+            }
+        if path == "/executions" and (params or {}).get("status") == "wait":
+            return {"executions": []}
+        if path == "/testtasks":
+            return {"data": []}
+        if path.startswith("/products/"):
+            return {"data": []}
+        if path.startswith("/executions/"):
+            return {"data": []}
+        return {}
+
+    monkeypatch.setattr(zentao, "_zt_get", fake_get)
+
+    response = _client(zentao.router).get(
+        "/api/zentao/dashboard",
+        params={"project": "west-kowloon", "max_iterations": 1},
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert [item["id"] for item in payload["iterations"]] == ["iter-614"]
+    assert [item["id"] for item in payload["moreExecutions"]] == ["iter-700"]
+    assert payload["meta"]["executionId"] == 614
+    assert payload["meta"]["scope"] == "all-active-executions"
+
+
 def test_package_health_list_contract(monkeypatch, tmp_path):
     class ScannerStub:
         STAGE_DEFS = [{"id": "01-input", "label": "Input"}]

@@ -19,10 +19,10 @@ const { Title, Text, Paragraph } = Typography
 // ---------------------------------------------------------------------------
 
 const ROLES = {
-  PM:       { key: 'PM',       name: '产品经理',     short: 'PM',   color: '#1677ff', icon: <CrownOutlined /> },
-  Designer: { key: 'Designer', name: 'UI/UX 设计',  short: 'UI',   color: '#eb2f96', icon: <HighlightOutlined /> },
-  Dev:      { key: 'Dev',      name: '开发工程师',   short: 'DEV',  color: '#52c41a', icon: <CodeOutlined /> },
-  QA:       { key: 'QA',       name: '测试 (QA)',   short: 'QA',   color: '#fa8c16', icon: <ExperimentOutlined /> },
+  PM:       { key: 'PM',       name: 'Product Manager',  short: 'PM',  color: '#1677ff', icon: <CrownOutlined /> },
+  Designer: { key: 'Designer', name: 'UI/UX Designer',   short: 'UI',  color: '#eb2f96', icon: <HighlightOutlined /> },
+  Dev:      { key: 'Dev',      name: 'Developer',        short: 'DEV', color: '#52c41a', icon: <CodeOutlined /> },
+  QA:       { key: 'QA',       name: 'Quality Assurance', short: 'QA', color: '#fa8c16', icon: <ExperimentOutlined /> },
   DevOps:   { key: 'DevOps',   name: 'DevOps / SRE', short: 'OPS', color: '#722ed1', icon: <CloudServerOutlined /> },
 }
 const ROLE_ORDER = ['PM', 'Designer', 'Dev', 'QA', 'DevOps']
@@ -38,87 +38,87 @@ const ROLE_ORDER = ['PM', 'Designer', 'Dev', 'QA', 'DevOps']
 // ---------------------------------------------------------------------------
 
 const PHASES = [
-  // Original Phase 1 (现状诊断) intentionally omitted per product call.
+  // Original Phase 1 (Current-State Assessment) intentionally omitted per product call.
   // `id` stays at the original number to keep localStorage keys stable
   // (deliverable ids `p2-d1`, selectedPhaseId persisted, etc.).
   // `displayId` is the renumbered 1..N shown in the UI.
   {
-    id: 2, displayId: 1, name: '质量目标与指标', goal: '与业务对齐质量目标', content: 'deliverables',
-    input: '公司业务目标、发布节奏、风险类型',
-    output: '质量目标、核心指标',
-    actions: '定 5-8 个指标：逃逸缺陷率、证据完整率、自动化覆盖率、发布通过率等',
+    id: 2, displayId: 1, name: 'Quality Goals & Metrics', goal: 'Align quality goals with business objectives', content: 'deliverables',
+    input: 'Business objectives, release cadence, and risk categories',
+    output: 'Quality goals and core metrics',
+    actions: 'Define 5-8 metrics, such as defect escape rate, evidence completeness, automation coverage, and release pass rate',
     deliverables: [
-      { id: 'p2-d1', name: '质量目标（年度/项目级）' },
-      { id: 'p2-d2', name: '核心质量指标定义' },
-      { id: 'p2-d3', name: '指标采集渠道明确' },
+      { id: 'p2-d1', name: 'Quality goals (annual / project level)' },
+      { id: 'p2-d2', name: 'Core quality metric definitions' },
+      { id: 'p2-d3', name: 'Defined metric data sources' },
     ],
   },
   {
-    id: 3, displayId: 2, name: '流程标准与角色', goal: '统一 SDLC 流程 + 各角色职责', content: 'sdlc',
-    input: 'SDLC 流程、团队角色、合规要求',
-    output: '流程图、各阶段角色职责、质量门禁',
-    actions: '为 8 个 SDLC 阶段定义角色 × 输入 × 产出 × 门禁',
+    id: 3, displayId: 2, name: 'Process Standards & Roles', goal: 'Standardize the SDLC and role responsibilities', content: 'sdlc',
+    input: 'SDLC process, team roles, and compliance requirements',
+    output: 'Process map, stage responsibilities, and quality gates',
+    actions: 'Define roles, inputs, outputs, and gates for all 8 SDLC stages',
   },
   {
-    id: 4, displayId: 3, name: '交付物与模板', goal: '统一测试资产格式', content: 'deliverables',
-    input: '历史文档、最佳实践、项目案例',
-    output: '测试策略、用例、需求评审、报告、复盘模板',
-    actions: '统一格式和必填项',
+    id: 4, displayId: 3, name: 'Deliverables & Templates', goal: 'Standardize test asset formats', content: 'deliverables',
+    input: 'Historical documents, best practices, and project examples',
+    output: 'Templates for test strategies, test cases, requirement reviews, reports, and retrospectives',
+    actions: 'Standardize formats and required fields',
     deliverables: [
-      { id: 'p4-d1', name: '测试策略模板' },
-      { id: 'p4-d2', name: '测试用例模板' },
-      { id: 'p4-d3', name: '需求评审 checklist' },
-      { id: 'p4-d4', name: '测试报告模板' },
-      { id: 'p4-d5', name: '复盘模板' },
+      { id: 'p4-d1', name: 'Test strategy template' },
+      { id: 'p4-d2', name: 'Test case template' },
+      { id: 'p4-d3', name: 'Requirement review checklist' },
+      { id: 'p4-d4', name: 'Test report template' },
+      { id: 'p4-d5', name: 'Retrospective template' },
     ],
   },
   {
-    id: 5, displayId: 4, name: '执行与证据机制', goal: '定义什么叫"测过"', content: 'deliverables',
-    input: '测试用例、环境、数据、版本',
-    output: '执行记录、截图、日志、缺陷单',
-    actions: '规定结果 + 证据 + 缺陷记录三件套',
+    id: 5, displayId: 4, name: 'Execution & Evidence', goal: 'Define what "tested" means', content: 'deliverables',
+    input: 'Test cases, environments, data, and builds',
+    output: 'Execution records, screenshots, logs, and defect records',
+    actions: 'Require the complete set of results, evidence, and defect records',
     deliverables: [
-      { id: 'p5-d1', name: '执行结果回填规范' },
-      { id: 'p5-d2', name: '证据上传规范（截图/日志）' },
-      { id: 'p5-d3', name: '缺陷登记规范' },
-      { id: 'p5-d4', name: 'evidence 目录约定' },
+      { id: 'p5-d1', name: 'Execution result recording standard' },
+      { id: 'p5-d2', name: 'Evidence upload standard (screenshots / logs)' },
+      { id: 'p5-d3', name: 'Defect logging standard' },
+      { id: 'p5-d4', name: 'Evidence folder convention' },
     ],
   },
   {
-    id: 6, displayId: 5, name: '自动化与平台', goal: '覆盖核心执行链路', content: 'deliverables',
-    input: '核心业务流、回归场景',
-    output: '自动化框架、回归集、Dashboard、报告',
-    actions: '先覆盖核心链路，不追求全量自动化',
+    id: 6, displayId: 5, name: 'Automation & Platform', goal: 'Cover critical execution paths', content: 'deliverables',
+    input: 'Critical business flows and regression scenarios',
+    output: 'Automation framework, regression suite, dashboard, and reports',
+    actions: 'Cover critical paths first instead of pursuing total automation',
     deliverables: [
-      { id: 'p6-d1', name: 'Behave + Playwright 框架' },
-      { id: 'p6-d2', name: '核心回归用例集' },
-      { id: 'p6-d3', name: 'Dashboard 展示自动化结果' },
-      { id: 'p6-d4', name: '证据自动入库（dashboard.db）' },
+      { id: 'p6-d1', name: 'Behave + Playwright framework' },
+      { id: 'p6-d2', name: 'Core regression suite' },
+      { id: 'p6-d3', name: 'Automation results displayed in the dashboard' },
+      { id: 'p6-d4', name: 'Evidence recorded automatically in dashboard.db' },
     ],
   },
   {
-    id: 7, displayId: 6, name: '质量门禁与发布准入', goal: '不达标不能发布', content: 'deliverables',
-    input: '用例、自动化、报告、缺陷状态',
-    output: 'Gate 检查、CI 门禁、发布准入',
-    actions: 'gate.py 接入 CI 和发布流程',
+    id: 7, displayId: 6, name: 'Quality Gates & Release Readiness', goal: 'Block releases that do not meet the standard', content: 'deliverables',
+    input: 'Test cases, automation, reports, and defect status',
+    output: 'Gate checks, CI gates, and release-readiness decisions',
+    actions: 'Integrate gate.py into CI and the release workflow',
     deliverables: [
-      { id: 'p7-d1', name: 'gate.py 全绿' },
-      { id: 'p7-d2', name: 'CI 门禁接入' },
-      { id: 'p7-d3', name: '发布准入 checklist' },
-      { id: 'p7-d4', name: 'Go/No-Go 决策机制' },
+      { id: 'p7-d1', name: 'All gate.py checks pass' },
+      { id: 'p7-d2', name: 'CI gate integration' },
+      { id: 'p7-d3', name: 'Release-readiness checklist' },
+      { id: 'p7-d4', name: 'Go / No-Go decision process' },
     ],
   },
   {
-    id: 8, displayId: 7, name: '度量与持续改进', goal: '形成质量治理闭环', content: 'review',
-    input: '缺陷、执行结果、线上问题、复盘',
-    output: '质量看板、复盘记录、改进项、qa-harness 现状评审',
-    actions: '复盘机制、问题反向更新模板、技能、自动化',
+    id: 8, displayId: 7, name: 'Metrics & Continuous Improvement', goal: 'Close the quality-governance feedback loop', content: 'review',
+    input: 'Defects, execution results, production issues, and retrospectives',
+    output: 'Quality dashboard, retrospective records, improvement actions, and qa-harness assessment',
+    actions: 'Use retrospectives to feed issues back into templates, skills, and automation',
     deliverables: [
-      { id: 'p8-d1', name: '质量看板（指标可视化）已上线' },
-      { id: 'p8-d2', name: '复盘机制（按版本 / 季度）已运行' },
-      { id: 'p8-d3', name: '改进项有 Owner / Due / 状态跟踪' },
-      { id: 'p8-d4', name: '改进反向更新模板 / Gate / 自动化' },
-      { id: 'p8-d5', name: 'qa-harness 现状评审项全部绿' },
+      { id: 'p8-d1', name: 'Quality dashboard (metric visualization) is live' },
+      { id: 'p8-d2', name: 'Release / quarterly retrospective process is active' },
+      { id: 'p8-d3', name: 'Improvement actions track owner, due date, and status' },
+      { id: 'p8-d4', name: 'Improvements feed back into templates, gates, and automation' },
+      { id: 'p8-d5', name: 'All qa-harness assessment items are green' },
     ],
   },
 ]
@@ -142,33 +142,33 @@ const PHASES = [
 
 const SDLC_STAGES = [
   {
-    id: 'sdlc-req', name: '需求阶段',
-    purpose: '理解业务诉求 → 明确范围 → 测试点对齐',
-    gate: 'PRD 评审通过 + 测试点已记录 + 用例已评审',
+    id: 'sdlc-req', name: 'Requirements',
+    purpose: 'Understand business needs → define scope → align test coverage',
+    gate: 'PRD approved + test points recorded + test cases reviewed',
     roles: {
       PM: {
         inputs: [
-          { id: 'req-pm-i1', name: '业务目标', from: '运营' },
-          { id: 'req-pm-i2', name: '客户访谈结论', from: '运营' },
-          { id: 'req-pm-i3', name: '历史相关数据', from: 'BI' },
+          { id: 'req-pm-i1', name: 'Business objectives', from: 'Operations' },
+          { id: 'req-pm-i2', name: 'Customer interview findings', from: 'Operations' },
+          { id: 'req-pm-i3', name: 'Relevant historical data', from: 'BI' },
         ],
         outputs: [
           { id: 'req-pm-o1', name: 'PRD', kind: 'doc' },
-          { id: 'req-pm-o2', name: '低保真原型 / 流程图', kind: 'doc',
-            note: '高保真 Figma 由 Designer 输出' },
-          { id: 'req-pm-o3', name: '验收标准', kind: 'doc' },
-          { id: 'req-pm-o4', name: '需求评审会议纪要', kind: 'doc' },
+          { id: 'req-pm-o2', name: 'Low-fidelity prototype / flowchart', kind: 'doc',
+            note: 'The Designer produces the high-fidelity Figma design' },
+          { id: 'req-pm-o3', name: 'Acceptance criteria', kind: 'doc' },
+          { id: 'req-pm-o4', name: 'Requirement review minutes', kind: 'doc' },
         ],
       },
       Designer: {
         inputs: [
           { id: 'req-ui-i1', name: 'PRD', from: 'PM' },
-          { id: 'req-ui-i2', name: '用户画像', from: 'PM/运营' },
+          { id: 'req-ui-i2', name: 'User personas', from: 'PM / Operations' },
         ],
         outputs: [
-          { id: 'req-ui-o1', name: '用户旅程 / 信息架构', kind: 'doc' },
-          { id: 'req-ui-o2', name: 'Figma 设计稿（高保真）', kind: 'doc',
-            note: 'QA 需在本阶段拿到，用于写用例' },
+          { id: 'req-ui-o1', name: 'User journey / information architecture', kind: 'doc' },
+          { id: 'req-ui-o2', name: 'Figma design (high fidelity)', kind: 'doc',
+            note: 'QA needs this during this stage to write test cases' },
         ],
       },
       Dev: {
@@ -176,271 +176,271 @@ const SDLC_STAGES = [
           { id: 'req-dev-i1', name: 'PRD', from: 'PM' },
         ],
         outputs: [
-          { id: 'req-dev-o1', name: '技术可行性评估', kind: 'doc' },
-          { id: 'req-dev-o2', name: '工时评估', kind: 'doc' },
+          { id: 'req-dev-o1', name: 'Technical feasibility assessment', kind: 'doc' },
+          { id: 'req-dev-o2', name: 'Effort estimate', kind: 'doc' },
         ],
       },
       QA: {
         inputs: [
-          { id: 'req-qa-i1', name: '脑图', from: 'PM' },
+          { id: 'req-qa-i1', name: 'Mind map', from: 'PM' },
           { id: 'req-qa-i2', name: 'PRD', from: 'PM' },
-          { id: 'req-qa-i3', name: 'Figma 设计稿', from: 'Designer' },
-          { id: 'req-qa-i4', name: '历史相关缺陷', from: 'QA / 客户' },
+          { id: 'req-qa-i3', name: 'Figma design', from: 'Designer' },
+          { id: 'req-qa-i4', name: 'Relevant historical defects', from: 'QA / Customer' },
         ],
         outputs: [
-          { id: 'req-qa-o1', name: '测试用例', kind: 'count', defaultTarget: 0, note: '基于需求颗粒度估算（目标可被禅道 API 覆盖）' },
-          { id: 'req-qa-o2', name: '测试用例同行评审记录', kind: 'doc', note: '至少 1 QA + 1 开发参与' },
-          { id: 'req-qa-o3', name: '测试点 / 风险记录', kind: 'doc' },
+          { id: 'req-qa-o1', name: 'Test cases', kind: 'count', defaultTarget: 0, note: 'Estimated from requirement granularity; the target can be populated through the ZenTao API' },
+          { id: 'req-qa-o2', name: 'Peer-review record for test cases', kind: 'doc', note: 'At least 1 QA and 1 developer participate' },
+          { id: 'req-qa-o3', name: 'Test points / risk record', kind: 'doc' },
         ],
       },
     },
   },
   {
-    id: 'sdlc-design', name: '设计阶段',
-    purpose: '把架构 / 接口 / 数据流转成测试策略',
-    gate: '测试策略评审通过 + 关键场景策略明确',
+    id: 'sdlc-design', name: 'Design',
+    purpose: 'Translate architecture, APIs, and data flows into a test strategy',
+    gate: 'Test strategy approved + approach defined for critical scenarios',
     roles: {
       PM: {
-        inputs: [{ id: 'des-pm-i1', name: 'PRD 已锁版', from: 'PM' }],
-        outputs: [{ id: 'des-pm-o1', name: '设计走查 + PRD 一致性确认', kind: 'doc' }],
+        inputs: [{ id: 'des-pm-i1', name: 'Baselined PRD', from: 'PM' }],
+        outputs: [{ id: 'des-pm-o1', name: 'Design walkthrough + PRD consistency confirmation', kind: 'doc' }],
       },
       Designer: {
         inputs: [{ id: 'des-ui-i1', name: 'PRD', from: 'PM' }],
         outputs: [
-          { id: 'des-ui-o1', name: '交互细节 / 边界态设计', kind: 'doc' },
-          { id: 'des-ui-o2', name: '设计规范 / 设计 Token', kind: 'doc' },
+          { id: 'des-ui-o1', name: 'Interaction details / edge-state design', kind: 'doc' },
+          { id: 'des-ui-o2', name: 'Design guidelines / design tokens', kind: 'doc' },
         ],
       },
       Dev: {
         inputs: [
           { id: 'des-dev-i1', name: 'PRD', from: 'PM' },
-          { id: 'des-dev-i2', name: '设计稿', from: 'Designer' },
+          { id: 'des-dev-i2', name: 'Design specification', from: 'Designer' },
         ],
         outputs: [
-          { id: 'des-dev-o1', name: '系统架构图', kind: 'doc' },
-          { id: 'des-dev-o2', name: 'API 接口文档 (Swagger)', kind: 'doc' },
-          { id: 'des-dev-o3', name: '数据模型 / 表结构', kind: 'doc' },
-          { id: 'des-dev-o4', name: '数据流图 / 状态机', kind: 'doc' },
+          { id: 'des-dev-o1', name: 'System architecture diagram', kind: 'doc' },
+          { id: 'des-dev-o2', name: 'API documentation (Swagger)', kind: 'doc' },
+          { id: 'des-dev-o3', name: 'Data model / table schema', kind: 'doc' },
+          { id: 'des-dev-o4', name: 'Data-flow diagram / state machine', kind: 'doc' },
         ],
       },
       QA: {
         inputs: [
-          { id: 'des-qa-i1', name: '系统架构图', from: 'Dev' },
-          { id: 'des-qa-i2', name: 'API 文档', from: 'Dev' },
-          { id: 'des-qa-i3', name: '数据流图 / 状态机', from: 'Dev' },
-          { id: 'des-qa-i4', name: '权限 / 角色定义', from: 'PM' },
+          { id: 'des-qa-i1', name: 'System architecture diagram', from: 'Dev' },
+          { id: 'des-qa-i2', name: 'API documentation', from: 'Dev' },
+          { id: 'des-qa-i3', name: 'Data-flow diagram / state machine', from: 'Dev' },
+          { id: 'des-qa-i4', name: 'Permission / role definitions', from: 'PM' },
         ],
         outputs: [
-          { id: 'des-qa-o1', name: '测试策略', kind: 'doc' },
-          { id: 'des-qa-o2', name: '接口测试方案', kind: 'doc' },
-          { id: 'des-qa-o3', name: '非功能测试方案 (性能 / 安全)', kind: 'doc' },
+          { id: 'des-qa-o1', name: 'Test strategy', kind: 'doc' },
+          { id: 'des-qa-o2', name: 'API test approach', kind: 'doc' },
+          { id: 'des-qa-o3', name: 'Non-functional test approach (performance / security)', kind: 'doc' },
         ],
       },
       DevOps: {
-        inputs: [{ id: 'des-ops-i1', name: '架构图', from: 'Dev' }],
-        outputs: [{ id: 'des-ops-o1', name: '环境部署方案', kind: 'doc' }],
+        inputs: [{ id: 'des-ops-i1', name: 'Architecture diagram', from: 'Dev' }],
+        outputs: [{ id: 'des-ops-o1', name: 'Environment deployment plan', kind: 'doc' }],
       },
     },
   },
   {
-    id: 'sdlc-dev', name: '开发阶段',
-    purpose: 'QA 同步开发产物 → 准备自动化与冒烟',
-    gate: '开发自测通过 + 冒烟脚本就位 + 关键接口可调',
+    id: 'sdlc-dev', name: 'Development',
+    purpose: 'QA tracks development outputs → prepares automation and smoke tests',
+    gate: 'Developer testing passed + smoke scripts ready + critical APIs testable',
     roles: {
       PM: {
         inputs: [],
-        outputs: [{ id: 'dev-pm-o1', name: '需求澄清答疑', kind: 'doc' }],
+        outputs: [{ id: 'dev-pm-o1', name: 'Requirement clarification responses', kind: 'doc' }],
       },
       Designer: {
         inputs: [],
-        outputs: [{ id: 'dev-ui-o1', name: '设计走查 (实现 vs 设计)', kind: 'doc' }],
+        outputs: [{ id: 'dev-ui-o1', name: 'Design walkthrough (implementation vs design)', kind: 'doc' }],
       },
       Dev: {
         inputs: [
-          { id: 'dev-dev-i1', name: '冻结后的需求 + 设计', from: 'PM / Designer' },
+          { id: 'dev-dev-i1', name: 'Baselined requirements + design', from: 'PM / Designer' },
         ],
         outputs: [
-          { id: 'dev-dev-o1', name: '编码完成', kind: 'doc' },
-          { id: 'dev-dev-o2', name: '单元测试覆盖率', kind: 'count', defaultTarget: 60, unit: '%', note: '行覆盖率 ≥ 60%' },
-          { id: 'dev-dev-o3', name: '代码评审通过', kind: 'doc' },
-          { id: 'dev-dev-o4', name: 'CI 构建绿', kind: 'doc' },
+          { id: 'dev-dev-o1', name: 'Implementation complete', kind: 'doc' },
+          { id: 'dev-dev-o2', name: 'Unit-test coverage', kind: 'count', defaultTarget: 60, unit: '%', note: 'Line coverage ≥ 60%' },
+          { id: 'dev-dev-o3', name: 'Code review passed', kind: 'doc' },
+          { id: 'dev-dev-o4', name: 'CI build is green', kind: 'doc' },
         ],
       },
       QA: {
         inputs: [
-          { id: 'dev-qa-i1', name: 'API 文档 (最新版)', from: 'Dev' },
-          { id: 'dev-qa-i2', name: '系统架构图 (最新版)', from: 'Dev' },
-          { id: 'dev-qa-i3', name: '数据库 Schema / 测试数据', from: 'Dev' },
-          { id: 'dev-qa-i4', name: '开发自测 / 冒烟报告', from: 'Dev' },
+          { id: 'dev-qa-i1', name: 'API documentation (latest)', from: 'Dev' },
+          { id: 'dev-qa-i2', name: 'System architecture diagram (latest)', from: 'Dev' },
+          { id: 'dev-qa-i3', name: 'Database schema / test data', from: 'Dev' },
+          { id: 'dev-qa-i4', name: 'Developer test / smoke-test report', from: 'Dev' },
         ],
         outputs: [
-          { id: 'dev-qa-o1', name: '测试脚本 (自动化)', kind: 'count', defaultTarget: 0,
-            linkedTo: 'req-qa-o1', note: '与测试用例 1:1，目标 = 测试用例数（自动同步）' },
-          { id: 'dev-qa-o2', name: '接口冒烟脚本', kind: 'count', defaultTarget: 0 },
-          { id: 'dev-qa-o3', name: '测试数据脚本', kind: 'doc' },
+          { id: 'dev-qa-o1', name: 'Automated test scripts', kind: 'count', defaultTarget: 0,
+            linkedTo: 'req-qa-o1', note: '1:1 with test cases; target = test case count (automatically synchronized)' },
+          { id: 'dev-qa-o2', name: 'API smoke-test scripts', kind: 'count', defaultTarget: 0 },
+          { id: 'dev-qa-o3', name: 'Test-data scripts', kind: 'doc' },
         ],
       },
       DevOps: {
         inputs: [],
         outputs: [
-          { id: 'dev-ops-o1', name: 'CI 流水线配置', kind: 'doc' },
-          { id: 'dev-ops-o2', name: '测试环境可用 (SIT)', kind: 'doc' },
+          { id: 'dev-ops-o1', name: 'CI pipeline configuration', kind: 'doc' },
+          { id: 'dev-ops-o2', name: 'Test environment available (SIT)', kind: 'doc' },
         ],
       },
     },
   },
   {
-    id: 'sdlc-testdesign', name: '测试设计',
-    purpose: '细化用例 + 准备数据，让需求阶段写的用例可执行',
-    gate: '边界 / 异常 / 权限场景已纳入 + 测试数据已准备 + 用例最终冻结',
+    id: 'sdlc-testdesign', name: 'Test Design',
+    purpose: 'Refine cases + prepare data so requirement-stage cases are executable',
+    gate: 'Boundary / exception / permission scenarios covered + test data ready + test cases baselined',
     roles: {
       PM: {
         inputs: [],
-        outputs: [{ id: 'td-pm-o1', name: '用例评审参与', kind: 'doc' }],
+        outputs: [{ id: 'td-pm-o1', name: 'Test case review participation', kind: 'doc' }],
       },
       Dev: {
         inputs: [],
-        outputs: [{ id: 'td-dev-o1', name: '技术细节澄清', kind: 'doc' }],
+        outputs: [{ id: 'td-dev-o1', name: 'Technical clarification', kind: 'doc' }],
       },
       QA: {
         inputs: [
-          { id: 'td-qa-i1', name: '需求 + 风险清单', from: 'PM / QA' },
-          { id: 'td-qa-i2', name: '历史缺陷库 (禅道)', from: 'QA' },
-          { id: 'td-qa-i3', name: '需求阶段已写的测试用例', from: 'QA' },
+          { id: 'td-qa-i1', name: 'Requirements + risk list', from: 'PM / QA' },
+          { id: 'td-qa-i2', name: 'Historical defect repository (ZenTao)', from: 'QA' },
+          { id: 'td-qa-i3', name: 'Test cases drafted during requirements', from: 'QA' },
         ],
         outputs: [
-          // No new count here — 测试用例 lives in 需求阶段 to avoid double-counting.
-          // 测试设计 is refinement work on top of it.
-          { id: 'td-qa-o1', name: '用例细化（边界 / 异常 / 权限）', kind: 'doc' },
-          { id: 'td-qa-o2', name: '测试数据集设计', kind: 'doc' },
-          { id: 'td-qa-o3', name: '用例最终冻结 / 版本号确定', kind: 'doc' },
+          // No new count here — Test Cases lives in Requirements to avoid double-counting.
+          // Test Design is refinement work on top of it.
+          { id: 'td-qa-o1', name: 'Test case refinement (boundary / exception / permission)', kind: 'doc' },
+          { id: 'td-qa-o2', name: 'Test dataset design', kind: 'doc' },
+          { id: 'td-qa-o3', name: 'Final test case baseline / version confirmed', kind: 'doc' },
         ],
       },
     },
   },
   {
-    id: 'sdlc-execute', name: '测试执行',
-    purpose: '按用例执行 + 证据 + 缺陷登记',
-    gate: '执行率 100% + 缺陷有归属 + 证据完整',
+    id: 'sdlc-execute', name: 'Test Execution',
+    purpose: 'Execute test cases + collect evidence + log defects',
+    gate: '100% execution + every defect assigned + complete evidence',
     roles: {
       PM: {
         inputs: [],
         outputs: [
-          { id: 'ex-pm-o1', name: '缺陷优先级裁定', kind: 'doc' },
-          { id: 'ex-pm-o2', name: 'UAT 验收', kind: 'doc' },
+          { id: 'ex-pm-o1', name: 'Defect priority decision', kind: 'doc' },
+          { id: 'ex-pm-o2', name: 'UAT acceptance', kind: 'doc' },
         ],
       },
       Dev: {
-        inputs: [{ id: 'ex-dev-i1', name: '缺陷单 (禅道)', from: 'QA' }],
-        outputs: [{ id: 'ex-dev-o1', name: '缺陷修复 + 提测', kind: 'doc' }],
+        inputs: [{ id: 'ex-dev-i1', name: 'Defect record (ZenTao)', from: 'QA' }],
+        outputs: [{ id: 'ex-dev-o1', name: 'Defect fix + test handoff', kind: 'doc' }],
       },
       QA: {
         inputs: [
-          { id: 'ex-qa-i1', name: '测试环境 (SIT/UAT) 可用', from: 'DevOps' },
-          { id: 'ex-qa-i2', name: '可测版本 (Build)', from: 'Dev' },
-          { id: 'ex-qa-i3', name: '测试数据已准备', from: 'QA' },
+          { id: 'ex-qa-i1', name: 'Test environment (SIT / UAT) available', from: 'DevOps' },
+          { id: 'ex-qa-i2', name: 'Testable build', from: 'Dev' },
+          { id: 'ex-qa-i3', name: 'Test data ready', from: 'QA' },
         ],
         outputs: [
-          { id: 'ex-qa-o1', name: '执行记录 (Pass / Fail)', kind: 'count', defaultTarget: 0,
-            linkedTo: 'req-qa-o1', note: '目标 = 测试用例数（自动同步）' },
-          { id: 'ex-qa-o2', name: '缺陷单 (禅道)', kind: 'count', defaultTarget: 0, note: '禅道 API 可自动拉取' },
-          { id: 'ex-qa-o3', name: '截图 / 日志证据', kind: 'doc' },
-          { id: 'ex-qa-o4', name: '日报 / 进度同步', kind: 'doc' },
+          { id: 'ex-qa-o1', name: 'Execution records (Pass / Fail)', kind: 'count', defaultTarget: 0,
+            linkedTo: 'req-qa-o1', note: 'Target = test case count (automatically synchronized)' },
+          { id: 'ex-qa-o2', name: 'Defect records (ZenTao)', kind: 'count', defaultTarget: 0, note: 'Can be retrieved automatically through the ZenTao API' },
+          { id: 'ex-qa-o3', name: 'Screenshot / log evidence', kind: 'doc' },
+          { id: 'ex-qa-o4', name: 'Daily report / progress update', kind: 'doc' },
         ],
       },
       DevOps: {
         inputs: [],
-        outputs: [{ id: 'ex-ops-o1', name: '测试环境稳定运行', kind: 'doc' }],
+        outputs: [{ id: 'ex-ops-o1', name: 'Stable test environment', kind: 'doc' }],
       },
     },
   },
   {
-    id: 'sdlc-regress', name: '回归阶段',
-    purpose: '保证修复不引入新问题',
-    gate: '高风险路径回归全绿',
+    id: 'sdlc-regress', name: 'Regression',
+    purpose: 'Ensure fixes do not introduce new issues',
+    gate: 'All high-risk regression paths pass',
     roles: {
       Dev: {
         inputs: [],
-        outputs: [{ id: 'rg-dev-o1', name: '修复缺陷自验证', kind: 'doc' }],
+        outputs: [{ id: 'rg-dev-o1', name: 'Developer verification of defect fixes', kind: 'doc' }],
       },
       QA: {
         inputs: [
-          { id: 'rg-qa-i1', name: '修复缺陷列表 (禅道)', from: 'QA' },
-          { id: 'rg-qa-i2', name: '影响范围说明', from: 'Dev' },
+          { id: 'rg-qa-i1', name: 'Fixed defect list (ZenTao)', from: 'QA' },
+          { id: 'rg-qa-i2', name: 'Impact scope', from: 'Dev' },
         ],
         outputs: [
-          { id: 'rg-qa-o1', name: '回归计划', kind: 'doc' },
-          { id: 'rg-qa-o2', name: '自动化回归运行', kind: 'count', defaultTarget: 0 },
-          { id: 'rg-qa-o3', name: '回归报告', kind: 'doc' },
+          { id: 'rg-qa-o1', name: 'Regression plan', kind: 'doc' },
+          { id: 'rg-qa-o2', name: 'Automated regression runs', kind: 'count', defaultTarget: 0 },
+          { id: 'rg-qa-o3', name: 'Regression report', kind: 'doc' },
         ],
       },
     },
   },
   {
-    id: 'sdlc-release', name: '执行评审阶段',
-    purpose: '给出 QA readiness 结论，不替代业务发布决策',
-    gate: '执行结果明确 + 风险 Owner 签字',
+    id: 'sdlc-release', name: 'Execution Review',
+    purpose: 'Provide a QA-readiness conclusion without replacing the business release decision',
+    gate: 'Clear execution outcome + risk owner sign-off',
     roles: {
       PM: {
         inputs: [],
         outputs: [
-          { id: 'rl-pm-o1', name: 'Go / No-Go 决策', kind: 'doc' },
-          { id: 'rl-pm-o2', name: '发布通告 / 用户告知', kind: 'doc' },
+          { id: 'rl-pm-o1', name: 'Go / No-Go decision', kind: 'doc' },
+          { id: 'rl-pm-o2', name: 'Release announcement / user notification', kind: 'doc' },
         ],
       },
       Dev: {
         inputs: [],
-        outputs: [{ id: 'rl-dev-o1', name: '发布包 / 部署脚本', kind: 'doc' }],
+        outputs: [{ id: 'rl-dev-o1', name: 'Release package / deployment scripts', kind: 'doc' }],
       },
       QA: {
         inputs: [
-          { id: 'rl-qa-i1', name: '所有用例执行完毕', from: 'QA' },
-          { id: 'rl-qa-i2', name: '遗留缺陷状态确认', from: 'QA + PM' },
+          { id: 'rl-qa-i1', name: 'All test cases executed', from: 'QA' },
+          { id: 'rl-qa-i2', name: 'Outstanding defect status confirmed', from: 'QA + PM' },
         ],
         outputs: [
           { id: 'rl-qa-o1', name: 'QA Readiness Report', kind: 'doc' },
-          { id: 'rl-qa-o2', name: '执行风险接受记录', kind: 'doc' },
-          { id: 'rl-qa-o3', name: '执行评审 checklist 已过', kind: 'doc' },
+          { id: 'rl-qa-o2', name: 'Execution-risk acceptance record', kind: 'doc' },
+          { id: 'rl-qa-o3', name: 'Execution-review checklist passed', kind: 'doc' },
         ],
       },
       DevOps: {
         inputs: [],
         outputs: [
-          { id: 'rl-ops-o1', name: '生产部署', kind: 'doc' },
-          { id: 'rl-ops-o2', name: '监控告警就位', kind: 'doc' },
+          { id: 'rl-ops-o1', name: 'Production deployment', kind: 'doc' },
+          { id: 'rl-ops-o2', name: 'Monitoring and alerts ready', kind: 'doc' },
         ],
       },
     },
   },
   {
-    id: 'sdlc-postrelease', name: '上线反馈阶段',
-    purpose: '监控 + 复盘 + 反向改进',
-    gate: '问题闭环 + 改进闭环',
+    id: 'sdlc-postrelease', name: 'Post-Release Feedback',
+    purpose: 'Monitor + review + feed improvements back into the system',
+    gate: 'Issues closed + improvements completed',
     roles: {
       PM: {
-        inputs: [{ id: 'po-pm-i1', name: '上线数据 / 用户反馈', from: 'Ops / SRE' }],
-        outputs: [{ id: 'po-pm-o1', name: '数据复盘 + 改进项跟踪', kind: 'doc' }],
+        inputs: [{ id: 'po-pm-i1', name: 'Production data / user feedback', from: 'Ops / SRE' }],
+        outputs: [{ id: 'po-pm-o1', name: 'Data review + improvement tracking', kind: 'doc' }],
       },
       Dev: {
         inputs: [],
-        outputs: [{ id: 'po-dev-o1', name: '线上 bug 修复', kind: 'doc' }],
+        outputs: [{ id: 'po-dev-o1', name: 'Production defect fixes', kind: 'doc' }],
       },
       QA: {
         inputs: [
-          { id: 'po-qa-i1', name: '上线监控数据', from: 'DevOps / SRE' },
-          { id: 'po-qa-i2', name: '用户 / 客服反馈', from: '运营' },
+          { id: 'po-qa-i1', name: 'Production monitoring data', from: 'DevOps / SRE' },
+          { id: 'po-qa-i2', name: 'User / customer-service feedback', from: 'Operations' },
         ],
         outputs: [
-          { id: 'po-qa-o1', name: '上线问题复盘', kind: 'doc' },
-          { id: 'po-qa-o2', name: '上线缺陷分析', kind: 'doc' },
-          { id: 'po-qa-o3', name: '改进项 (有 Owner / Due)', kind: 'doc' },
+          { id: 'po-qa-o1', name: 'Production issue retrospective', kind: 'doc' },
+          { id: 'po-qa-o2', name: 'Production defect analysis', kind: 'doc' },
+          { id: 'po-qa-o3', name: 'Improvement actions (with owner / due date)', kind: 'doc' },
         ],
       },
       DevOps: {
         inputs: [],
         outputs: [
-          { id: 'po-ops-o1', name: '监控告警闭环', kind: 'doc' },
-          { id: 'po-ops-o2', name: 'SLA 报告', kind: 'doc' },
+          { id: 'po-ops-o1', name: 'Monitoring-alert closure', kind: 'doc' },
+          { id: 'po-ops-o2', name: 'SLA report', kind: 'doc' },
         ],
       },
     },
@@ -448,14 +448,14 @@ const SDLC_STAGES = [
 ]
 
 const HARNESS_REVIEW = [
-  { module: '流程标准', status: 'partial', gap: '需要在真实项目中持续强制执行', action: '在门禁中真项目落地' },
-  { module: '模板体系', status: 'partial', gap: 'QA Readiness Report 需要与 06-execution-review 串联', action: '生成执行评审报告和风险接受记录' },
-  { module: '自动化平台', status: '已有基础', gap: '项目首页/SKU 详情未自动化', action: '补齐核心链路覆盖' },
-  { module: '证据机制', status: '已有但拒收', gap: 'gate 显示 comments/截图/状态等问题', action: '先把 gate.py 跑绿' },
-  { module: '质量门禁', status: '已有工具', gap: '当前 OVERALL FAIL，未接入 CI', action: '修复失败项接入 CI' },
-  { module: '度量看板', status: '雏形中', gap: '指标定义未完全自动化', action: '自动汇总各阶段指标' },
-  { module: '复盘闭环', status: '偏弱', gap: '缺执行评审、上线反馈、签字流', action: '用 execution review 模板实例化' },
-  { module: '持续运营机制', status: '偏弱', gap: '不是 Git 仓库，无 .gitignore', action: '建立版本与可审计性' },
+  { module: 'Process Standards', status: 'Partial', gap: 'Still needs consistent enforcement in real projects', action: 'Enforce it through project gates' },
+  { module: 'Template System', status: 'Partial', gap: 'QA Readiness Report must connect to 06-execution-review', action: 'Generate execution-review reports and risk-acceptance records' },
+  { module: 'Automation Platform', status: 'Foundation ready', gap: 'Project home page / SKU details are not automated', action: 'Complete critical-path coverage' },
+  { module: 'Evidence System', status: 'Present but rejected', gap: 'The gate reports issues with comments, screenshots, and status', action: 'Make gate.py pass first' },
+  { module: 'Quality Gates', status: 'Tooling ready', gap: 'Current status is OVERALL FAIL and CI is not integrated', action: 'Fix failures and integrate with CI' },
+  { module: 'Metrics Dashboard', status: 'Early stage', gap: 'Metric definitions are not fully automated', action: 'Aggregate stage metrics automatically' },
+  { module: 'Retrospective Loop', status: 'Weak', gap: 'Missing execution review, post-release feedback, and sign-off flow', action: 'Instantiate the execution-review template' },
+  { module: 'Continuous Operations', status: 'Weak', gap: 'Not a Git repository and has no .gitignore', action: 'Establish versioning and auditability' },
 ]
 
 // ---------------------------------------------------------------------------
@@ -472,272 +472,272 @@ const HARNESS_REVIEW = [
 // ---------------------------------------------------------------------------
 
 const PHASE_RICH = {
-  // ---- Phase 2 / id=3  流程标准与角色（SDLC） -------------------------------
+  // ---- Phase 2 / id=3  Process Standards & Roles (SDLC) --------------------
   3: {
-    brief: '每个 SDLC 阶段定义清楚：谁做什么、输入什么、产出什么、Gate 在哪。RACI 是行业语言。',
+    brief: 'Define who does what, what comes in, what goes out, and where the gate sits at every SDLC stage. RACI is the industry-standard language.',
     frameworks: [
       { name: 'RACI Matrix', url: 'https://www.pmi.org/learning/library/raci-matrix-creating-clarity-9534',
-        summary: 'PMI 标准的角色责任矩阵：Responsible / Accountable / Consulted / Informed' },
+        summary: 'PMI responsibility matrix: Responsible / Accountable / Consulted / Informed' },
       { name: 'ISTQB Foundation', url: 'https://www.istqb.org/',
-        summary: '测试过程 7 活动 + 各角色分工的国际基准（CTFL 大纲）' },
+        summary: 'International baseline for the seven testing activities and role responsibilities (CTFL syllabus)' },
       { name: 'SAFe Agile Roles', url: 'https://scaledagileframework.com/',
-        summary: '大规模 Agile 框架的角色定义（PO / SM / Dev / QA / RTE…）' },
+        summary: 'Role definitions for scaled Agile delivery (PO / SM / Dev / QA / RTE...)' },
     ],
     sections: [],
     antiPatterns: [
-      '所有人都对，所有人都不对 — RACI 里 Accountable 必须唯一',
-      '角色清单写了但不在 PR / 评审里被引用 — 流于形式',
-      '只有 QA 角色被细化，其他角色一句话带过 — 跨职能协作没基础',
+      'Everyone is responsible, so no one is responsible — each RACI item must have exactly one Accountable owner',
+      'The role list exists but is never referenced in PRs or reviews — it becomes a formality',
+      'Only QA is defined in detail while every other role gets one sentence — cross-functional collaboration has no foundation',
     ],
   },
 
-  // ---- Phase 1 / id=2  质量目标与指标 ----------------------------------------
+  // ---- Phase 1 / id=2  Quality Goals & Metrics -----------------------------
   2: {
-    brief: '把"质量好不好"变成"质量数字"。北极星指标驱动整个体系的优先级。',
+    brief: 'Turn "is quality good?" into measurable quality data. North-star metrics drive priorities across the system.',
     frameworks: [
       { name: 'DORA Four Keys', url: 'https://dora.dev/guides/dora-metrics-four-keys/',
-        summary: 'Google DORA 团队定义的 4 项交付绩效指标，行业基准（精英团队按需部署 + 1 小时内恢复 + CFR 0-15%）' },
+        summary: 'Four software-delivery performance metrics defined by Google DORA; the industry benchmark for elite teams includes on-demand deployment, recovery within one hour, and CFR of 0-15%' },
       { name: 'ISO/IEC 25010:2023', url: 'https://www.iso.org/standard/35733.html',
-        summary: '8 大质量属性 × 31 子属性，软件质量评估的世界基准' },
+        summary: 'Eight quality characteristics and 31 sub-characteristics: a global software-quality benchmark' },
       { name: 'ISTQB Defect Metrics', url: 'https://www.istqb.org/',
-        summary: '逃逸缺陷率 (DER)、缺陷去除率 (DRE)、缺陷密度等经典 QA 指标' },
+        summary: 'Classic QA metrics such as Defect Escape Rate (DER), Defect Removal Efficiency (DRE), and defect density' },
     ],
     sections: [
       {
-        kind: 'kpiCatalog', title: 'KPI 目录（你的"北极星"）',
-        columns: ['指标', '公式', '团队目标', '精英标杆', '采集来源', '类别'],
+        kind: 'kpiCatalog', title: 'KPI Catalog (Your North Star)',
+        columns: ['Metric', 'Formula', 'Team Target', 'Elite Benchmark', 'Data Source', 'Category'],
         rows: [
-          ['部署频率 (DF)', '生产部署次数 / 周',           '每日 ≥ 1', '按需',           'CI/CD',       'DORA'],
-          ['变更前置时间 (LT)', 'commit → 生产用时',       '< 1 天',   '< 1 小时',       'CI/CD',       'DORA'],
-          ['变更失败率 (CFR)', '失败部署 / 总部署',         '< 15%',    '0-15%',          'CI/CD+监控',  'DORA'],
-          ['恢复时间 (MTTR)', '故障开始 → 恢复用时',       '< 1 天',   '< 1 小时',       '监控告警',    'DORA'],
-          ['逃逸缺陷率 (DER)', '上线后缺陷 / 总缺陷',       '< 5%',     '< 1%',           '禅道',        'QA'],
-          ['缺陷去除率 (DRE)', '上线前发现缺陷 / 总缺陷',   '≥ 95%',    '≥ 99%',          '禅道',        'QA'],
-          ['自动化覆盖率', '自动化用例 / 总用例',           '≥ 50%',    '≥ 80%',          'dashboard.db','QA'],
-          ['证据完整率', '完整证据用例 / 执行用例',         '100%',     '100%',           'gate.py',     'QA'],
+          ['Deployment Frequency (DF)', 'Production deployments / week',        '≥ 1 per day', 'On demand', 'CI/CD',              'DORA'],
+          ['Lead Time for Changes (LT)', 'Commit → production elapsed time',      '< 1 day',     '< 1 hour', 'CI/CD',              'DORA'],
+          ['Change Failure Rate (CFR)', 'Failed deployments / total deployments', '< 15%',       '0-15%',    'CI/CD + monitoring', 'DORA'],
+          ['Mean Time to Restore (MTTR)', 'Incident start → service restored',    '< 1 day',     '< 1 hour', 'Monitoring alerts',  'DORA'],
+          ['Defect Escape Rate (DER)', 'Post-release defects / total defects',    '< 5%',        '< 1%',     'ZenTao',             'QA'],
+          ['Defect Removal Efficiency (DRE)', 'Pre-release defects / total defects', '≥ 95%',    '≥ 99%',    'ZenTao',             'QA'],
+          ['Automation Coverage', 'Automated cases / total cases',                '≥ 50%',       '≥ 80%',    'dashboard.db',       'QA'],
+          ['Evidence Completeness', 'Cases with complete evidence / executed cases', '100%',     '100%',     'gate.py',            'QA'],
         ],
       },
       {
-        kind: 'iso25010', title: 'ISO 25010 八大质量属性 — 测试目标拆分',
+        kind: 'iso25010', title: 'ISO 25010 Eight Quality Characteristics — Test Objective Breakdown',
         items: [
-          { name: '功能性', sub: '完整性 / 正确性 / 适合性' },
-          { name: '性能效率', sub: '时间特性 / 资源利用 / 容量' },
-          { name: '兼容性', sub: '共存性 / 互操作性' },
-          { name: '可用性', sub: '易学 / 易操作 / 用户错误防护 / 美学 / 可访问性' },
-          { name: '可靠性', sub: '成熟性 / 可用性 / 容错性 / 可恢复性' },
-          { name: '安全性', sub: '机密性 / 完整性 / 不可否认性 / 可问责性 / 真实性' },
-          { name: '可维护性', sub: '模块化 / 可重用性 / 可分析性 / 可修改性 / 可测试性' },
-          { name: '可移植性', sub: '适应性 / 可安装性 / 可替换性' },
+          { name: 'Functional Suitability', sub: 'Completeness / correctness / appropriateness' },
+          { name: 'Performance Efficiency', sub: 'Time behavior / resource utilization / capacity' },
+          { name: 'Compatibility', sub: 'Co-existence / interoperability' },
+          { name: 'Interaction Capability', sub: 'Learnability / operability / user-error protection / aesthetics / accessibility' },
+          { name: 'Reliability', sub: 'Maturity / availability / fault tolerance / recoverability' },
+          { name: 'Security', sub: 'Confidentiality / integrity / non-repudiation / accountability / authenticity' },
+          { name: 'Maintainability', sub: 'Modularity / reusability / analyzability / modifiability / testability' },
+          { name: 'Portability', sub: 'Adaptability / installability / replaceability' },
         ],
       },
     ],
     antiPatterns: [
-      '指标只展示不行动 — dashboard 不连改进项 = 装饰',
-      '只看测试用例数不看覆盖率与逃逸率 — case 多 ≠ 测得好',
-      '指标依赖人肉采集 — 不自动化就会断',
-      '所有指标都重要 = 没有北极星 — 选 3-5 个就够',
+      'Metrics are displayed but drive no action — a dashboard without linked improvements is decoration',
+      'Counting cases without measuring coverage or escapes — more cases do not mean better testing',
+      'Metrics rely on manual collection — the process will break without automation',
+      'Every metric is important means there is no north star — choose 3-5',
     ],
   },
 
-  // ---- Phase 3 / id=4  交付物与模板 ------------------------------------------
+  // ---- Phase 3 / id=4  Deliverables & Templates ----------------------------
   4: {
-    brief: '模板降低团队上手门槛 + 保证产出一致。IEEE 829 + ISTQB 是行业基准。',
+    brief: 'Templates reduce onboarding effort and keep outputs consistent. IEEE 829 and ISTQB provide industry baselines.',
     frameworks: [
       { name: 'IEEE 829-2008', url: 'https://standards.ieee.org/ieee/829/4453/',
-        summary: '8 大测试文档标准：Master Plan / Level Plan / Design Spec / Case Spec / Procedure Spec / Item Transmittal Report / Log / Incident Report / Summary Report' },
+        summary: 'Eight standard test document types: Master Plan / Level Plan / Design Spec / Case Spec / Procedure Spec / Item Transmittal Report / Log / Incident Report / Summary Report' },
       { name: 'ISTQB Foundation Test Process', url: 'https://www.istqb.org/',
-        summary: '测试过程 7 活动：planning / monitoring / analysis / design / implementation / execution / completion' },
+        summary: 'Seven testing activities: planning / monitoring / analysis / design / implementation / execution / completion' },
     ],
     sections: [
       {
-        kind: 'templateCatalog', title: '模板目录（对应 IEEE 829）',
-        columns: ['模板', 'IEEE 829 对应', '关键章节', 'Owner'],
+        kind: 'templateCatalog', title: 'Template Catalog (Mapped to IEEE 829)',
+        columns: ['Template', 'IEEE 829 Mapping', 'Key Sections', 'Owner'],
         rows: [
-          ['测试策略',          'Master Test Plan',          'Scope / Approach / Risks / Schedule / Resources', 'Test Manager'],
-          ['测试用例',          'Test Case Specification',   '前置 / 步骤 / 期望 / 实际 / Pass/Fail',         'QA'],
-          ['需求评审 Checklist', '—',                         '可测性 / 完整性 / 边界 / 权限 / 数据干扰',      'QA Lead'],
-          ['测试报告',          'Test Summary Report',       '执行统计 / 缺陷分布 / 风险 / Go/No-Go 建议',    'Test Manager'],
-          ['复盘报告',          '—',                         'Went well / Didn\'t / Improve / Owners',        'Team'],
-          ['缺陷报告',          'Test Incident Report',      '标题 / 步骤 / 期望 / 实际 / 严重 / 优先 / 环境 / 截图', 'QA'],
+          ['Test Strategy',             'Master Test Plan',        'Scope / Approach / Risks / Schedule / Resources',               'Test Manager'],
+          ['Test Cases',                'Test Case Specification', 'Preconditions / Steps / Expected / Actual / Pass or Fail',       'QA'],
+          ['Requirement Review Checklist', '—',                    'Testability / completeness / boundaries / permissions / data interference', 'QA Lead'],
+          ['Test Report',               'Test Summary Report',     'Execution statistics / defect distribution / risks / Go-No-Go recommendation', 'Test Manager'],
+          ['Retrospective Report',       '—',                       'Went well / Didn\'t / Improve / Owners',                         'Team'],
+          ['Defect Report',              'Test Incident Report',    'Title / steps / expected / actual / severity / priority / environment / screenshot', 'QA'],
         ],
       },
     ],
     antiPatterns: [
-      '模板太厚 → 填表疲劳 → 团队跳过',
-      '模板放 Wiki 没人维护 → 版本过时 → 团队自己 fork',
-      '没有 Owner → 没人为模板质量负责',
+      'Templates are too heavy → form fatigue → the team skips them',
+      'Templates sit unmaintained in a wiki → become outdated → teams create their own forks',
+      'No owner → no one is accountable for template quality',
     ],
   },
 
-  // ---- Phase 4 / id=5  执行与证据机制 ----------------------------------------
+  // ---- Phase 4 / id=5  Execution & Evidence -------------------------------
   5: {
-    brief: '"测过"不是"跑过"。结果 + 证据 + 缺陷三件套缺一不可，audit trail 是基础。',
+    brief: '"Tested" does not merely mean "run." Results, evidence, and defect records are all required, and an audit trail is fundamental.',
     frameworks: [
       { name: 'ISTQB Defect Lifecycle', url: 'https://www.istqb.org/',
-        summary: '标准缺陷状态机：New → Assigned → Open → Fixed → Retest → Verified → Closed' },
+        summary: 'Standard defect workflow: New → Assigned → Open → Fixed → Retest → Verified → Closed' },
       { name: 'Severity × Priority Matrix', url: 'https://www.istqb.org/',
-        summary: 'Severity = 技术严重程度，Priority = 业务紧急度；两者独立，二维矩阵决定处理顺序' },
+        summary: 'Severity measures technical impact; Priority measures business urgency. They are independent, and the matrix determines handling order.' },
     ],
     sections: [
       {
-        kind: 'defectLifecycle', title: '缺陷状态机（ISTQB 标准）',
+        kind: 'defectLifecycle', title: 'Defect Lifecycle (ISTQB Standard)',
         states: [
-          { name: 'New', color: '#1677ff', desc: '刚发现，未分配' },
-          { name: 'Assigned', color: '#13c2c2', desc: '已派给开发' },
-          { name: 'Open', color: '#fa8c16', desc: '开发确认，待修' },
-          { name: 'Fixed', color: '#722ed1', desc: '开发修复，待 QA 验证' },
-          { name: 'Verified', color: '#52c41a', desc: 'QA 验证通过' },
-          { name: 'Closed', color: '#389e0d', desc: '关闭归档' },
+          { name: 'New', color: '#1677ff', desc: 'Newly discovered and unassigned' },
+          { name: 'Assigned', color: '#13c2c2', desc: 'Assigned to a developer' },
+          { name: 'Open', color: '#fa8c16', desc: 'Confirmed by development and awaiting a fix' },
+          { name: 'Fixed', color: '#722ed1', desc: 'Fixed and awaiting QA verification' },
+          { name: 'Verified', color: '#52c41a', desc: 'Verified by QA' },
+          { name: 'Closed', color: '#389e0d', desc: 'Closed and archived' },
         ],
         sideStates: ['Reopened', 'Rejected', 'Deferred', 'Duplicate'],
       },
       {
-        kind: 'severityMatrix', title: 'Severity × Priority 处理矩阵',
-        cols: ['P1 立即', 'P2 本版', 'P3 下版'],
-        rows: ['S1 致命', 'S2 严重', 'S3 一般', 'S4 轻微'],
+        kind: 'severityMatrix', title: 'Severity × Priority Handling Matrix',
+        cols: ['P1 Immediate', 'P2 Current Release', 'P3 Next Release'],
+        rows: ['S1 Critical', 'S2 Major', 'S3 Moderate', 'S4 Minor'],
         cells: [
-          [{ text: '立即修', color: '#ff4d4f' }, { text: '本版必修', color: '#ff7a45' }, { text: '下版必修', color: '#fa8c16' }],
-          [{ text: '立即修', color: '#ff4d4f' }, { text: '本版必修', color: '#ff7a45' }, { text: '排期', color: '#faad14' }],
-          [{ text: '本版必修', color: '#ff7a45' }, { text: '排期', color: '#faad14' }, { text: '排期或拒绝', color: '#d9d9d9' }],
-          [{ text: '排期', color: '#faad14' }, { text: '排期或拒绝', color: '#d9d9d9' }, { text: '可拒绝', color: '#bfbfbf' }],
+          [{ text: 'Fix immediately', color: '#ff4d4f' }, { text: 'Required this release', color: '#ff7a45' }, { text: 'Required next release', color: '#fa8c16' }],
+          [{ text: 'Fix immediately', color: '#ff4d4f' }, { text: 'Required this release', color: '#ff7a45' }, { text: 'Schedule', color: '#faad14' }],
+          [{ text: 'Required this release', color: '#ff7a45' }, { text: 'Schedule', color: '#faad14' }, { text: 'Schedule or reject', color: '#d9d9d9' }],
+          [{ text: 'Schedule', color: '#faad14' }, { text: 'Schedule or reject', color: '#d9d9d9' }, { text: 'May reject', color: '#bfbfbf' }],
         ],
       },
       {
-        kind: 'evidenceRules', title: '证据规范（按测试类型）',
-        columns: ['测试类型', '必需证据', '可选证据'],
+        kind: 'evidenceRules', title: 'Evidence Standard by Test Type',
+        columns: ['Test Type', 'Required Evidence', 'Optional Evidence'],
         rows: [
-          ['功能测试', '步骤截图 + 结果截图', '操作录屏'],
-          ['接口测试', 'Request + Response + Status Code', '抓包日志'],
-          ['性能测试', 'Locust 汇总 + Grafana 截图', 'Prometheus 原始查询'],
-          ['兼容性', '设备截图（含 UA）', 'BrowserStack 链接'],
-          ['安全测试', '工具报告 + 复现步骤', 'CVE 引用'],
+          ['Functional Testing', 'Step screenshots + result screenshots', 'Screen recording'],
+          ['API Testing', 'Request + response + status code', 'Network capture log'],
+          ['Performance Testing', 'Locust summary + Grafana screenshots', 'Raw Prometheus queries'],
+          ['Compatibility Testing', 'Device screenshots (including user agent)', 'BrowserStack link'],
+          ['Security Testing', 'Tool report + reproduction steps', 'CVE reference'],
         ],
       },
     ],
     antiPatterns: [
-      'Pass / Fail 不写原因 → 复盘无证据',
-      '缺陷无 Owner / 无 Due → 烂在系统里',
-      '证据是个 zip 包没人看 → 等于没有',
-      '"重新跑一遍就过了" → 没记 flaky 标记 → 下次还是这样',
+      'Pass / Fail has no reason → retrospectives have no evidence',
+      'A defect has no owner or due date → it stagnates in the system',
+      'Evidence is an unread ZIP archive → effectively no evidence',
+      '"It passed when rerun" without a flaky marker → the same issue returns next time',
     ],
   },
 
-  // ---- Phase 5 / id=6  自动化与平台 ------------------------------------------
+  // ---- Phase 5 / id=6  Automation & Platform ------------------------------
   6: {
-    brief: '测试金字塔不是规则是经济学：底层多 + 顶层少 = 反馈快 + 成本低。',
+    brief: 'The test pyramid is economics, not dogma: more lower-level tests and fewer top-level tests produce faster feedback at lower cost.',
     frameworks: [
       { name: 'Mike Cohn Test Pyramid', url: 'https://martinfowler.com/bliki/TestPyramid.html',
-        summary: 'Cohn《Succeeding with Agile》(2009) 首提；底宽顶窄；70/20/10 的经验比例' },
+        summary: 'Introduced by Cohn in Succeeding with Agile (2009): a wide base, narrow top, and the commonly cited 70/20/10 ratio' },
       { name: 'Practical Test Pyramid (Fowler)', url: 'https://martinfowler.com/articles/practical-test-pyramid.html',
-        summary: 'Fowler 强调 E2E 是"二线防御"；E2E 失败 = 一个 bug + 一个单元测试缺口' },
-      { name: 'Testing Honeycomb (微服务)', url: 'https://engineering.atspotify.com/2018/01/testing-of-microservices/',
-        summary: '微服务架构下，integration 层增厚成"蜂巢"形' },
+        summary: 'Fowler treats E2E as a second line of defense: an E2E failure indicates both a defect and a unit-test gap' },
+      { name: 'Testing Honeycomb (Microservices)', url: 'https://engineering.atspotify.com/2018/01/testing-of-microservices/',
+        summary: 'In microservice architectures, the integration layer becomes thicker and forms a honeycomb shape' },
     ],
     sections: [
       {
-        kind: 'testPyramid', title: '测试金字塔 — 理想比例',
+        kind: 'testPyramid', title: 'Test Pyramid — Target Ratio',
         layers: [
-          { layer: 'E2E / UI',           pct: 10, speed: '慢 (分钟)', flaky: '高', maintain: '高', stack: 'Behave + Playwright' },
-          { layer: 'Integration / API',  pct: 20, speed: '中 (秒)',   flaky: '中', maintain: '中', stack: 'requests + pytest' },
-          { layer: 'Unit',               pct: 70, speed: '快 (毫秒)', flaky: '低', maintain: '低', stack: 'pytest / Vitest' },
+          { layer: 'E2E / UI',           pct: 10, speed: 'Slow (minutes)',       flaky: 'High',   maintain: 'High',   stack: 'Behave + Playwright' },
+          { layer: 'Integration / API',  pct: 20, speed: 'Medium (seconds)',     flaky: 'Medium', maintain: 'Medium', stack: 'requests + pytest' },
+          { layer: 'Unit',               pct: 70, speed: 'Fast (milliseconds)', flaky: 'Low',    maintain: 'Low',    stack: 'pytest / Vitest' },
         ],
       },
       {
-        kind: 'toolStack', title: '当前工具栈',
-        columns: ['层', '工具', '当前状态'],
+        kind: 'toolStack', title: 'Current Tool Stack',
+        columns: ['Layer', 'Tools', 'Current Status'],
         rows: [
-          ['E2E', 'Behave + Playwright', '已落地'],
-          ['API', 'requests + pytest', '部分'],
-          ['Unit', 'pytest / Vitest', '由开发负责'],
-          ['性能', 'Locust + Prometheus + Grafana', '已落地'],
-          ['日志', 'Loki', '已落地'],
-          ['看板', 'FastAPI + Vite + Ant Design', '已落地'],
+          ['E2E', 'Behave + Playwright', 'Implemented'],
+          ['API', 'requests + pytest', 'Partial'],
+          ['Unit', 'pytest / Vitest', 'Owned by development'],
+          ['Performance', 'Locust + Prometheus + Grafana', 'Implemented'],
+          ['Logging', 'Loki', 'Implemented'],
+          ['Dashboard', 'FastAPI + Vite + Ant Design', 'Implemented'],
         ],
       },
     ],
     antiPatterns: [
-      'Ice Cream Cone (反金字塔) — E2E 多 + 单元少 → 慢 + flaky',
-      'Selenium / Playwright 测后端逻辑 → 应该用单元测试',
-      'CSS 选择器写死 → 一改 UI 全挂；用 data-testid',
-      'sleep() 代替显式等待 → 慢 + flaky',
+      'Ice Cream Cone (inverted pyramid) — too many E2E tests and too few unit tests → slow and flaky',
+      'Using Selenium / Playwright to test backend logic → use unit tests instead',
+      'Hard-coded CSS selectors → every UI change breaks tests; use data-testid',
+      'Using sleep() instead of explicit waits → slow and flaky',
     ],
   },
 
-  // ---- Phase 6 / id=7  质量门禁与发布准入 ------------------------------------
+  // ---- Phase 6 / id=7  Quality Gates & Release Readiness ------------------
   7: {
-    brief: 'Gate 不是阻挠是保险。DoR / DoD 让团队对"准备好了"有共同语言。',
+    brief: 'A gate is insurance, not obstruction. DoR and DoD give the team a shared definition of "ready."',
     frameworks: [
       { name: 'Scrum Guide — DoD', url: 'https://scrumguides.org/scrum-guide.html#done',
-        summary: 'Scrum Guide 强制要求 DoD 是"做完了"的统一标准；Sutherland《Be Ready to be Done》延伸到 DoR' },
+        summary: 'The Scrum Guide requires a shared Definition of Done; Sutherland extends the concept to readiness in Be Ready to be Done' },
       { name: 'Definition of Ready (DoR)', url: 'https://www.scrum.org/resources/blog/walking-through-definition-ready',
-        summary: '进入 Sprint 的准入条件，确保需求"可做"；DoR 是 optional 但强烈推荐' },
+        summary: 'Entry criteria for a Sprint ensure work is actionable. DoR is optional but strongly recommended.' },
       { name: 'ISTQB Risk-Based Testing', url: 'https://www.istqb.org/',
-        summary: '风险驱动测试 + Go/No-Go 决策矩阵' },
+        summary: 'Risk-based testing + Go / No-Go decision matrix' },
     ],
     sections: [
       {
         kind: 'twoListChecklist', title: 'DoR vs DoD',
         left: {
-          title: 'Definition of Ready (DoR) — 需求可做',
+          title: 'Definition of Ready (DoR) — Ready for Delivery',
           items: [
-            'PRD 已评审通过',
-            '验收标准明确',
-            '技术方案已澄清',
-            '测试点已识别',
-            '依赖已就绪（API / 数据 / 环境）',
-            '故事可在一个 Sprint 内交付',
+            'PRD reviewed and approved',
+            'Acceptance criteria are clear',
+            'Technical approach is clarified',
+            'Test points are identified',
+            'Dependencies are ready (API / data / environment)',
+            'The story can be delivered within one Sprint',
           ],
         },
         right: {
-          title: 'Definition of Done (DoD) — 需求做完',
+          title: 'Definition of Done (DoD) — Delivery Complete',
           items: [
-            '代码已合并到主干',
-            '单元测试覆盖率 ≥ 60%',
-            '所有 P0 / P1 缺陷关闭',
-            '所有测试用例已执行',
-            'QA Readiness Report 已生成并签字',
+            'Code merged into the main branch',
+            'Unit-test coverage ≥ 60%',
+            'All P0 / P1 defects closed',
+            'All test cases executed',
+            'QA Readiness Report generated and signed',
             'gate.py OVERALL PASS',
-            '上线风险已记录',
+            'Release risks recorded',
           ],
         },
       },
       {
-        kind: 'releaseGate', title: '执行评审 Gate（数字门槛 + 数据源）',
-        columns: ['指标', '门槛', '当前', '数据源'],
+        kind: 'releaseGate', title: 'Execution Review Gate (Thresholds + Data Sources)',
+        columns: ['Metric', 'Threshold', 'Current', 'Data Source'],
         rows: [
-          ['执行率', '100%', '—', 'dashboard.db'],
-          ['P0 缺陷未关闭', '0', '—', '禅道'],
-          ['P1 缺陷未关闭', '0', '—', '禅道'],
-          ['回归 Pass Rate', '≥ 95%', '—', 'dashboard.db'],
-          ['gate.py 状态', 'OVERALL PASS', 'FAIL', 'gate.py'],
-          ['执行评审签字', 'Owner 已签字', '—', 'QA Readiness Report'],
+          ['Execution Rate', '100%', '—', 'dashboard.db'],
+          ['Open P0 Defects', '0', '—', 'ZenTao'],
+          ['Open P1 Defects', '0', '—', 'ZenTao'],
+          ['Regression Pass Rate', '≥ 95%', '—', 'dashboard.db'],
+          ['gate.py Status', 'OVERALL PASS', 'FAIL', 'gate.py'],
+          ['Execution Review Sign-Off', 'Owner signed', '—', 'QA Readiness Report'],
         ],
       },
     ],
     antiPatterns: [
-      'Gate 太松 = 没有 Gate',
-      'DoD 写在 Wiki 但 PR 不卡 → 等于装饰',
-      '无视风险硬上 Go → 一次事故抵 10 次 Gate',
-      'Gate 只看测试不看缺陷状态 → 漏 P0',
+      'A gate that is too loose is not a gate',
+      'DoD exists in a wiki but does not block PRs → it is only decoration',
+      'Ignoring risk and forcing a Go decision → one incident can erase the value of ten gates',
+      'A gate checks tests but ignores defect status → P0 defects slip through',
     ],
   },
 
-  // ---- Phase 7 / id=8  度量与持续改进 ----------------------------------------
+  // ---- Phase 7 / id=8  Metrics & Continuous Improvement -------------------
   8: {
-    brief: '没有改进的度量是数据噪音。复盘 → 行动 → 反向更新模板 / Gate / 自动化 = 闭环。',
+    brief: 'Metrics without improvement are data noise. Retrospective → action → updates to templates, gates, and automation creates the feedback loop.',
     frameworks: [
       { name: 'Toyota / Lean — PDCA', url: 'https://en.wikipedia.org/wiki/PDCA',
-        summary: 'Plan → Do → Check → Act 戴明环；改进的根本框架' },
+        summary: 'Plan → Do → Check → Act: the Deming cycle and a foundational improvement framework' },
       { name: 'Google SRE — Blameless Postmortem', url: 'https://sre.google/sre-book/postmortem-culture/',
-        summary: '无指责复盘文化；focus on systems not people' },
+        summary: 'A blameless postmortem culture that focuses on systems, not people' },
       { name: 'DORA — Generative Culture', url: 'https://dora.dev/research/2022/',
-        summary: 'Westrum 文化模型；信息流 / 责任分担 / 系统性思考 → 高绩效' },
+        summary: 'Westrum culture model: information flow, shared responsibility, and systems thinking drive high performance' },
     ],
     sections: [],
     antiPatterns: [
-      '复盘只写"以后注意" — 没有具体改进项 + Owner + Due',
-      '改进项写完就忘 — 没纳入 Sprint / OKR / Gate',
-      '看板做完不更新 — 数据陈旧 → 没人看 → 死循环',
+      'A retrospective only says "be more careful next time" — no concrete action, owner, or due date',
+      'Improvement actions are written and forgotten — not added to a Sprint, OKR, or gate',
+      'The dashboard is built but not maintained — stale data → no readers → a downward spiral',
     ],
   },
 }
@@ -769,9 +769,9 @@ function useLocalStorage(key, initial) {
 // ---------------------------------------------------------------------------
 
 const STATUS_COLORS = {
-  green:  { tag: 'success', dot: '#52c41a', bg: 'rgba(82,196,26,0.12)',  border: '#52c41a', text: '完成' },
-  yellow: { tag: 'warning', dot: '#faad14', bg: 'rgba(250,173,20,0.12)', border: '#faad14', text: '进行中' },
-  gray:   { tag: 'default', dot: '#bfbfbf', bg: 'rgba(0,0,0,0.04)',      border: '#d9d9d9', text: '未开始' },
+  green:  { tag: 'success', dot: '#52c41a', bg: 'rgba(82,196,26,0.12)',  border: '#52c41a', text: 'Complete' },
+  yellow: { tag: 'warning', dot: '#faad14', bg: 'rgba(250,173,20,0.12)', border: '#faad14', text: 'In Progress' },
+  gray:   { tag: 'default', dot: '#bfbfbf', bg: 'rgba(0,0,0,0.04)',      border: '#d9d9d9', text: 'Not Started' },
 }
 
 const EMPTY_QUALITY_EVIDENCE = {
@@ -815,11 +815,11 @@ function phaseProgress(phase, done, qualityEvidence = EMPTY_QUALITY_EVIDENCE) {
 // Map qualitative harness review status to a rough 0-100 score so the chip
 // can show a real number instead of being hardcoded yellow.
 const HARNESS_STATUS_SCORE = {
-  '完成': 100,
-  '已有基础': 70, '已有工具': 70,
-  'partial': 50, '部分': 50, '雏形中': 50,
-  '已有但拒收': 30,
-  '偏弱': 10,
+  'Complete': 100,
+  'Foundation ready': 70, 'Tooling ready': 70,
+  'Partial': 50, 'Early stage': 50,
+  'Present but rejected': 30,
+  'Weak': 10,
 }
 
 function harnessReviewPct() {
@@ -946,7 +946,7 @@ function QualityGateSummary({ qualityEvidence, loading }) {
           <div style={{ padding: '10px 12px', border: `1px solid ${color}33`, background: bg, borderRadius: 8 }}>
             <Text type="secondary" style={{ fontSize: 11 }}>Gate conclusion</Text>
             <div style={{ color, fontWeight: 700, fontSize: 18, marginTop: 2 }}>
-              {trusted ? '可信' : '阻塞'}
+              {trusted ? 'Trusted' : 'Blocked'}
             </div>
           </div>
         </Col>
@@ -989,12 +989,12 @@ function DeliverableRow({ deliverable, done, setDone, qualityEvidence }) {
   const complete = checked || backed
   const pkg = ev.latestPackage
   const tag = backed
-    ? <Tag color="success" style={{ margin: 0, fontSize: 11 }}>证据支撑</Tag>
+    ? <Tag color="success" style={{ margin: 0, fontSize: 11 }}>Evidence-backed</Tag>
     : hasPackage
-      ? <Tag color="error" style={{ margin: 0, fontSize: 11 }}>证据阻塞</Tag>
+      ? <Tag color="error" style={{ margin: 0, fontSize: 11 }}>Evidence blocked</Tag>
       : checked
-        ? <Tag color="warning" style={{ margin: 0, fontSize: 11 }}>人工</Tag>
-        : <Tag style={{ margin: 0, fontSize: 11 }}>无证据</Tag>
+        ? <Tag color="warning" style={{ margin: 0, fontSize: 11 }}>Manual</Tag>
+        : <Tag style={{ margin: 0, fontSize: 11 }}>No evidence</Tag>
   const tooltip = backed
     ? `${ev.trustedCount} trusted package(s); latest ${pkg?.packageId || ''}`
     : hasPackage
@@ -1146,7 +1146,7 @@ function OutputRow({ stageId, roleKey, output, sdlcState, setSdlcState }) {
           />
           <Text type="secondary" style={{ fontSize: 12 }}>/</Text>
           {output.linkedTo ? (
-            <Tooltip title={`目标自动同步自 ${output.linkedTo}`}>
+            <Tooltip title={`Target synchronized automatically from ${output.linkedTo}`}>
               <Tag icon={<LinkOutlined />} color="purple" style={{ marginInlineEnd: 0 }}>{tgt}</Tag>
             </Tooltip>
           ) : (
@@ -1231,7 +1231,7 @@ function RoleSwimlane({ stageId, roleKey, roleData, sdlcState, setSdlcState }) {
         <Col xs={24} md={12}>
           <Space size={4} style={{ marginBottom: 2 }}>
             <ImportOutlined style={{ color: '#1677ff' }} />
-            <Text type="secondary" style={{ fontSize: 11 }}>输入</Text>
+            <Text type="secondary" style={{ fontSize: 11 }}>Inputs</Text>
           </Space>
           {(roleData.inputs || []).length === 0 ? (
             <div><Text type="secondary" style={{ fontSize: 12, fontStyle: 'italic' }}>—</Text></div>
@@ -1245,7 +1245,7 @@ function RoleSwimlane({ stageId, roleKey, roleData, sdlcState, setSdlcState }) {
         <Col xs={24} md={12}>
           <Space size={4} style={{ marginBottom: 2 }}>
             <ExportOutlined style={{ color: '#52c41a' }} />
-            <Text type="secondary" style={{ fontSize: 11 }}>产出</Text>
+            <Text type="secondary" style={{ fontSize: 11 }}>Outputs</Text>
           </Space>
           {(roleData.outputs || []).length === 0 ? (
             <div><Text type="secondary" style={{ fontSize: 12, fontStyle: 'italic' }}>—</Text></div>
@@ -1288,7 +1288,7 @@ function FrameworkRefs({ items }) {
     <div style={{ marginBottom: 14 }}>
       <Space size={6} style={{ marginBottom: 6 }}>
         <BookOutlined style={{ color: '#722ed1' }} />
-        <Text type="secondary" style={{ fontSize: 12 }}>业界参考框架</Text>
+        <Text type="secondary" style={{ fontSize: 12 }}>Industry Reference Frameworks</Text>
       </Space>
       <Row gutter={[10, 10]}>
         {items.map(f => (
@@ -1395,7 +1395,7 @@ function DefectLifecycleFlow({ states, sideStates }) {
       </div>
       {sideStates && sideStates.length > 0 && (
         <div style={{ marginTop: 6, fontSize: 11, color: '#8c8c8c' }}>
-          旁路状态：{sideStates.map(s => <Tag key={s} style={{ fontSize: 10, marginRight: 4 }}>{s}</Tag>)}
+          Alternate states: {sideStates.map(s => <Tag key={s} style={{ fontSize: 10, marginRight: 4 }}>{s}</Tag>)}
         </div>
       )}
     </div>
@@ -1474,11 +1474,11 @@ function TestPyramidViz({ layers }) {
         <Table
           dataSource={layers.map((l, i) => ({ key: i, ...l }))}
           columns={[
-            { title: '层', dataIndex: 'layer', render: (v) => <Text strong style={{ fontSize: 12 }}>{v}</Text> },
-            { title: '反馈速度', dataIndex: 'speed', render: (v) => <Tag>{v}</Tag> },
-            { title: 'Flaky 风险', dataIndex: 'flaky', render: (v) => <Text style={{ fontSize: 12 }}>{v}</Text> },
-            { title: '维护成本', dataIndex: 'maintain', render: (v) => <Text style={{ fontSize: 12 }}>{v}</Text> },
-            { title: '工具', dataIndex: 'stack', render: (v) => <Text code style={{ fontSize: 11 }}>{v}</Text> },
+            { title: 'Layer', dataIndex: 'layer', render: (v) => <Text strong style={{ fontSize: 12 }}>{v}</Text> },
+            { title: 'Feedback Speed', dataIndex: 'speed', render: (v) => <Tag>{v}</Tag> },
+            { title: 'Flaky Risk', dataIndex: 'flaky', render: (v) => <Text style={{ fontSize: 12 }}>{v}</Text> },
+            { title: 'Maintenance Cost', dataIndex: 'maintain', render: (v) => <Text style={{ fontSize: 12 }}>{v}</Text> },
+            { title: 'Tools', dataIndex: 'stack', render: (v) => <Text code style={{ fontSize: 11 }}>{v}</Text> },
           ]}
           size="small"
           pagination={false}
@@ -1530,7 +1530,7 @@ function AntiPatterns({ items }) {
     }}>
       <Space size={6} style={{ marginBottom: 6 }}>
         <WarningFilled style={{ color: '#ff4d4f' }} />
-        <Text strong style={{ fontSize: 12, color: '#ff4d4f' }}>避坑（反模式）</Text>
+        <Text strong style={{ fontSize: 12, color: '#ff4d4f' }}>Pitfalls (Anti-Patterns)</Text>
       </Space>
       <ul style={{ margin: '4px 0 0 0', paddingLeft: 22, fontSize: 12 }}>
         {items.map((it, i) => (
@@ -1567,7 +1567,7 @@ function RichSection({ section }) {
           case 'twoListChecklist':
             return <TwoListChecklist left={section.left} right={section.right} />
           default:
-            return <Text type="secondary">未知 section 类型: {section.kind}</Text>
+            return <Text type="secondary">Unknown section type: {section.kind}</Text>
         }
       })()}
     </div>
@@ -1576,7 +1576,7 @@ function RichSection({ section }) {
 
 /**
  * Slim mode — only renders the figures (KPI tables, pyramid, matrix, etc.)
- * plus a tiny `参考` link row. Drops BriefBanner, FrameworkRefs cards, and
+ * plus a tiny `References` link row. Drops BriefBanner, FrameworkRefs cards, and
  * AntiPatterns box so the actionable parts (deliverables) stay primary.
  */
 function RichContentBlock({ phaseId }) {
@@ -1591,7 +1591,7 @@ function RichContentBlock({ phaseId }) {
       {refs.length > 0 && (
         <div style={{ marginTop: 8, fontSize: 11, color: '#8c8c8c' }}>
           <BookOutlined style={{ marginRight: 6, color: '#722ed1' }} />
-          参考：{refs.map((f, i) => (
+          References: {refs.map((f, i) => (
             <span key={f.name}>
               <a href={f.url} target="_blank" rel="noreferrer">{f.name}</a>
               {i < refs.length - 1 && <span style={{ color: '#bfbfbf' }}> · </span>}
@@ -1617,8 +1617,8 @@ function SdlcPanel({ phase, sdlcState, setSdlcState, selectedStageId, setSelecte
     <>
       <Card
         size="small"
-        title={<><ApartmentOutlined style={{ color: '#13c2c2' }} /> SDLC 流程标准（{SDLC_STAGES.length} 阶段 · 多角色）</>}
-        extra={<Text type="secondary" style={{ fontSize: 11 }}>点击阶段切换详情</Text>}
+        title={<><ApartmentOutlined style={{ color: '#13c2c2' }} /> SDLC Process Standard ({SDLC_STAGES.length} Stages · Multiple Roles)</>}
+        extra={<Text type="secondary" style={{ fontSize: 11 }}>Select a stage to view details</Text>}
         style={{ borderRadius: 12, border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.06)', marginBottom: 16 }}
       >
         <ChipStrip
@@ -1647,7 +1647,7 @@ function SdlcPanel({ phase, sdlcState, setSdlcState, selectedStageId, setSelecte
         extra={
           <Space>
             <Text type="secondary" style={{ fontSize: 11 }}>
-              输入 {r.inDone}/{r.inTotal} · 产出 {r.outDone}/{r.outTotal}
+              Inputs {r.inDone}/{r.inTotal} · Outputs {r.outDone}/{r.outTotal}
             </Text>
             <Progress percent={r.pct} size="small" style={{ width: 100 }} strokeColor={c.dot} showInfo={false} />
             <Text style={{ fontSize: 12, color: c.dot, fontWeight: 600 }}>{r.pct}%</Text>
@@ -1656,7 +1656,7 @@ function SdlcPanel({ phase, sdlcState, setSdlcState, selectedStageId, setSelecte
         style={{ borderRadius: 12, border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.06)', marginBottom: 16 }}
       >
         <div style={{ marginBottom: 14, padding: '8px 12px', background: '#f6f4ff', borderRadius: 6 }}>
-          <Text type="secondary" style={{ fontSize: 11 }}>本阶段质量门禁</Text>
+          <Text type="secondary" style={{ fontSize: 11 }}>Quality gate for this stage</Text>
           <div style={{ fontSize: 13, color: '#722ed1', marginTop: 2 }}>{stage.gate}</div>
         </div>
 
@@ -1705,7 +1705,7 @@ function DeliverablesPanel({ phase, done, setDone, qualityEvidence }) {
       <div style={{ marginBottom: 14 }}>
         <Text strong style={{ fontSize: 13 }}>
           <FileDoneOutlined style={{ color: '#1677ff', marginRight: 6 }} />
-          本阶段要做的（证据优先，人工勾选仅记录进度）
+          Actions for This Phase (Evidence Takes Priority; Manual Checks Only Record Progress)
         </Text>
         <div style={{
           marginTop: 6, padding: '10px 14px',
@@ -1742,18 +1742,18 @@ function ReviewPanelRich({ phase, done, setDone, qualityEvidence }) {
 
 function ReviewPanelInner({ phase, done, setDone, qualityEvidence }) {
   const reviewColumns = [
-    { title: '模块', dataIndex: 'module', width: 130, render: (v) => <Text strong style={{ fontSize: 12 }}>{v}</Text> },
+    { title: 'Module', dataIndex: 'module', width: 130, render: (v) => <Text strong style={{ fontSize: 12 }}>{v}</Text> },
     {
-      title: '状态', dataIndex: 'status', width: 110,
+      title: 'Status', dataIndex: 'status', width: 140,
       render: (v) => {
-        const m = { '完成': 'success', '已有基础': 'processing', '已有工具': 'processing',
-          '已有但拒收': 'warning', '雏形中': 'warning', '部分': 'warning',
-          'partial': 'warning', '偏弱': 'error' }
+        const m = { 'Complete': 'success', 'Foundation ready': 'processing', 'Tooling ready': 'processing',
+          'Present but rejected': 'warning', 'Early stage': 'warning',
+          'Partial': 'warning', 'Weak': 'error' }
         return <Tag color={m[v] || 'default'}>{v}</Tag>
       },
     },
-    { title: '缺口', dataIndex: 'gap', render: (v) => <Text style={{ fontSize: 12 }}>{v}</Text> },
-    { title: '建议动作', dataIndex: 'action', width: 200, render: (v) => <Text style={{ fontSize: 12, color: '#1677ff' }}>{v}</Text> },
+    { title: 'Gap', dataIndex: 'gap', render: (v) => <Text style={{ fontSize: 12 }}>{v}</Text> },
+    { title: 'Recommended Action', dataIndex: 'action', width: 220, render: (v) => <Text style={{ fontSize: 12, color: '#1677ff' }}>{v}</Text> },
   ]
 
   const { completed, total, pct } = phaseProgress(phase, done, qualityEvidence)
@@ -1775,7 +1775,7 @@ function ReviewPanelInner({ phase, done, setDone, qualityEvidence }) {
         extra={
           <Space>
             <Text type="secondary" style={{ fontSize: 11 }}>
-              评审 {reviewPct}% · 改进项 {completed}/{total}
+              Assessment {reviewPct}% · Improvements {completed}/{total}
             </Text>
           </Space>
         }
@@ -1783,7 +1783,7 @@ function ReviewPanelInner({ phase, done, setDone, qualityEvidence }) {
       >
         <Text strong style={{ fontSize: 13 }}>
           <FileDoneOutlined style={{ color: '#1677ff', marginRight: 6 }} />
-          本阶段要做的（改进项 — 体系运行起来后勾选）
+          Actions for This Phase (Check Improvements After the System Is Operating)
         </Text>
         <div style={{
           marginTop: 6, padding: '10px 14px',
@@ -1803,8 +1803,8 @@ function ReviewPanelInner({ phase, done, setDone, qualityEvidence }) {
 
       <Card
         size="small"
-        title={<><BugOutlined style={{ color: '#fa541c' }} /> qa-harness 现状评审（{reviewPct}%）</>}
-        extra={<Text type="secondary" style={{ fontSize: 11 }}>状态加权平均反映体系成熟度</Text>}
+        title={<><BugOutlined style={{ color: '#fa541c' }} /> Current qa-harness Assessment ({reviewPct}%)</>}
+        extra={<Text type="secondary" style={{ fontSize: 11 }}>The weighted status average reflects system maturity</Text>}
         style={{ borderRadius: 12, border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
       >
         <Table
@@ -1852,7 +1852,7 @@ export default function QualitySystemPage({ activeProject }) {
             gate: {
               status: 'FAIL',
               trusted: false,
-              blockingIssues: [`无法读取 evidence manifest: ${e.message || String(e)}`],
+              blockingIssues: [`Unable to read the evidence manifest: ${e.message || String(e)}`],
               checkedAt: null,
             },
           })
@@ -1871,11 +1871,11 @@ export default function QualitySystemPage({ activeProject }) {
       <div style={{ marginBottom: 20 }}>
         <Title level={4} style={{ margin: 0, fontWeight: 600 }}>
           <SafetyCertificateOutlined style={{ color: '#1677ff', marginRight: 8 }} />
-          Quality System — 流程标准 · 多角色 · 多阶段
+          Quality System — Process Standards · Multiple Roles · Multiple Stages
           <Tag style={{ marginLeft: 8 }}>{projectName}</Tag>
         </Title>
         <Text type="secondary" style={{ fontSize: 13 }}>
-          点击 Phase 切换详情。Phase 2 = SDLC 流程标准（8 阶段 · 多角色 RACI），Phase 7 = 度量与持续改进 + qa-harness 评审。
+          Select a phase to view details. Phase 2 covers the eight-stage, multi-role RACI-based SDLC process standard; Phase 7 covers metrics, continuous improvement, and the qa-harness assessment.
         </Text>
       </div>
 
@@ -1884,7 +1884,7 @@ export default function QualitySystemPage({ activeProject }) {
       {/* Phase strip */}
       <Card
         size="small"
-        title={<><AimOutlined style={{ color: '#1677ff' }} /> 质量体系建设流程图（{PHASES.length} 阶段 · 点击切换）</>}
+        title={<><AimOutlined style={{ color: '#1677ff' }} /> Quality System Build Flow ({PHASES.length} Phases · Select to Switch)</>}
         style={{ borderRadius: 12, border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.06)', marginBottom: 16 }}
       >
         <ChipStrip
@@ -1894,13 +1894,13 @@ export default function QualitySystemPage({ activeProject }) {
           getLabel={(it) => `Phase ${it.displayId}`}
           getStatus={(it) => buildPhaseStatus(it, done, sdlcState, qualityEvidence).status}
           getPct={(it) => buildPhaseStatus(it, done, sdlcState, qualityEvidence).pct}
-          getSubtitle={(it) => it.content === 'sdlc' ? '8 阶段' : it.content === 'review' ? '评审' : ''}
+          getSubtitle={(it) => it.content === 'sdlc' ? '8 stages' : it.content === 'review' ? 'Assessment' : ''}
         />
       </Card>
 
       {/* Breadcrumb hint */}
       <div style={{ marginBottom: 12, color: '#8c8c8c', fontSize: 12 }}>
-        <Text type="secondary">质量体系建设</Text>
+        <Text type="secondary">Quality System Build</Text>
         <RightOutlined style={{ fontSize: 9, margin: '0 6px' }} />
         <Text type="secondary">Phase {selectedPhase.displayId}</Text>
         <RightOutlined style={{ fontSize: 9, margin: '0 6px' }} />

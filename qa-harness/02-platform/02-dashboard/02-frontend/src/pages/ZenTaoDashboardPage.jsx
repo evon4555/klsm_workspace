@@ -896,7 +896,11 @@ export default function ZenTaoDashboardPage({ activeProject }) {
     try {
       const qs = new URLSearchParams({
         project: projectKey,
-        execution_id: String(activeProject?.zentaoExecutionId || 0),
+        execution_id: String(
+          Number(String(displayOrder[0] || '').replace(/^iter-/, ''))
+          || activeProject?.zentaoExecutionId
+          || 0
+        ),
       })
       if (refresh) qs.set('refresh', 'true')
       const json = await requestJson(`/api/zentao/qa-task-matrix?${qs.toString()}`)
@@ -908,7 +912,7 @@ export default function ZenTaoDashboardPage({ activeProject }) {
     } finally {
       setQaTaskLoading(false)
     }
-  }, [projectKey, activeProject?.zentaoExecutionId])
+  }, [projectKey, activeProject?.zentaoExecutionId, displayOrder])
 
   useEffect(() => { fetchQaTaskMatrix(false) }, [fetchQaTaskMatrix])
 

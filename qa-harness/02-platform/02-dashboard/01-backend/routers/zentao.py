@@ -1292,7 +1292,11 @@ def zentao_dashboard(
     project_key = cfg["key"]
     mapped_product_id = int(cfg.get("zentaoProductId") or 0)
     mapped_execution_id = int(cfg.get("zentaoExecutionId") or 0)
-    execution_scoped = mapped_execution_id > 0
+    # The catalog execution is the project's preferred/default execution.  It
+    # must not turn the ZenTao dashboard into a one-execution-only view: users
+    # still need the searchable project/execution switcher to inspect other
+    # active work.  Keep the mapping for ordering and project defaults only.
+    execution_scoped = False
     if not mapped_product_id and not mapped_execution_id:
         empty = _empty_dashboard(f"No ZenTao product or execution is mapped for project {project_key}.")
         empty["meta"].update({
@@ -1334,22 +1338,25 @@ def zentao_dashboard(
     _ZT_LAST_ERROR = None
 
     # --- 1. Executions list ------------------------------------------------
-    # In platform mode the selected dashboard project owns the ZenTao scope.
-    # Prefer the execution explicitly mapped in PROJECT_CATALOG; otherwise fall
-    # back to the historical all-active behavior for unmapped/internal views.
+    # Load the active execution catalog for the switcher.  The execution mapped
+    # in PROJECT_CATALOG is promoted to the front below, but does not restrict
+    # the catalog to that one execution.
     from concurrent.futures import ThreadPoolExecutor
-    if execution_scoped:
+    def _fetch_status(status: str):
+        return _zt_get("/executions", token,
+                       {"limit": 100, "status": status}, critical=True) or {}
+    with ThreadPoolExecutor(max_workers=2) as _list_pool:
+        doing_resp, wait_resp = _list_pool.map(_fetch_status, ["doing", "wait"])
+    execs_doing = doing_resp.get("executions") or doing_resp.get("data") or []
+    execs_wait  = wait_resp.get("executions")  or wait_resp.get("data")  or []
+    executions = execs_doing + execs_wait
+
+    # A mapped default may be suspended/closed and therefore absent from the
+    # active lists.  Include it so the configured default remains selectable.
+    if mapped_execution_id and not any(int(e.get("id") or 0) == mapped_execution_id for e in executions):
         mapped_exec = _zt_get(f"/executions/{mapped_execution_id}", token, critical=True) or {}
-        executions = [mapped_exec] if mapped_exec.get("id") else []
-    else:
-        def _fetch_status(status: str):
-            return _zt_get("/executions", token,
-                           {"limit": 100, "status": status}, critical=True) or {}
-        with ThreadPoolExecutor(max_workers=2) as _list_pool:
-            doing_resp, wait_resp = _list_pool.map(_fetch_status, ["doing", "wait"])
-        execs_doing = doing_resp.get("executions") or doing_resp.get("data") or []
-        execs_wait  = wait_resp.get("executions")  or wait_resp.get("data")  or []
-        executions = execs_doing + execs_wait
+        if mapped_exec.get("id"):
+            executions.append(mapped_exec)
     if not executions and _ZT_LAST_ERROR:
         if project_key == "west-kowloon":
             return _local_story_generation_dashboard(_ZT_LAST_ERROR)
@@ -1361,16 +1368,6 @@ def zentao_dashboard(
             "scope": f"execution:{mapped_execution_id}" if mapped_execution_id else "unmapped-project",
         })
         return empty
-    if not executions and execution_scoped:
-        empty = _empty_dashboard(f"Mapped ZenTao execution {mapped_execution_id} not found")
-        empty["meta"].update({
-            "project": project_key,
-            "productId": product_id,
-            "executionId": mapped_execution_id,
-            "scope": f"execution:{mapped_execution_id}",
-        })
-        return empty
-
     today = datetime.now()
     # "最近活跃优先" — use realBegan (actually started) when present, else
     # planned begin, else openedDate. Also prefer 'doing' over 'wait'.
@@ -1382,14 +1379,17 @@ def zentao_dashboard(
              or _safe_date(e.get("openedDate")))
         ts = d.timestamp() if d else 0
         return (status_rank, ts)
-    if execution_scoped:
-        active_execs = executions[:1]
-    else:
-        executions.sort(key=_exec_sort_key, reverse=True)
-        active_execs = [
-            e for e in executions
-            if (e.get("status") or "").lower() in ("doing", "wait", "suspended")
-        ][:max_iterations]
+    executions.sort(key=_exec_sort_key, reverse=True)
+    if mapped_execution_id:
+        executions.sort(
+            key=lambda e: int(e.get("id") or 0) == mapped_execution_id,
+            reverse=True,
+        )
+    active_execs = [
+        e for e in executions
+        if (e.get("status") or "").lower() in ("doing", "wait", "suspended")
+        or int(e.get("id") or 0) == mapped_execution_id
+    ][:max_iterations]
 
     iterations = []
     requirements_by_iter = {}
@@ -1469,11 +1469,12 @@ def zentao_dashboard(
     # Light list of every other active/wait execution — frontend uses these to
     # populate the searchable dropdown without firing N sub-fetches up front.
     seen_ids = {ex.get("id") for ex in active_execs}
-    more_executions = [] if execution_scoped else [
+    more_executions = [
         _exec_summary_minimal(e)
         for e in executions
         if e.get("id") and e["id"] not in seen_ids
-        and (e.get("status") or "").lower() in ("doing", "wait", "suspended")
+        and ((e.get("status") or "").lower() in ("doing", "wait", "suspended")
+             or int(e.get("id") or 0) == mapped_execution_id)
     ]
 
     # --- 2. All testcases for the product (for modules / QA throughput / trend)
@@ -1579,7 +1580,7 @@ def zentao_dashboard(
             "productId": product_id,
             "project": project_key,
             "executionId": mapped_execution_id or None,
-            "scope": f"execution:{mapped_execution_id}" if mapped_execution_id else "all-active-executions",
+            "scope": "all-active-executions",
             "fetchedAt": datetime.now().isoformat(),
             "cached": False,
             "activeIterations": len(active_execs),
