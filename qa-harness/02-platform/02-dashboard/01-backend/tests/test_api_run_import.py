@@ -42,6 +42,7 @@ def test_api_import_creates_visible_run_with_case_ids(tmp_path, monkeypatch):
         duplicate = main.import_api_run(request)
         history = main.list_runs(project="west-kowloon")
         detail = main.get_run_detail(imported["id"])
+        trends = main.get_trends(project="west-kowloon")
 
         assert imported["imported"] is True
         assert duplicate["imported"] is False
@@ -56,6 +57,9 @@ def test_api_import_creates_visible_run_with_case_ids(tmp_path, monkeypatch):
         ]
         assert [row["automation_type"] for row in detail["scenarios"]] == ["API", "API"]
         assert all(row["automation_location"] is None for row in detail["scenarios"])
+        assert [row["id"] for row in trends["runs"]] == [imported["id"]]
+        assert trends["runs"][0]["run_kind"] == "api"
+        assert trends["summary"]["total_runs"] == 1
     finally:
         database = sys.modules.get("database")
         if database is not None:

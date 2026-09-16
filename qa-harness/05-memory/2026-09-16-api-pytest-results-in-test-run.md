@@ -19,3 +19,6 @@
 - Visible filtering rule: provide a separate `Run Type` selector with
   `All Runs`, `API`, and `Full`. Search inside the history picker alone is not
   visually discoverable and must not be treated as the type filter.
+- Sync rule: completed API imports must appear in both Test Run and the main
+  Dashboard. Both pages poll for external pytest imports; Test Run follows a
+  new latest run only while the user is not intentionally viewing history.

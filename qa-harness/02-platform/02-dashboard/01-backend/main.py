@@ -2410,7 +2410,7 @@ def get_trends(limit: int = 30, project: str = "west-kowloon"):
             .filter(
                 TestRun.status != "running",
                 TestRun.project_key == project_key,
-                TestRun.run_kind == "full",
+                TestRun.run_kind.in_(["full", "api"]),
             )
             .order_by(TestRun.id.desc())
             .limit(limit)
@@ -2482,7 +2482,7 @@ def get_trends(limit: int = 30, project: str = "west-kowloon"):
             .filter(
                 TestRun.status != "running",
                 TestRun.project_key == project_key,
-                TestRun.run_kind == "full",
+                TestRun.run_kind.in_(["full", "api"]),
             )
             .all()
         )

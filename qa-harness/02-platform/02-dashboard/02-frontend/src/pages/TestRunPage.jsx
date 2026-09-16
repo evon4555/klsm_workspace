@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { Alert, Typography, Divider, Tag, Modal, Button, Space } from 'antd'
 
 import KpiCards from '../components/KpiCards'
@@ -34,6 +34,8 @@ export default function TestRunPage({ activeProject }) {
   const [logMode, setLogMode] = useState('inline')
   const [rerunLogOpen, setRerunLogOpen] = useState(false)
   const [rerunLogTitle, setRerunLogTitle] = useState('Rerun Log')
+  const followLatestRef = useRef(true)
+  const currentRunVersionRef = useRef('')
 
   // Per-case "synced to the Kasi workbook" status; refreshed on mount and
   // whenever an evidence sync finishes (RunControls calls onSyncDone).
@@ -46,12 +48,21 @@ export default function TestRunPage({ activeProject }) {
     setRuns(data)
     if (data.length > 0) {
       const latest = data[0]
-      setCurrentRun(latest)
-      if (latest.status !== 'running') {
-        const detail = await getRunDetail(latest.id)
-        setScenarios(detail.scenarios || [])
+      const latestVersion = [
+        latest.id, latest.status, latest.finished_at,
+        latest.passed, latest.failed, latest.errored, latest.skipped,
+      ].join(':')
+      if (followLatestRef.current && currentRunVersionRef.current !== latestVersion) {
+        currentRunVersionRef.current = latestVersion
+        setCurrentRun(latest)
+        if (latest.status !== 'running') {
+          const detail = await getRunDetail(latest.id)
+          setCurrentRun(detail)
+          setScenarios(detail.scenarios || [])
+        }
       }
     } else if (data.length === 0) {
+      currentRunVersionRef.current = ''
       setCurrentRun(null)
       setScenarios([])
     }
@@ -82,10 +93,14 @@ export default function TestRunPage({ activeProject }) {
   }, [])
 
   useEffect(() => {
+    followLatestRef.current = true
+    currentRunVersionRef.current = ''
     setRunError('')
     setLogLines([])
     fetchRuns()
     fetchEvidence()
+    const timer = window.setInterval(fetchRuns, 10_000)
+    return () => window.clearInterval(timer)
   }, [fetchRuns, fetchEvidence])
 
   useEffect(() => {
@@ -101,6 +116,8 @@ export default function TestRunPage({ activeProject }) {
   }, [packageId])
 
   const handleSelectRun = async (runId) => {
+    followLatestRef.current = String(runId) === String(runs[0]?.id)
+    currentRunVersionRef.current = ''
     const detail = await getRunDetail(runId)
     setCurrentRun(detail)
     setScenarios(detail.scenarios || [])
@@ -122,6 +139,8 @@ export default function TestRunPage({ activeProject }) {
       return
     }
     const { id } = result
+    followLatestRef.current = true
+    currentRunVersionRef.current = ''
     setCurrentRun({ id, status: 'running', total: 0, passed: 0, failed: 0, skipped: 0 })
 
     connectWebSocket(

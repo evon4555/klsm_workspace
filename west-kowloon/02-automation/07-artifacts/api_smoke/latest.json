@@ -1,7 +1,7 @@
 {
   "project": "西九",
   "website_url": "https://anticket.lengliwh.com",
-  "ran_at": "2026-09-16T15:02:17+00:00",
+  "ran_at": "2026-09-16T15:31:19+00:00",
   "summary": {
     "total": 40,
     "up": 40,
@@ -21,13 +21,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 17.8,
+      "latency_ms": 23.9,
       "status": "up",
       "group": "auth",
       "notes": "Issues a captcha session id used by login / register flows.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -40,13 +40,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 30.3,
+      "latency_ms": 46.3,
       "status": "up",
       "group": "auth",
       "notes": "Logout endpoint.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -59,13 +59,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 24.3,
+      "latency_ms": 21.9,
       "status": "up",
       "group": "config",
       "notes": "Returns the list of supported country codes shown in the phone dropdown.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -79,13 +79,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 21.6,
+      "latency_ms": 16.8,
       "status": "up",
       "group": "member",
       "notes": "Step 1 of account-deletion — which channel (email/SMS) to verify on.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -99,13 +99,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 18.4,
+      "latency_ms": 19.2,
       "status": "up",
       "group": "member",
       "notes": "Step 2 of account-deletion — send the verification code.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -119,13 +119,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 21.2,
+      "latency_ms": 17.3,
       "status": "up",
       "group": "member",
       "notes": "Step 3 of account-deletion — verify the entered code.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -139,13 +139,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 16.7,
+      "latency_ms": 21.1,
       "status": "up",
       "group": "member",
       "notes": "List of selectable reasons for leaving (account deletion).",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -159,13 +159,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 19.2,
+      "latency_ms": 16.9,
       "status": "up",
       "group": "member",
       "notes": "Final step of account-deletion — submit deletion request.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -179,13 +179,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 15.2,
+      "latency_ms": 21.3,
       "status": "up",
       "group": "member",
       "notes": "My event subscriptions / message inbox.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -199,13 +199,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 18.0,
+      "latency_ms": 15.6,
       "status": "up",
       "group": "ticket",
       "notes": "Get show schedule info for a given product.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -219,13 +219,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 20.5,
+      "latency_ms": 19.2,
       "status": "up",
       "group": "ticket",
       "notes": "Get ticket price tiers for a given schedule.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -239,13 +239,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 16.2,
+      "latency_ms": 18.3,
       "status": "up",
       "group": "ticket",
       "notes": "Get seat-map availability for a given schedule.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -258,13 +258,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 30.3,
+      "latency_ms": 46.9,
       "status": "up",
       "group": "cms",
       "notes": "[crawler] Banner / ad list shown on home + landing pages.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -277,13 +277,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 227.2,
+      "latency_ms": 76.7,
       "status": "up",
       "group": "cms",
       "notes": "[crawler] Cached campaign list (homepage).",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -296,13 +296,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 17.8,
+      "latency_ms": 24.8,
       "status": "up",
       "group": "cms",
       "notes": "[crawler] Campaign labels / categories.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -321,7 +321,7 @@
       "notes": "[crawler] Per-site display config loaded on every page entry.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -334,13 +334,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 113.3,
+      "latency_ms": 207.6,
       "status": "up",
       "group": "config",
       "notes": "[crawler] Venue / stadium list.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:17+00:00"
     },
     {
       "project": "西九",
@@ -353,13 +353,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 126.8,
+      "latency_ms": 116.6,
       "status": "up",
       "group": "member",
       "notes": "[crawler] Public membership plans list (anonymous browse).",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:16+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -372,13 +372,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 50.7,
+      "latency_ms": 105.1,
       "status": "up",
       "group": "ticket",
       "notes": "[crawler] Program / show categories.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -391,13 +391,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 338.9,
+      "latency_ms": 267.2,
       "status": "up",
       "group": "ticket",
       "notes": "[crawler] Hot programs (PC recList) — homepage carousel data.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -411,13 +411,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 13.9,
+      "latency_ms": 20.5,
       "status": "up",
       "group": "member",
       "notes": "[crawler] Member shipping address list.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -431,13 +431,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 19.6,
+      "latency_ms": 20.3,
       "status": "up",
       "group": "ticket",
       "notes": "[crawler] Current cart contents.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -451,13 +451,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 14.4,
+      "latency_ms": 28.4,
       "status": "up",
       "group": "ticket",
       "notes": "[crawler] Initialise a ticket cart session.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -471,13 +471,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 17.3,
+      "latency_ms": 18.0,
       "status": "up",
       "group": "member",
       "notes": "[crawler] My coupons, filtered by status (notStart / inUse / expired).",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -491,13 +491,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 20.5,
+      "latency_ms": 25.2,
       "status": "up",
       "group": "member",
       "notes": "[crawler] My wishlist / favorites.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -511,13 +511,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 17.2,
+      "latency_ms": 17.3,
       "status": "up",
       "group": "member",
       "notes": "[crawler] ID certification status (real-name).",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -531,13 +531,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 19.6,
+      "latency_ms": 23.9,
       "status": "up",
       "group": "member",
       "notes": "[crawler] Logged-in member's core info bundle.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -551,13 +551,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 20.5,
+      "latency_ms": 19.1,
       "status": "up",
       "group": "member",
       "notes": "[crawler] Profile page data.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -571,13 +571,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 21.7,
+      "latency_ms": 22.1,
       "status": "up",
       "group": "member",
       "notes": "[crawler] Dynamic / custom profile fields.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -591,13 +591,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 31.6,
+      "latency_ms": 19.9,
       "status": "up",
       "group": "member",
       "notes": "[crawler] My membership cards list.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -611,13 +611,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 47.1,
+      "latency_ms": 22.0,
       "status": "up",
       "group": "member",
       "notes": "[crawler] My valid tickets (entry-ready).",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -631,13 +631,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 28.4,
+      "latency_ms": 18.5,
       "status": "up",
       "group": "member",
       "notes": "[crawler] My orders, paginated + filterable by status.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -651,13 +651,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 18.8,
+      "latency_ms": 21.0,
       "status": "up",
       "group": "member",
       "notes": "[crawler] Remaining points expiring soon.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -671,13 +671,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 21.3,
+      "latency_ms": 29.3,
       "status": "up",
       "group": "member",
       "notes": "[crawler] Point-earning history.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -691,13 +691,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 16.1,
+      "latency_ms": 21.4,
       "status": "up",
       "group": "ticket",
       "notes": "[crawler] Ticket-transfer rule: allowed times per ticket.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -710,13 +710,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 21.4,
+      "latency_ms": 20.9,
       "status": "up",
       "group": "member",
       "notes": "[deep-crawler] Aggregate favourite count for a program.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -729,13 +729,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 71.6,
+      "latency_ms": 75.9,
       "status": "up",
       "group": "ticket",
       "notes": "[deep-crawler] Static program detail content (description, images).",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -748,13 +748,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 19.8,
+      "latency_ms": 42.3,
       "status": "up",
       "group": "ticket",
       "notes": "[deep-crawler] Membership-tier discount info shown on program page.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:18+00:00"
     },
     {
       "project": "西九",
@@ -767,13 +767,13 @@
         200
       ],
       "actual_status_code": 200,
-      "latency_ms": 36.4,
+      "latency_ms": 47.8,
       "status": "up",
       "group": "ticket",
       "notes": "[deep-crawler] Combo / package ticket options for a program.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:19+00:00"
     },
     {
       "project": "西九",
@@ -787,13 +787,13 @@
         403
       ],
       "actual_status_code": 401,
-      "latency_ms": 50.4,
+      "latency_ms": 18.9,
       "status": "up",
       "group": "member",
       "notes": "[deep-crawler] Did the logged-in member favourite this program.",
       "error": null,
       "body_warning": null,
-      "last_check": "2026-09-16T15:02:17+00:00"
+      "last_check": "2026-09-16T15:31:19+00:00"
     }
   ]
 }

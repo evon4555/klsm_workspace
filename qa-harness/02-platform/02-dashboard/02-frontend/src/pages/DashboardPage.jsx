@@ -209,14 +209,30 @@ export default function DashboardPage({ activeProject }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
-    Promise.all([
-      fetchTrends(20, projectKey),
-      fetchFlakyTests(15, projectKey),
-    ]).then(([t, f]) => {
-      setTrends(t)
-      setFlaky(f)
-    }).finally(() => setLoading(false))
+    let cancelled = false
+    const refresh = async (initial = false) => {
+      if (initial) setLoading(true)
+      try {
+        const [t, f] = await Promise.all([
+          fetchTrends(20, projectKey),
+          fetchFlakyTests(15, projectKey),
+        ])
+        if (!cancelled) {
+          setTrends(t)
+          setFlaky(f)
+        }
+      } catch {
+        // Keep the last successful snapshot during a transient refresh failure.
+      } finally {
+        if (!cancelled && initial) setLoading(false)
+      }
+    }
+    refresh(true)
+    const timer = window.setInterval(() => refresh(false), 10_000)
+    return () => {
+      cancelled = true
+      window.clearInterval(timer)
+    }
   }, [projectKey])
 
   if (loading) {
@@ -259,6 +275,12 @@ export default function DashboardPage({ activeProject }) {
       render: (v) => <Tag>{(v || '').toUpperCase()}</Tag>,
     },
     {
+      title: 'Type',
+      dataIndex: 'run_kind',
+      width: 70,
+      render: (v) => <Tag color={v === 'api' ? 'blue' : 'default'}>{v === 'api' ? 'API' : 'Full'}</Tag>,
+    },
+    {
       title: 'Scope',
       key: 'scope',
       width: 130,
@@ -266,7 +288,7 @@ export default function DashboardPage({ activeProject }) {
         const executed = runExecuted(r)
         const collected = runCollected(r)
         return (
-          <Tooltip title="Executed excludes skipped/NA scenarios. Collected is every Behave scenario discovered in the feature files.">
+          <Tooltip title="Executed excludes skipped/NA tests. Collected is every test discovered by the selected suite.">
             <div>
               <Text strong>{executed}</Text>
               <Text type="secondary"> / {collected}</Text>
