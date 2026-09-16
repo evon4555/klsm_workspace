@@ -13,3 +13,6 @@
 - Verification: run #232 imported 80 rows (59 passed, 21 skipped), with zero
   missing Case IDs; the run detail endpoint loaded in about 0.14 seconds after
   bypassing Behave/XLSX enrichment for API runs.
+- Run-history picker: keep it searchable. Match run ID, API/Full type, status,
+  execution totals, and formatted date so mixed run histories can be narrowed
+  without scrolling through every entry.

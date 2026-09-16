@@ -199,6 +199,22 @@ export default function RunControls({
     () => (runs || []).find(r => String(r.id) === String(currentRunId)),
     [runs, currentRunId],
   )
+  const runHistoryOptions = useMemo(
+    () => (runs || []).map((r) => {
+      const runType = r.run_kind === 'api' ? 'API' : 'Full'
+      const status = String(r.status || 'unknown').toUpperCase()
+      const executed = `${runExecuted(r)}/${runCollected(r)} executed`
+      const when = formatRunTime(r.finished_at || r.started_at)
+      const selectedLabel = `${runType} run #${r.id} - ${executed} - ${when}`
+      return {
+        value: r.id,
+        label: `${runType} run #${r.id} - ${status} - ${executed} - ${when}`,
+        selectedLabel,
+        searchText: `${r.id} ${runType} ${r.run_kind || ''} ${status} ${executed} ${when}`.toLowerCase(),
+      }
+    }),
+    [runs],
+  )
   const canRerunFailed = hasFailed && !isRunning && ((selectedRun?.run_kind || 'full') === 'full')
 
   return (
@@ -305,17 +321,22 @@ export default function RunControls({
         </Col>
         <Col flex="auto" style={{ textAlign: 'right', minWidth: 390 }}>
           {runs.length > 0 && (
-            <Select
-              value={currentRunId}
-              onChange={onSelectRun}
-              style={{ width: 390, textAlign: 'left' }}
-              placeholder="View past run..."
-              suffixIcon={<HistoryOutlined />}
-              options={runs.map((r) => ({
-                value: r.id,
-                label: `${r.run_kind === 'api' ? 'API' : 'Full'} run #${r.id} - ${runExecuted(r)}/${runCollected(r)} executed - ${formatRunTime(r.finished_at || r.started_at)}`,
-              }))}
-            />
+            <Tooltip title="Search by run ID, API/Full type, status, or date">
+              <Select
+                value={currentRunId}
+                onChange={onSelectRun}
+                showSearch
+                optionLabelProp="selectedLabel"
+                filterOption={(input, option) => (
+                  option?.searchText?.includes(input.trim().toLowerCase())
+                )}
+                style={{ width: 390, textAlign: 'left' }}
+                placeholder="Search run ID, type, status, or date..."
+                notFoundContent="No matching run"
+                suffixIcon={<HistoryOutlined />}
+                options={runHistoryOptions}
+              />
+            </Tooltip>
           )}
         </Col>
       </Row>
