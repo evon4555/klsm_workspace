@@ -253,7 +253,7 @@ export default function TestRunPage({ activeProject }) {
           Test Run
         </Title>
         <Text type="secondary" style={{ fontSize: 13 }}>
-          Execute and monitor Behave + Playwright test suites for <Tag style={{ marginInline: 4 }}>{projectName}</Tag>
+          Monitor Behave + Playwright and pytest API suites for <Tag style={{ marginInline: 4 }}>{projectName}</Tag>
         </Text>
       </div>
 

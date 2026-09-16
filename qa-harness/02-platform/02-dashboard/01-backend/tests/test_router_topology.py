@@ -20,7 +20,7 @@ def test_domain_routes_are_registered_once_from_router_modules():
         for route in dashboard_routes
         for method in route.methods
     ]
-    assert len(dashboard_routes) == 53
+    assert len(dashboard_routes) == 54
     assert len(route_keys) == len(set(route_keys))
 
     expected_modules = {

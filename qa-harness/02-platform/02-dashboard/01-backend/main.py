@@ -255,6 +255,27 @@ class RunRequest(BaseModel):
     package_id: Optional[str] = None        # workspace-relative package context; audit only for now
 
 
+class ApiTestResultImport(BaseModel):
+    """One pytest API result imported into the shared Test Run history."""
+    case_id: str
+    name: str
+    layer: str
+    status: str
+    duration_s: float = 0.0
+    error_msg: Optional[str] = None
+    source: Optional[str] = None
+
+
+class ApiRunImportRequest(BaseModel):
+    """Body posted by the project's pytest session-finish hook."""
+    project: str = "west-kowloon"
+    env: str = "sit"
+    run_token: str
+    started_at: datetime
+    finished_at: datetime
+    tests: list[ApiTestResultImport]
+
+
 # ---------------------------------------------------------------------------
 # Routes
 # ---------------------------------------------------------------------------
@@ -299,13 +320,96 @@ async def create_run(req: RunRequest):
     return {"id": run_id, "status": "running"}
 
 
+@app.post("/api/runs/import-api")
+def import_api_run(req: ApiRunImportRequest):
+    """Import one completed pytest API session into the Test Run page.
+
+    `run_token` makes retries idempotent. The API monitor continues to own
+    endpoint-health detail; this record owns test-execution history.
+    """
+    project_key = _project_key(req.project)
+    import_tag = f"api-import:{req.run_token}"[:200]
+    allowed_statuses = {"passed", "failed", "error", "skipped"}
+
+    db = get_db()
+    try:
+        existing = (
+            db.query(TestRun)
+            .filter(
+                TestRun.project_key == project_key,
+                TestRun.run_kind == "api",
+                TestRun.tags == import_tag,
+            )
+            .first()
+        )
+        if existing:
+            return {**_run_dict(existing), "imported": False}
+
+        normalized = []
+        for test in req.tests:
+            status = (test.status or "error").strip().lower()
+            if status not in allowed_statuses:
+                status = "error"
+            normalized.append((test, status))
+
+        failed = sum(1 for _, status in normalized if status == "failed")
+        errored = sum(1 for _, status in normalized if status == "error")
+        skipped = sum(1 for _, status in normalized if status == "skipped")
+        passed = sum(1 for _, status in normalized if status == "passed")
+        overall = "failed" if failed else ("error" if errored else "passed")
+
+        def db_time(value: datetime) -> datetime:
+            return value.astimezone(timezone.utc).replace(tzinfo=None) if value.tzinfo else value
+
+        run = TestRun(
+            started_at=db_time(req.started_at),
+            finished_at=db_time(req.finished_at),
+            status=overall,
+            env=req.env,
+            project_key=project_key,
+            tags=import_tag,
+            run_kind="api",
+            total=len(normalized),
+            passed=passed,
+            failed=failed,
+            errored=errored,
+            skipped=skipped,
+        )
+        db.add(run)
+        db.flush()
+
+        for test, status in normalized:
+            layer = (test.layer or "api").strip().lower()[:200]
+            scenario_tags = (
+                "api,ui,api_ui_mixed"
+                if layer == "api_ui_mixed"
+                else f"api,{layer}"
+            )
+            db.add(TestScenario(
+                run_id=run.id,
+                case_id=test.case_id.strip()[:500],
+                feature=layer.replace("_", " ").title()[:200],
+                name=test.name.strip()[:200],
+                status=status,
+                duration_s=max(0.0, float(test.duration_s or 0.0)),
+                error_msg=(test.error_msg or None),
+                tags=scenario_tags,
+            ))
+
+        db.commit()
+        db.refresh(run)
+        return {**_run_dict(run), "imported": True}
+    finally:
+        db.close()
+
+
 @app.get("/api/runs")
 def list_runs(
     project: str = "west-kowloon",
     kind: str = "full",
     include_reruns: bool = False,
 ):
-    """List recent functional test runs for the Test Run page.
+    """List recent functional and API test runs for the Test Run page.
 
     Performance runs belong to the dedicated Performance Test page. Mixing
     them into this history makes transaction metrics look like functional
@@ -320,7 +424,7 @@ def list_runs(
             if not include_reruns:
                 query = query.filter(~TestRun.run_kind.in_(["rerun_single", "rerun_failed"]))
         elif requested_kind in {"full", "dashboard", "history"}:
-            visible_kinds = ["full"]
+            visible_kinds = ["full", "api"]
             if include_reruns:
                 visible_kinds.extend(["rerun_single", "rerun_failed"])
             query = query.filter(TestRun.run_kind.in_(visible_kinds))
@@ -349,14 +453,20 @@ def get_run_detail(run_id: int):
             .filter(TestScenario.run_id == run_id)
             .all()
         )
-        latest_attempts = _scenario_latest_attempts(db, scenarios, run.project_key)
+        # API sessions already represent one complete pytest snapshot and use
+        # explicit node-derived case IDs. Behave/XLSX cross-run enrichment is
+        # both irrelevant and expensive for an 80+ row API suite.
+        latest_attempts = (
+            {} if (run.run_kind or "full") == "api"
+            else _scenario_latest_attempts(db, scenarios, run.project_key)
+        )
         scenario_dicts = _enrich_bug_statuses([
             _scenario_dict(
                 s,
                 run.project_key,
                 run=run,
                 latest_attempt=latest_attempts.get(
-                    _case_id_from_scenario_fields(s.name, s.tags)
+                    _scenario_case_id(s)
                 ),
             )
             for s in scenarios
@@ -1321,6 +1431,11 @@ def _case_id_from_scenario_fields(name: str | None, tags: str | None) -> str | N
     return None
 
 
+def _scenario_case_id(s: TestScenario) -> str | None:
+    explicit = (getattr(s, "case_id", None) or "").strip()
+    return explicit or _case_id_from_scenario_fields(s.name, s.tags)
+
+
 def _normalise_xlsx_header(value) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip().lower()
 
@@ -1467,7 +1582,7 @@ def _automation_type_from_tags(tags: str | None) -> str | None:
 
 def _automation_type_for_scenario(s: TestScenario, run: Optional[TestRun] = None) -> str:
     project_key = (run.project_key if run else None) or "west-kowloon"
-    case_id = _case_id_from_scenario_fields(s.name, s.tags)
+    case_id = _scenario_case_id(s)
     case_meta = _case_metadata_for_project(project_key).get(case_id, {}) if case_id else {}
     return case_meta.get("automation_type") or _automation_type_from_tags(s.tags) or "N/A"
 
@@ -2560,7 +2675,7 @@ def _scenario_latest_attempts(
     project_key = _project_key(project)
     case_ids = sorted({
         cid for cid in (
-            _case_id_from_scenario_fields(s.name, s.tags) for s in scenarios
+            _scenario_case_id(s) for s in scenarios
         )
         if cid
     })
@@ -2568,6 +2683,7 @@ def _scenario_latest_attempts(
         return {}
 
     conditions = []
+    conditions.append(TestScenario.case_id.in_(case_ids))
     for case_id in case_ids:
         conditions.append(TestScenario.name.like(f"%{case_id}%"))
         conditions.append(TestScenario.tags.like(f"%{case_id}%"))
@@ -2583,7 +2699,7 @@ def _scenario_latest_attempts(
         case_id: [] for case_id in case_ids
     }
     for scenario, run in rows:
-        case_id = _case_id_from_scenario_fields(scenario.name, scenario.tags)
+        case_id = _scenario_case_id(scenario)
         if case_id in grouped:
             grouped[case_id].append((scenario, run))
 
@@ -2659,9 +2775,13 @@ def _scenario_dict(
         "title": b.title,
         "opened_at": b.opened_at.isoformat() if b.opened_at else None,
     } for b in (s.bugs or [])]
-    case_id = _case_id_from_scenario_fields(s.name, s.tags)
-    case_meta = _case_metadata_for_project(project).get(case_id, {}) if case_id and project else {}
+    case_id = _scenario_case_id(s)
     run_kind = (run.run_kind if run else None) or "full"
+    is_api_run = run_kind == "api"
+    case_meta = (
+        _case_metadata_for_project(project).get(case_id, {})
+        if case_id and project and not is_api_run else {}
+    )
     payload = {
         "id": s.id,
         "run_id": s.run_id,
@@ -2680,8 +2800,11 @@ def _scenario_dict(
         "test_steps": case_meta.get("test_steps"),
         "expected_result": case_meta.get("expected_result"),
         "automation_status": case_meta.get("automation_status"),
-        "automation_type": case_meta.get("automation_type"),
-        "automation_location": _automation_location_for_scenario(s, project) if project else None,
+        "automation_type": case_meta.get("automation_type") or _automation_type_from_tags(s.tags),
+        "automation_location": (
+            None if is_api_run
+            else (_automation_location_for_scenario(s, project) if project else None)
+        ),
         "case_metadata_source": case_meta.get("case_metadata_source"),
         "automation_metadata_source": case_meta.get("automation_metadata_source"),
         "status": s.status,

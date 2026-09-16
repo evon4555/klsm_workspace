@@ -2,6 +2,13 @@
 
 Pytest-based API layers for the West Kowloon Website.
 
+Every completed pytest API session is also published to the local QA
+Dashboard (`http://127.0.0.1:8002` by default). It appears in **Test Run** as
+an **API run**, with stable API case identifiers, per-case status, and
+**Automation Type = API**. Tests under `api_ui_mixed` remain **Mixed** because
+they intentionally combine API setup with UI verification. Publishing is
+best-effort and never changes the pytest exit result if the dashboard is down.
+
 This folder is intentionally split by test style so the operating model is visible from the directory tree:
 
 ```text

@@ -48,6 +48,9 @@ _AUTOMATION = _THIS.parents[2]
 _DATA_DIR = _THIS.parent / "data"
 _ARTIFACT_DIR = _AUTOMATION / "07-artifacts" / "api_smoke"
 _LAYER_SUMMARY = _ARTIFACT_DIR / "layer_summary.json"
+_QA_REPORTS: dict[str, dict[str, Any]] = {}
+_QA_SESSION_STARTED_AT: _dt.datetime | None = None
+_QA_RUN_TOKEN = ""
 
 # Latency thresholds (ms) for the smoke verdict.
 _SLOW_MS = 1000
@@ -62,6 +65,14 @@ def pytest_configure(config: pytest.Config) -> None:
         "filterwarnings",
         "ignore:Unverified HTTPS request.*:urllib3.exceptions.InsecureRequestWarning",
     )
+
+
+def pytest_sessionstart(session: pytest.Session) -> None:
+    """Start a fresh result bucket for this pytest process."""
+    global _QA_SESSION_STARTED_AT, _QA_RUN_TOKEN
+    _QA_REPORTS.clear()
+    _QA_SESSION_STARTED_AT = _dt.datetime.now(_dt.timezone.utc)
+    _QA_RUN_TOKEN = f"{_QA_SESSION_STARTED_AT.strftime('%Y%m%dT%H%M%S%fZ')}-{os.getpid()}"
 
 
 # ---------------------------------------------------------------------------
@@ -162,20 +173,32 @@ def pytest_sessionfinish(session: pytest.Session, exitstatus: int) -> None:
     #   api_functional - API-only multi-step business checks
     #   api_ui_mixed   - API chains plus final UI assertions
     layer_counts: dict[str, dict[str, int]] = {}
-    for item, result in getattr(session, "_qa_layer_results", {}).items():
-        node = item.nodeid.replace("\\", "/")
-        for prefix in ("02-tests/api/",):
-            if prefix in node:
-                after = node.split(prefix, 1)[1]
-                break
-        else:
-            after = node
-        first_dir = after.split("/", 1)[0]
-        if first_dir not in {"api_smoke", "api_contract", "api_functional", "api_ui_mixed"}:
+    dashboard_tests: list[dict[str, Any]] = []
+    for item in session.items:
+        layer = _api_layer(item.nodeid)
+        if not layer:
             continue
-        b = layer_counts.setdefault(first_dir, {"passed": 0, "failed": 0, "skipped": 0, "total": 0})
+        result = _QA_REPORTS.get(item.nodeid, {
+            "status": "error",
+            "duration_s": 0.0,
+            "error_msg": "pytest did not emit a result report",
+        })
+        status = result["status"]
+        b = layer_counts.setdefault(
+            layer,
+            {"passed": 0, "failed": 0, "error": 0, "skipped": 0, "total": 0},
+        )
         b["total"] += 1
-        b[result] = b.get(result, 0) + 1
+        b[status] = b.get(status, 0) + 1
+        dashboard_tests.append({
+            "case_id": _api_case_id(item, layer),
+            "name": _api_display_name(item),
+            "layer": layer,
+            "status": status,
+            "duration_s": result.get("duration_s", 0.0),
+            "error_msg": result.get("error_msg"),
+            "source": item.nodeid.replace("\\", "/"),
+        })
 
     if layer_counts:
         out = _LAYER_SUMMARY
@@ -192,48 +215,105 @@ def pytest_sessionfinish(session: pytest.Session, exitstatus: int) -> None:
         parts = [f"{l['name']}={l['passed']}/{l['total']}" for l in payload["layers"]]
         print(f"[api-smoke] wrote {out}  ({', '.join(parts)})")
 
+    if dashboard_tests:
+        _publish_dashboard_run(dashboard_tests)
+
 
 def pytest_runtest_logreport(report: pytest.TestReport) -> None:
-    """Capture each test's (passed/failed/skipped) outcome for layer counts.
-    Only the 'call' phase result matters 鈥?'setup' and 'teardown' phases
-    don't change the verdict (except setup errors, which we treat as failed)."""
-    if report.when not in ("call", "setup"):
-        return
-    session = getattr(report, "session", None)
-    if session is None:
-        # Pytest >= 7 attaches the session at config; fall back to the global.
-        import _pytest.config as _cfg
-        return
-    bucket = getattr(report, "_qa_session", None)
-    # We can't reliably access session here; instead use a sticky dict
-    # attached during pytest_collection_finish.
-    # See pytest_collection_finish below.
+    """Capture call results plus setup-level skips/errors.
+
+    The previous autouse-fixture collector never resumed when a session
+    fixture skipped a test, which made 6 collected API cases disappear from
+    the dashboard summary. Report hooks receive those outcomes reliably.
+    """
+    current = _QA_REPORTS.get(report.nodeid)
+    if report.when == "setup" and report.outcome in {"failed", "skipped"}:
+        _QA_REPORTS[report.nodeid] = {
+            "status": "error" if report.failed else "skipped",
+            "duration_s": float(report.duration or 0.0),
+            "error_msg": _report_message(report),
+        }
+    elif report.when == "call":
+        status = "failed" if report.failed else ("skipped" if report.skipped else "passed")
+        _QA_REPORTS[report.nodeid] = {
+            "status": status,
+            "duration_s": float(report.duration or 0.0),
+            "error_msg": _report_message(report) if status != "passed" else None,
+        }
+    elif report.when == "teardown" and report.failed:
+        duration = float(report.duration or 0.0) + float((current or {}).get("duration_s", 0.0))
+        _QA_REPORTS[report.nodeid] = {
+            "status": "error",
+            "duration_s": duration,
+            "error_msg": _report_message(report),
+        }
 
 
-@pytest.fixture(autouse=True)
-def _record_layer_result(request):
-    """Yield around each test; after, record its outcome on the session."""
-    yield
-    session = request.session
-    if not hasattr(session, "_qa_layer_results"):
-        session._qa_layer_results = {}
-    rep = getattr(request.node, "rep_call", None) or getattr(request.node, "rep_setup", None)
-    if rep is None:
-        return
-    if rep.failed:
-        result = "failed"
-    elif rep.skipped:
-        result = "skipped"
-    else:
-        result = "passed"
-    session._qa_layer_results[request.node] = result
+def _api_layer(nodeid: str) -> str | None:
+    node = nodeid.replace("\\", "/")
+    allowed = ("api_smoke", "api_contract", "api_functional", "api_ui_mixed")
+    for layer in allowed:
+        if f"/{layer}/" in f"/{node}":
+            return layer
+    return None
 
 
-@pytest.hookimpl(hookwrapper=True)
-def pytest_runtest_makereport(item, call):
-    out = yield
-    rep = out.get_result()
-    setattr(item, f"rep_{rep.when}", rep)
+def _api_case_id(item: pytest.Item, layer: str) -> str:
+    import re
+
+    raw_name = item.name
+    sit_match = re.search(r"sit_tc_([a-z0-9_]+?)_(\d{3})(?:_|$)", raw_name, re.IGNORECASE)
+    if sit_match:
+        module = sit_match.group(1).replace("_", "-").upper()
+        return f"SIT-TC-{module}-{sit_match.group(2)}"
+
+    param = raw_name.split("[", 1)[1].rsplit("]", 1)[0] if "[" in raw_name else ""
+    logical = param or raw_name.removeprefix("test_")
+    logical = re.sub(r"[^A-Za-z0-9._:/-]+", "-", logical).strip("-").upper()
+    return f"{layer.replace('_', '-').upper()}::{logical}"
+
+
+def _api_display_name(item: pytest.Item) -> str:
+    import re
+
+    raw_name = item.name
+    if "[" in raw_name:
+        param = raw_name.split("[", 1)[1].rsplit("]", 1)[0]
+        return param.replace("_", " ")[:200]
+    return re.sub(r"\s+", " ", raw_name.removeprefix("test_").replace("_", " ")).strip()[:200]
+
+
+def _report_message(report: pytest.TestReport) -> str | None:
+    text = getattr(report, "longreprtext", "") or str(getattr(report, "longrepr", "") or "")
+    text = "\n".join(line.rstrip() for line in text.splitlines() if line.strip())
+    return text[-4000:] or None
+
+
+def _publish_dashboard_run(tests: list[dict[str, Any]]) -> None:
+    """Best-effort local publish; test success never depends on the UI."""
+    finished_at = _dt.datetime.now(_dt.timezone.utc)
+    started_at = _QA_SESSION_STARTED_AT or finished_at
+    payload = {
+        "project": os.environ.get("QA_DASHBOARD_PROJECT", "west-kowloon"),
+        "env": os.environ.get("ENV", "sit"),
+        "run_token": _QA_RUN_TOKEN or f"pytest-{os.getpid()}",
+        "started_at": started_at.isoformat(),
+        "finished_at": finished_at.isoformat(),
+        "tests": tests,
+    }
+    base_url = os.environ.get("QA_DASHBOARD_URL", "http://127.0.0.1:8002").rstrip("/")
+    session = requests.Session()
+    session.trust_env = False
+    try:
+        response = session.post(f"{base_url}/api/runs/import-api", json=payload, timeout=10)
+        response.raise_for_status()
+        body = response.json()
+        action = "imported" if body.get("imported") else "already present"
+        print(f"[api-test-run] {action} as dashboard run #{body.get('id')}")
+    except Exception as exc:
+        warnings.warn(f"API results were not published to the local dashboard: {exc}")
+    finally:
+        session.close()
 
 
 @pytest.fixture(scope="session", autouse=True)

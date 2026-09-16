@@ -39,6 +39,7 @@ export default function KpiCards({ run }) {
   const skipped = run.skipped || 0
   const passRate = executed > 0 ? Math.round(((run.passed || 0) / executed) * 100) : 0
   const prColor = passRate >= 80 ? '#52c41a' : passRate >= 60 ? '#faad14' : '#ff4d4f'
+  const runKindLabel = run.run_kind === 'api' ? 'API run' : 'Full run'
 
   return (
     <Row gutter={16} style={{ marginBottom: 24 }}>
@@ -56,7 +57,7 @@ export default function KpiCards({ run }) {
             />
             <div>
               <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: 12 }}>
-                <Badge {...badge} /> Full run #{run.id}
+                <Badge {...badge} /> {runKindLabel} #{run.id}
               </div>
               <div style={{ color: '#fff', fontSize: 18, fontWeight: 700 }}>
                 {executed} <span style={{ fontSize: 11, fontWeight: 400 }}>executed</span>

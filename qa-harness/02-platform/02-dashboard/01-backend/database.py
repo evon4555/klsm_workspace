@@ -43,7 +43,7 @@ engine = create_engine(
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
 Base = declarative_base()
 
-DASHBOARD_SCHEMA_VERSION = 3
+DASHBOARD_SCHEMA_VERSION = 4
 
 
 def _utcnow_naive() -> datetime:
@@ -102,6 +102,10 @@ class TestScenario(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     run_id = Column(Integer, ForeignKey("test_runs.id"), nullable=False)
+    # Behave scenarios historically embedded SIT-TC-* in name/tags. Pytest
+    # API cases have their own stable node-derived identifiers, so keep the
+    # identifier explicitly instead of forcing it into a display label.
+    case_id = Column(String(500), nullable=True, index=True)
     feature = Column(String(200), nullable=False)    # e.g., "Antank 项目管理"
     name = Column(String(200), nullable=False)        # e.g., "Admin creates a no-seat project..."
     status = Column(String(20), nullable=False)       # passed | failed | skipped | undefined
@@ -215,6 +219,7 @@ def init_db():
         for ddl in (
             "ALTER TABLE test_scenarios ADD COLUMN zentao_bug_id INTEGER",
             "ALTER TABLE test_scenarios ADD COLUMN zentao_bug_url VARCHAR(300)",
+            "ALTER TABLE test_scenarios ADD COLUMN case_id VARCHAR(500)",
             # 2026-06-03: split 'errored' out of 'failed' in test_runs.
             "ALTER TABLE test_runs ADD COLUMN errored INTEGER DEFAULT 0",
             "ALTER TABLE test_runs ADD COLUMN project_key VARCHAR(100) DEFAULT 'west-kowloon'",
@@ -306,6 +311,7 @@ def init_db():
             "CREATE INDEX IF NOT EXISTS ix_test_runs_status ON test_runs (status)",
             "CREATE INDEX IF NOT EXISTS ix_test_runs_project_kind_started ON test_runs (project_key, run_kind, started_at)",
             "CREATE INDEX IF NOT EXISTS ix_test_scenarios_run_id ON test_scenarios (run_id)",
+            "CREATE INDEX IF NOT EXISTS ix_test_scenarios_case_id ON test_scenarios (case_id)",
             "CREATE INDEX IF NOT EXISTS ix_scenario_bugs_scenario_id ON scenario_bugs (scenario_id)",
             "CREATE INDEX IF NOT EXISTS ix_performance_run_configs_run_id ON performance_run_configs (run_id)",
         ):

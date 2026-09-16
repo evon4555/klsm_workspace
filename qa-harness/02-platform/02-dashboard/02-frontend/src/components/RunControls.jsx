@@ -313,7 +313,7 @@ export default function RunControls({
               suffixIcon={<HistoryOutlined />}
               options={runs.map((r) => ({
                 value: r.id,
-                label: `Run #${r.id} - ${runExecuted(r)}/${runCollected(r)} executed - ${formatRunTime(r.finished_at || r.started_at)}`,
+                label: `${r.run_kind === 'api' ? 'API' : 'Full'} run #${r.id} - ${runExecuted(r)}/${runCollected(r)} executed - ${formatRunTime(r.finished_at || r.started_at)}`,
               }))}
             />
           )}

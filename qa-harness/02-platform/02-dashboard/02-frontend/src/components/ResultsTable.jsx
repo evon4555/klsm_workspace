@@ -217,6 +217,7 @@ function formatTs(iso) {
 
 const RUN_KIND_LABELS = {
   full: 'Full run',
+  api: 'API run',
   performance: 'Performance test',
   rerun_single: 'Single rerun',
   rerun_failed: 'Failed-case rerun',
@@ -448,25 +449,28 @@ function buildColumns(evidenceMap, openBugFor, rerunOne, rerunningId,
       key: 'rerun',
       width: 290,
       render: (_, record) => {
+        const isApiRun = record.run_kind === 'api'
         // Three buttons in this column:
         //   - Rerun: always available (passed too — useful for flake checks)
         //   - Open Bug: always available (passed today doesn't mean passed
         //     tomorrow; backend dedupes by exact title within scenario)
         //   - 📜 History: open the execution-result history
         const histBtn = (
-          <Tooltip title="Open this case's execution history">
+          <Tooltip title={isApiRun ? 'API history is recorded by complete pytest runs.' : "Open this case's execution history"}>
             <Button
               size="small"
               icon={<HistoryOutlined />}
+              disabled={isApiRun}
               onClick={() => showHistoryFor(record)}
             />
           </Tooltip>
         )
         const rerunBtn = (
-          <Tooltip title="Rerun this case as an audit attempt. The full-run package summary stays selected.">
+          <Tooltip title={isApiRun ? 'Run the pytest API suite to create the next API run.' : 'Rerun this case as an audit attempt. The full-run package summary stays selected.'}>
             <Button
               size="small"
               icon={<ReloadOutlined />}
+              disabled={isApiRun}
               loading={rerunningId === record.id}
               onClick={() => rerunOne(record)}
             >
