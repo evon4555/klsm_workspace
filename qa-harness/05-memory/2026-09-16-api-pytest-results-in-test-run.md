@@ -16,3 +16,6 @@
 - Run-history picker: keep it searchable. Match run ID, API/Full type, status,
   execution totals, and formatted date so mixed run histories can be narrowed
   without scrolling through every entry.
+- Visible filtering rule: provide a separate `Run Type` selector with
+  `All Runs`, `API`, and `Full`. Search inside the history picker alone is not
+  visually discoverable and must not be treated as the type filter.

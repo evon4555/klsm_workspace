@@ -75,6 +75,7 @@ export default function RunControls({
   const [syncing, setSyncing] = useState(false)
   const [syncMsg, setSyncMsg] = useState('')
   const [syncOk, setSyncOk] = useState(null)      // null / true / false
+  const [runKindFilter, setRunKindFilter] = useState('all')
   const pollRef = useRef(null)
 
   useEffect(() => {
@@ -208,6 +209,7 @@ export default function RunControls({
       const selectedLabel = `${runType} run #${r.id} - ${executed} - ${when}`
       return {
         value: r.id,
+        runKind: r.run_kind === 'api' ? 'api' : 'full',
         label: `${runType} run #${r.id} - ${status} - ${executed} - ${when}`,
         selectedLabel,
         searchText: `${r.id} ${runType} ${r.run_kind || ''} ${status} ${executed} ${when}`.toLowerCase(),
@@ -215,6 +217,20 @@ export default function RunControls({
     }),
     [runs],
   )
+  const visibleRunHistoryOptions = useMemo(
+    () => (
+      runKindFilter === 'all'
+        ? runHistoryOptions
+        : runHistoryOptions.filter(option => option.runKind === runKindFilter)
+    ),
+    [runHistoryOptions, runKindFilter],
+  )
+  const visibleRunHistoryValue = visibleRunHistoryOptions.some(
+    option => String(option.value) === String(currentRunId),
+  ) ? currentRunId : undefined
+  const handleRunKindFilter = (nextKind) => {
+    setRunKindFilter(nextKind)
+  }
   const canRerunFailed = hasFailed && !isRunning && ((selectedRun?.run_kind || 'full') === 'full')
 
   return (
@@ -319,24 +335,45 @@ export default function RunControls({
             </Button>
           </Tooltip>
         </Col>
-        <Col flex="auto" style={{ textAlign: 'right', minWidth: 390 }}>
+        <Col flex="auto" style={{ textAlign: 'right', minWidth: 520 }}>
           {runs.length > 0 && (
-            <Tooltip title="Search by run ID, API/Full type, status, or date">
+            <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 8 }}>
+              <Text type="secondary" style={{ fontSize: 12, whiteSpace: 'nowrap' }}>Run Type</Text>
               <Select
-                value={currentRunId}
-                onChange={onSelectRun}
-                showSearch
-                optionLabelProp="selectedLabel"
-                filterOption={(input, option) => (
-                  option?.searchText?.includes(input.trim().toLowerCase())
-                )}
-                style={{ width: 390, textAlign: 'left' }}
-                placeholder="Search run ID, type, status, or date..."
-                notFoundContent="No matching run"
-                suffixIcon={<HistoryOutlined />}
-                options={runHistoryOptions}
+                aria-label="Filter runs by type"
+                value={runKindFilter}
+                onChange={handleRunKindFilter}
+                style={{ width: 105, textAlign: 'left' }}
+                options={[
+                  { value: 'all', label: 'All Runs' },
+                  { value: 'api', label: 'API' },
+                  { value: 'full', label: 'Full' },
+                ]}
               />
-            </Tooltip>
+              <Tooltip title="Search by run ID, status, or date">
+                <Select
+                  aria-label="Select a filtered run"
+                  value={visibleRunHistoryValue}
+                  onChange={onSelectRun}
+                  showSearch
+                  optionLabelProp="selectedLabel"
+                  filterOption={(input, option) => (
+                    option?.searchText?.includes(input.trim().toLowerCase())
+                  )}
+                  style={{ width: 300, textAlign: 'left' }}
+                  placeholder={
+                    runKindFilter === 'all'
+                      ? 'Search run ID, status, or date...'
+                      : runKindFilter === 'api'
+                        ? 'Select an API run...'
+                        : 'Select a Full run...'
+                  }
+                  notFoundContent="No matching run"
+                  suffixIcon={<HistoryOutlined />}
+                  options={visibleRunHistoryOptions}
+                />
+              </Tooltip>
+            </div>
           )}
         </Col>
       </Row>
